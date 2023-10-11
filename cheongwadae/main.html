@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <title>Swiper demo</title>
@@ -8,9 +7,10 @@
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main/style.css">
+
   <!-- Demo styles -->
   <style>
     html,
@@ -52,57 +52,349 @@
     .swiper-v {
       background: #eee;
     }
-    .hslide1 div.summary{
-        font-family: 'Noto Serif KR', serif;
-        position: absolute; color: #fff; 
-        font-size: 35px;
-        line-height: 1.6;
+
+    .hslide1 div.summary {
+      font-family: 'Noto Serif KR', serif;
+      position: absolute;
+      color: #fff;
+      font-size: 35px;
+      line-height: 1.6;
     }
 
-    .hslide1 div.summary p{
-        margin: 0;
-    }
-    .hslide1 .swiper-slide:nth-child(2) .summary{
-        left: 10%;
-        bottom: 15%;
-        text-align: left;
-    }
-    .hslide1 .swiper-slide:nth-child(3) .summary{
-        left: 15%;
-        top: 30%;
-    }
-    .hslide1 .swiper-slide:nth-child(4) .summary{
-        left: 10%;
-        top: 38%;
-        text-align: left;
-    }
-    .hslide1 .swiper-slide:nth-child(6) .summary{
-        top: 35%;
+    .hslide1 div.summary p {
+      margin: 0;
     }
 
-    .w-500{
-        font-weight: 500;
+    .hslide1 .swiper-slide:nth-child(2) .summary {
+      left: 10%;
+      bottom: 15%;
+      text-align: left;
     }
-    .p-32{
-        font-size: 32px;
+
+    .hslide1 .swiper-slide:nth-child(3) .summary {
+      left: 15%;
+      top: 30%;
     }
-    .p-45{
-        font-size: 45px;
+
+    .hslide1 .swiper-slide:nth-child(4) .summary {
+      left: 10%;
+      top: 38%;
+      text-align: left;
     }
-    .p-50{
-        font-size: 50px;
+
+    .hslide1 .swiper-slide:nth-child(6) .summary {
+      top: 35%;
     }
-    .p-80{
-        font-size: 80px;
+
+    .w-500 {
+      font-weight: 500;
     }
-    .p-65{
-        font-size: 65px;
+
+    .p-32 {
+      font-size: 32px;
     }
-    
+
+    .p-45 {
+      font-size: 45px;
+    }
+
+    .p-50 {
+      font-size: 50px;
+    }
+
+    .p-80 {
+      font-size: 80px;
+    }
+
+    .p-65 {
+      font-size: 65px;
+    }
   </style>
 </head>
 
 <body>
+  <header id="header" class="start">
+    <div class="header_wrap">
+      <h1 id="logo">
+        <a href="/">
+          <img src="imgs/logo.png" alt="청와대, 국민 품으로" class="n_ov"><img src="imgs/logo_black.png" alt="청와대, 국민 품으로"
+            class="ov hidden">
+        </a>
+      </h1>
+      <div class="header-sns">
+        <a class="header-sns-link" href="https://www.instagram.com/cheongwadae_korea/" target="_blank"
+          rel="noopener norefferer" title="청와대 인스타그램. 새 창으로 열립니다."><img src="imgs/header-instagram.png"></a>
+      </div>
+      <!--<span class="h_dday">D+<em>519</em></span>-->
+      <nav id="gnb1">
+        <ul id="head_menu" class="topmenu">
+          <li class="lnb2 mnfirst">
+            <a href="/open-message">개방의 의미</a>
+          </li>
+          <li class="lnb3">
+            <a href="/introduce-history">청와대 소개</a>
+              <ul class="sub03">
+                <li class="sub02 subfirst">
+                  <a href="/introduce-history">역사</a>
+                </li>
+                <li class="sub03">
+                  <a href="/introduce-map00">지도 및 주요시설</a>
+                </li>
+                <li class="sub04">
+                  <a href="/introduce-heritage">경내 주요 유적</a>
+                </li>
+              </ul>
+          </li>
+          <li class="lnb4">
+            <a href="/sub0501">관람안내</a>
+              <ul class="sub04">
+                <li class="sub02 subfirst">
+                  <a href="/sub0501">관람 규칙 및 규정</a>
+                </li>
+                <li class="sub03">
+                  <a href="/sub0506">관람 시간 및 해설 안내</a>
+                </li>
+                <li class="sub04">
+                  <a href="/sub0303">관람 신청</a>
+                </li>
+                <li class="sub05">
+                  <a href="/sub0507">관람 안내도</a>
+                </li>
+                <li class="sub06">
+                  <a href="/event-tourism">함께 가 볼 만한 장소</a>
+                </li>
+                <li class="sub07">
+                  <a href="/event-program">공연 프로그램</a>
+                </li>
+              </ul>
+          </li>
+          <li class="lnb5">
+            <a href="/trail-summary">등산로</a>
+              <ul class="sub05">
+                <li class="sub02 subfirst">
+                  <a href="/trail-summary">개요</a>
+                </li>
+                <li class="sub03">
+                  <a href="/trail-course">등산로 코스</a>
+                </li>
+                <li class="sub04">
+                  <a href="/trail-relic">등산로 이모저모</a>
+                </li>
+              </ul>
+          </li>
+          <li class="lnb6">
+            <a href="/sub1101">오시는 길 및 교통정보</a>
+              <ul class="sub06">
+                <li class="sub02 subfirst">
+                  <a href="/sub1101">오시는 길</a>
+                </li>
+                <li class="sub03">
+                  <a href="/sub1102">청와대 관람 순환버스</a>
+                </li>
+                <li class="sub04">
+                  <a href="/sub1103">서울시자율주행버스(청와대A01)</a>
+                </li>
+              </ul>
+          </li>
+          <li class="lnb7">
+            <a href="/communicate-notice">국민소통</a>
+              <ul class="sub07">
+                <li class="sub02 subfirst">
+                  <a href="/communicate-notice">공지사항</a>
+                </li>
+                <li class="sub03">
+                  <a href="/communicate-photo">미디어센터</a>
+                </li>
+                <li class="sub04">
+                  <a href="/communicate-faq">자주 하는 질문</a>
+                </li>
+              </ul>
+          </li>
+          <li class="lnb8">
+            <a href="/make-review">내가 만드는 청와대</a>
+              <ul class="sub08">
+                <li class="sub02 subfirst">
+                  <a href="/make-review">관람후기</a>
+                </li>
+              </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <nav id="gnb2">
+        <a href="/" class="logo hidden"><img src="/_html/img/layout/logo.png" alt="청와대, 국민 품으로" class="n_ov"></a>
+
+        <a href="/eng" class="global" target="_blank" rel="noopener noreferrer">EN<span class="sr_only hidden">영문 홈페이지로 이동
+          </span></a>
+
+        <a href="" class="control open"><span class="hidden">전체 메뉴 열기</span></a>
+        <h5 class="title"><img src="/_html/img/layout/sitemap_logo.png" alt=""> SITE MAP</h5>
+        <ul id="head_menu_all" class="topmenu_all">
+          <li class="lnb2 mnfirst ">
+            <a href="/open-message">개방의 의미</a>
+          </li>
+          <li class="lnb3  ">
+            <a href="/introduce-history">청와대 소개</a>
+            <div class="submenu">
+              <ul class="sub03">
+                <li class="sub02 subfirst ">
+                  <a href="/introduce-history"><span>역사</span></a>
+                </li>
+                <li class="sub03 on">
+                  <a href="/introduce-map00"><span>지도 및 주요시설</span></a>
+                  <ul class="depth3">
+                    <li class="sub02 subfirst ">
+                      <a href="/introduce-map00">지도 및 주요시설</a>
+                    </li>
+                    <li class="sub03  ">
+                      <a href="/introduce-map01">청와대 본관</a>
+                    </li>
+                    <li class="sub04  ">
+                      <a href="/introduce-map02">영빈관</a>
+                    </li>
+                    <li class="sub05  ">
+                      <a href="/introduce-map03">대통령 관저</a>
+                    </li>
+                    <li class="sub06  ">
+                      <a href="/introduce-map04">구 본관터(수궁터)</a>
+                    </li>
+                    <li class="sub07  ">
+                      <a href="/introduce-map05">상춘재</a>
+                    </li>
+                    <li class="sub08  ">
+                      <a href="/introduce-map06">녹지원</a>
+                    </li>
+                    <li class="sub09  ">
+                      <a href="/introduce-map07">여민관</a>
+                    </li>
+                    <li class="sub10  ">
+                      <a href="/introduce-map08">춘추관</a>
+                    </li>
+                    <li class="sub11  ">
+                      <a href="/introduce-map09">무궁화 동산</a>
+                    </li>
+                    <li class="sub12  ">
+                      <a href="/introduce-map10">칠궁</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="sub04  ">
+                  <a href="/introduce-heritage"><span>경내 주요 유적</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="lnb4  ">
+            <a href="/sub0501">관람안내</a>
+            <div class="submenu">
+              <ul class="sub04">
+                <li class="sub02 subfirst ">
+                  <a href="/sub0501"><span>관람 규칙 및 규정</span></a>
+                </li>
+                <li class="sub03  ">
+                  <a href="/sub0506"><span>관람 시간 및 해설 안내</span></a>
+                </li>
+                <li class="sub04  ">
+                  <a href="/sub0303"><span>관람 신청</span></a>
+                </li>
+                <li class="sub05  ">
+                  <a href="/sub0507"><span>관람 안내도</span></a>
+                </li>
+                <li class="sub06  ">
+                  <a href="/event-tourism"><span>함께 가 볼 만한 장소</span></a>
+                </li>
+                <li class="sub07  ">
+                  <a href="/event-program"><span>공연 프로그램</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="lnb5  ">
+            <a href="/trail-summary">등산로</a>
+            <div class="submenu">
+              <ul class="sub05">
+                <li class="sub02 subfirst ">
+                  <a href="/trail-summary"><span>개요</span></a>
+                </li>
+                <li class="sub03  ">
+                  <a href="/trail-course"><span>등산로 코스</span></a>
+                </li>
+                <li class="sub04 on">
+                  <a href="/trail-relic"><span>등산로 이모저모</span></a>
+                  <ul class="depth3">
+                    <li class="sub02 subfirst ">
+                      <a href="/trail-relic">유적 안내</a>
+                    </li>
+                    <li class="sub03  ">
+                      <a href="/trail-application">관련 앱</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="lnb6  ">
+            <a href="/sub1101">오시는 길 및 교통정보</a>
+            <div class="submenu">
+              <ul class="sub06">
+                <li class="sub02 subfirst ">
+                  <a href="/sub1101"><span>오시는 길</span></a>
+                </li>
+                <li class="sub03  ">
+                  <a href="/sub1102"><span>청와대 관람 순환버스</span></a>
+                </li>
+                <li class="sub04  ">
+                  <a href="/sub1103"><span>서울시자율주행버스(청와대A01)</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="lnb7  ">
+            <a href="/communicate-notice">국민소통</a>
+            <div class="submenu">
+              <ul class="sub07">
+                <li class="sub02 subfirst ">
+                  <a href="/communicate-notice"><span>공지사항</span></a>
+                </li>
+                <li class="sub03 on">
+                  <a href="/communicate-photo"><span>미디어센터</span></a>
+                  <ul class="depth3">
+                    <li class="sub02 subfirst ">
+                      <a href="/communicate-photo">사진</a>
+                    </li>
+                    <li class="sub03  ">
+                      <a href="/communicate-video">영상</a>
+                    </li>
+                    <li class="sub04  ">
+                      <a href="/communicate-news">카드뉴스</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="sub04  ">
+                  <a href="/communicate-faq"><span>자주 하는 질문</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="lnb8  ">
+            <a href="/make-review">내가 만드는 청와대</a>
+            <div class="submenu">
+              <ul class="sub08">
+                <li class="sub02 subfirst ">
+                  <a href="/make-review"><span>관람후기</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!--<li><a href="https://20insu.go.kr/message" target="_blank">국민이 당선인에 바란다</a></li>-->
+        </ul>
+        <a href="" class="control close"><span class="hidden">전체 메뉴 닫기</span></a>
+      </nav>
+    </div>
+  </header>
+
+
+
   <!-- Swiper -->
 
   <div class="swiper vslide swiper-v">
@@ -111,45 +403,45 @@
         <div class="swiper hslide1 swiper-h">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="imgs/v_img01_sdown.jpg" alt="">
-                <div class="summary">
-                    <p class="p-32">2022.05.10.</p>
-                    <p class="p-80 w-500">청와대, 국민 품으로</p>
-                </div>
+              <img src="imgs/v_img01_sdown.jpg" alt="">
+              <div class="summary">
+                <p class="p-32">2022.05.10.</p>
+                <p class="p-80 w-500">청와대, 국민 품으로</p>
+              </div>
             </div>
             <div class="swiper-slide"><img src="imgs/v_img02.jpg" alt="">
-                <div class="summary">
-                    <p>“청와대는 임기시작인</p>
-                    <p><span class="p-50 w-500">5월10일</span>에 개방하여</p>
-                    <p><span class="p-50 w-500">국민께</span> 돌려드리겠습니다.”</p>
-                </div>
+              <div class="summary">
+                <p>“청와대는 임기시작인</p>
+                <p><span class="p-50 w-500">5월10일</span>에 개방하여</p>
+                <p><span class="p-50 w-500">국민께</span> 돌려드리겠습니다.”</p>
+              </div>
             </div>
             <div class="swiper-slide"><img src="imgs/v_img03.jpg" alt="">
-                <div class="summary">
-                    <p>“본관, 영빈관을 비롯하여..</p>
-                </div>
+              <div class="summary">
+                <p>“본관, 영빈관을 비롯하여..</p>
+              </div>
             </div>
             <div class="swiper-slide"><img src="imgs/v_img04.jpg" alt="">
-                <div class="summary">
-                    <p>최고의 정원이라 불리는</p>
-                    <p>녹지원과 상춘재를<span class="p-45"> 모두</span></p>
-                    <p><span class="p-45">국민들의 품으로 </span>돌려드리겠습니다.”</p>
-                </div>
+              <div class="summary">
+                <p>최고의 정원이라 불리는</p>
+                <p>녹지원과 상춘재를<span class="p-45"> 모두</span></p>
+                <p><span class="p-45">국민들의 품으로 </span>돌려드리겠습니다.”</p>
+              </div>
             </div>
             <div class="swiper-slide"><img src="imgs/v_img05.jpg" alt="">
-                <div class="summary">
-                    <p>“경복궁 지하철역에서 경복궁을 거쳐 청와대를 거쳐..</p>
-                </div>
+              <div class="summary">
+                <p>“경복궁 지하철역에서 경복궁을 거쳐 청와대를 거쳐..</p>
+              </div>
             </div>
             <div class="swiper-slide"><img src="imgs/v_img06.jpg" alt="">
-                <div class="summary">
-                    <p>북악산으로의 등반로 역시 <span class="p-50">개방</span>되는 것입니다.”</p>
-                </div>
+              <div class="summary">
+                <p>북악산으로의 등반로 역시 <span class="p-50">개방</span>되는 것입니다.”</p>
+              </div>
             </div>
             <div class="swiper-slide"><img src="imgs/v_img07.jpg" alt="">
-                <div class="summary">
-                    <p class="p-65 w-500">약속 실천으로 시작합니다</p>
-                </div>
+              <div class="summary">
+                <p class="p-65 w-500">약속 실천으로 시작합니다</p>
+              </div>
             </div>
           </div>
           <div class="swiper-pagination"></div>
@@ -173,29 +465,29 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
-      }, 
+      },
       effect: "fade",
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
       },
-      on:{
-        slideChange: function(){
-            let activeSlide = this.slides[this.activeIndex];
-            gsap.set[activeSlide.querySelectorAll('div.summary p')];
+      on: {
+        slideChange: function () {
+          let activeSlide = this.slides[this.activeIndex];
+          gsap.set[activeSlide.querySelectorAll('div.summary p')];
 
-            const split = new SplitText(activeSlide.querySelectorAll('.summary p'), {type: 'chars'})
+          const split = new SplitText(activeSlide.querySelectorAll('.summary p'), { type: 'chars' })
 
-            gsap.from(split.chars, {
-                y:100,
-                x:-10,
-                opacity:0,
-                duration:1,
-                stagger:{
-                    each: 0.02,
-                    from: 'start'
-                }
-            })
+          gsap.from(split.chars, {
+            y: 100,
+            x: -10,
+            opacity: 0,
+            duration: 1,
+            stagger: {
+              each: 0.02,
+              from: 'start'
+            }
+          })
         }
       }
     });
@@ -209,7 +501,7 @@
       },
     });
   </script>
- 
+
 </body>
 
 </html>
