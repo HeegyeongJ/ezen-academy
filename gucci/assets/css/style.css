@@ -1,0 +1,69 @@
+@import "reset.css";
+@import "stages.css";
+
+*{box-sizing: border-box;}
+body{
+    overflow-x: hidden;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    background: url('../imgs/bg1.jpg') no-repeat;
+    background-position: 40% 80%;
+    background-size: cover;
+}
+h1{
+    /* margin: auto; */
+    padding: 30px 0;
+    /* width: 300px; */
+    text-align: center;
+    border-bottom: 0.3px solid #fff;
+}
+h1 img{
+    width: 300px;
+}
+h2 {
+    font-family: 'Nanum Myeongjo', serif;
+}
+.main-contents{
+    padding-left: 300px; 
+}
+.video-box{
+    margin: 90px 0 0 ;
+    left: 230px;
+    top: 210px;
+    width: 700px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.3);
+}
+video{
+    width: 100%;
+}
+.btn{
+    text-align: center;
+    margin-top: 80px;
+    width: 700px;
+}
+.btn a{
+    display: inline-block;
+    margin: 0 20px;
+    padding: 16px 24px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    color: black;
+    font-size: 18px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: bold;
+}
+.flex{
+    display: flex;
+}
+/* .btn a{
+   display: inline-block; 
+   background: #e15205;
+   padding: 10px 20px;
+   color: #fff;
+   border-radius: 99px;
+   font-size: 20px;
+   font-weight: bold;
+   margin: 0.1rem;
+} */

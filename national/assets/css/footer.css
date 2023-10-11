@@ -1,0 +1,18 @@
+footer{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 80px;
+    background-color: #000;
+    color: #fff;
+}
+.footer-nav-list{
+    display: flex;
+    gap: 2rem;
+
+}
+.footer-nav-list__item a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}

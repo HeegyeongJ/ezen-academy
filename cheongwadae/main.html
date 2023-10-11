@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-v {
+      background: #eee;
+    }
+    .hslide1 div.summary{
+        font-family: 'Noto Serif KR', serif;
+        position: absolute; color: #fff; 
+        font-size: 35px;
+        line-height: 1.6;
+    }
+
+    .hslide1 div.summary p{
+        margin: 0;
+    }
+    .hslide1 .swiper-slide:nth-child(2) .summary{
+        left: 10%;
+        bottom: 15%;
+        text-align: left;
+    }
+    .hslide1 .swiper-slide:nth-child(3) .summary{
+        left: 15%;
+        top: 30%;
+    }
+    .hslide1 .swiper-slide:nth-child(4) .summary{
+        left: 10%;
+        top: 38%;
+        text-align: left;
+    }
+    .hslide1 .swiper-slide:nth-child(6) .summary{
+        top: 35%;
+    }
+
+    .w-500{
+        font-weight: 500;
+    }
+    .p-32{
+        font-size: 32px;
+    }
+    .p-45{
+        font-size: 45px;
+    }
+    .p-50{
+        font-size: 50px;
+    }
+    .p-80{
+        font-size: 80px;
+    }
+    .p-65{
+        font-size: 65px;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+
+  <div class="swiper vslide swiper-v">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="swiper hslide1 swiper-h">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="imgs/v_img01_sdown.jpg" alt="">
+                <div class="summary">
+                    <p class="p-32">2022.05.10.</p>
+                    <p class="p-80 w-500">청와대, 국민 품으로</p>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="imgs/v_img02.jpg" alt="">
+                <div class="summary">
+                    <p>“청와대는 임기시작인</p>
+                    <p><span class="p-50 w-500">5월10일</span>에 개방하여</p>
+                    <p><span class="p-50 w-500">국민께</span> 돌려드리겠습니다.”</p>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="imgs/v_img03.jpg" alt="">
+                <div class="summary">
+                    <p>“본관, 영빈관을 비롯하여..</p>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="imgs/v_img04.jpg" alt="">
+                <div class="summary">
+                    <p>최고의 정원이라 불리는</p>
+                    <p>녹지원과 상춘재를<span class="p-45"> 모두</span></p>
+                    <p><span class="p-45">국민들의 품으로 </span>돌려드리겠습니다.”</p>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="imgs/v_img05.jpg" alt="">
+                <div class="summary">
+                    <p>“경복궁 지하철역에서 경복궁을 거쳐 청와대를 거쳐..</p>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="imgs/v_img06.jpg" alt="">
+                <div class="summary">
+                    <p>북악산으로의 등반로 역시 <span class="p-50">개방</span>되는 것입니다.”</p>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="imgs/v_img07.jpg" alt="">
+                <div class="summary">
+                    <p class="p-65 w-500">약속 실천으로 시작합니다</p>
+                </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="swiper-slide">Horizontal Slide 2</div>
+      <div class="swiper-slide">Horizontal Slide 3</div>
+      <div class="swiper-slide">Horizontal Slide 4</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="../splitText.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".hslide1", {
+     /*  pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      }, 페이징 필요 없음 */ 
+      effect: "fade",
+      autoplay:{
+        delay: 2500,
+        disableOnInetraction: false,
+      },
+      on:{
+        slideChange: function(){
+            let activeSlide = this.slides[this.activeIndex];
+            gsap.set[activeSlide.querySelectorAll('div.summary p')];
+
+            const split = new SplitText(activeSlide.querySelectorAll('.summary p'))
+
+            gsap.from(split.chars, {
+                y:100,
+                x:-100,
+                opacity:0,
+                duration:1,
+                stagger:{
+                    each: 0.2,
+                    from: 'start'
+                }
+            })
+        }
+      }
+    });
+    var swiper2 = new Swiper(".vslide", {
+      direction: "vertical",
+      spaceBetween: 50,
+      mousewheel: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+ 
+</body>
+
+</html>

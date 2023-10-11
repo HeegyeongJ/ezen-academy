@@ -1,0 +1,26 @@
+header{
+    z-index: 9999;
+    position: absolute;
+    top:3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 1024px;
+
+}
+.header-nav__list{
+    display: flex;
+    justify-content: end;
+}
+.header-nav_list-item{
+    width: 170px;
+    text-align: center;
+}
+.header-nav_list-item a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -1,0 +1,7 @@
+header h1{
+    width: 157px;
+    padding: 50px 0;
+}
+header h1 img{
+    max-width: 100%;
+}

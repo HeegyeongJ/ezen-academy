@@ -1,0 +1,134 @@
+.banner-wrap{
+    position: relative;
+    /* height: 100vh; */
+    overflow: hidden;
+}
+.banner video{
+    width: 100%;
+    
+}
+.banner-img-box{
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    width: 30vw;
+}
+.banner-img{
+    width: 100%;
+}
+
+
+.sect1{
+    width: 1024px;
+    margin: auto;
+}
+h3{
+    margin: 32px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+.sect-p{
+    margin: 32px 0;
+    font-weight: normal;
+    font-size: 1.6rem;
+    text-align: left;
+    line-height: 1.2;
+}
+.bold{
+    padding: 32px 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+.sect1 .bold{
+    padding: 0;
+}
+.sect1-img{
+    width: 100%;
+}
+
+.sect2{
+    position: relative;
+    background: url('../imgs/bg1.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.ab-contents{
+    z-index: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.sect2-h3{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+.sect-bg-p{
+    font-size: 16px;
+    line-height: 1.2;
+}
+.sect3{
+    width: 1024px;
+    margin: auto;
+}
+.sect3 .bold{
+    text-align: left;
+}
+.flex-box{
+    display: flex;
+    justify-content: space-between;
+
+}
+.flex-box__item{
+    width: 49%;
+}
+.flex-box__item-img{
+    width: 100%;
+}
+.sect4{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 310px;
+    background: url('../imgs/parallax.jpg') no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+
+.sect5{
+    width: 1024px;
+    margin: auto;
+    padding-bottom: 32px;
+}
+
+.sect5-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.sect5-list__item{
+    width: 49%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.sect5-list__item-contents{
+    width: 50%;
+}
+.sect5-list__item-img{
+    width: 40%;
+    border-radius: 50%;
+}
+.sect5-list__item .bold{
+    text-align: left;
+}

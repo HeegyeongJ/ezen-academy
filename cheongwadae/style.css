@@ -1,0 +1,132 @@
+@import "../reset.css";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{font-size: 62.5%;}
+body{
+    box-sizing: border-box;
+    
+}
+
+.contents{
+    background-image: url(imgs/landing_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.logo{
+    position: absolute;
+    top: 4.8rem;
+    left: 3.6rem;
+}
+.logo img{
+    width: 100%;
+}
+.center{
+    padding-top: 17.2rem;
+    max-width: 84rem;
+    margin: auto;
+    text-align: center;
+}
+.center .slogan{
+    margin: auto;
+    width: 52.2rem;
+    margin-bottom: 3.8rem;
+}
+.center .slogan img{
+    width: 100%;
+
+}
+.center p{
+    font-size: 2.2rem;
+    font-family:'Pretendard-Regular';
+    line-height: 3.7rem;
+    margin-bottom: 4rem;
+}
+
+.btn-box{
+    margin: auto;
+}
+.center a{
+    display: inline-block;
+    padding: 35px 20px;
+    color: #fff;
+    font-size: 2.8rem;
+    border: 0.2rem solid transparent;
+    border-radius: 1rem;
+    max-width: 30rem;
+    width: 100%;
+    font-family:'Pretendard-Regular';
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0 0.5rem;
+}
+.center .left-btn{
+    background-color: #0d9ab4;
+
+}
+.center .right-btn{
+    background-color: #f74763;
+}
+
+@media screen and (max-width:768px){
+    .logo{
+        position: absolute;
+        top: 3.8rem;
+        left: 2.9rem;
+    }
+    .center{
+        padding-top: 13.8rem;
+    }    
+    .center .slogan{
+        margin-bottom: 3rem;
+    }
+    
+    .center p{
+       font-size: 1.8rem;
+       line-height: 3rem;
+       word-break: keep-all;
+    }
+    .center a{
+        box-sizing: border-box;
+        padding: 28px 16px;
+        max-width: 24rem;
+        font-size: 2.2rem;
+        margin: 0 0.3rem;
+    }
+}
+
+@media screen and (max-width:640px){
+    .logo{
+        top:2.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 18.5rem;
+    }
+    .center{
+        padding-top: 9.6rem;
+    }    
+    .center .slogan{
+        width: 32rem;
+    }
+}
+
+@media screen and (max-width:531px){
+    .btn-box{
+    }
+    .center a{
+        font-size: 2.3rem;
+        max-width: 24rem;
+        display: block;
+        margin: 1rem auto;
+        word-break: keep-all;
+    }
+    
+}
