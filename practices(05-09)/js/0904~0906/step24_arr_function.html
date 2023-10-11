@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //화살표 함수 
+        //ECMAScript(javascript)에서 새로 정의한 함수 
+        //기존의 익명함수를 표현식 함수로 사용하는것과 유사하다. 
+        //1. ()=>{}  : function (){}
+        // let fnc = function (){}
+        // fnc();
+        let fn = ()=>{}
+
+
+        //즉시함수 
+        //(function fn(immediatelyRn){ alert(immediatelyRn+'즉시함 수 실행'); }('전달인자 즉시전달'));
+        
+        //((x)=>{ alert(x+'화살표함수 실행');})('전달인자 즉시전달');
+        
+        //전달인자가 한개일 때는 괄호 생략
+        //( x=>{ alert(x+' 보여주기'); } )('전달인자 1개');
+
+        let fn2 = (x, y) =>{ alert( (x+y)+' 보여주기'); } //전달 인자가 2개 이상일 때는 매개변수 부분 괄호생략 불가능
+        fn2(10, 20);
+
+        let fn3 = x => x*x; //{} 없는 상황 : function (x){ return x*x; } ----> return을 생략한다. (한 줄일 때만 이렇게 사용)
+
+        let result1 = fn3(10);
+        console.log(result1);
+
+        console.log('============================ 화살표함수 객체 return ===========================');
+        //하나의 객체만 return하는 표현식
+        let fn4 = x => ({
+                        prop1:x*x,
+                        prop2:x+x
+                    }); // function (x) { return {prop1:x*x, prop2: x+x} }
+        
+        let result2 = fn4(10);
+        console.log(result2.prop1);
+        console.log(result2.prop2);
+
+
+        
+    </script>
+</body>
+</html>

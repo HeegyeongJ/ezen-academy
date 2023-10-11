@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* Q.1
+            임의 숫자 2개를 전달했을 때
+            처음 숫자는 제곱을 한 상태
+            두 번째 숫자는 +10을 한 상태
+            큰 숫자를 출력하도록 함수를 정의하시오
+        */
+
+        let num1 = prompt('숫자1')*1, num2 = prompt('숫자2')*1;
+        show_big_num(num1, num2);
+        function show_big_num( x, y ){
+            // x *= x, y += 10;
+            let tmp_x = x*x, tmp_y = y+10;
+            console.log(x, y);
+            if( tmp_x > tmp_y){
+                alert(`계산된 ${x}가 계산된 ${y}보다 큽니다.`);
+            }else{
+                alert(y);
+            }
+        }
+
+        /* Q.2
+            임의의 숫자를 한개 입력 받는다. 
+            전달받은 숫자의 구구단을 전체 출력하도록 정의하시오
+            ex)3 입력시 
+            ==> 3 * 1 = 3
+                3 * 2 = 6 ....3 * 9 = 27
+        */
+        
+        while(true){
+            num1 = prompt('숫자입력')*1;
+            if(!isNaN(num1)){
+                break;
+            }
+        }
+        function time_tables(x){
+            let tmp = 1;
+            while(tmp < 10){
+                alert(`${x} * ${tmp} = ${x*tmp}`);
+                ++tmp;
+            }
+            // for 문
+            // for(let i = 1; i < 10; ++i){
+            //     alert(`${x} * ${i} = ${x*i}`);
+            // }
+        }
+        time_tables(num1);
+
+
+        /* Q.3
+            계산기
+            calculator 함수
+            전달인자 3개 - 숫자1, 연산자, 숫자2
+        */
+
+        let operator;
+        while(true){
+            num1 = prompt('숫자 입력')*1;
+            if(!isNaN(num1)){
+                break;
+            }
+        }
+        while(true){
+            operator = prompt('연산자를 입력 ex) /, +, -, *');
+            if(operator == '/' || operator == '+' || operator == '-' || operator == '*'){
+                break;
+            }
+        }
+        while(true){
+            num2 = prompt('숫자 입력')*1;
+            if(!isNaN(num2)){
+                break;
+            }
+        }
+        function calculator(a, b, c){
+            let result = 0;
+            if(b == '/'){
+                result = a/c;
+            }else if(b == '+'){
+                result = a+c;
+            }else if(b == '-'){
+                result = a-c;
+            }else{
+                result = a*c;
+            }
+            console.log(`${a} ${b} ${c} = ${result}`);
+        }
+
+        calculator(num1, operator, num2);
+
+
+        /* Q.4
+            임의의 숫자를 하나 입력하면,
+            그 숫자가 양수이거나 음수이거나 무조건 양수로 만들어서 1~그 숫자의 합을 구하시오. if a<0 *-1
+            함수명은 sum
+        */
+
+        let result1 = 0;
+        while(true){
+            num1 = prompt('숫자 입력')*1;
+            if(!isNaN(num1)){
+                break;
+            }
+        }
+        function sum(x){
+            let minus = -1;
+            if(x < 0){
+                x *= minus;
+            }else{
+                minus = 1;
+            }
+            for(let i = 0; i <= x; ++i){
+                result1 += i;
+            }
+            console.log(`1~${x}까지의 총합은 ${result1}입니다.`);
+
+            //음수 합산
+            //for문
+            //for(let cnt=0; cnt>x; --cnt){
+            //     result -= cnt;
+            // }
+            //while문
+            //let cnt = 0;
+            // while(cnt >= x){
+            //     --cnt;
+            // }
+        }
+
+        sum(num1);
+        
+        /* Q5.
+            숫자 2개를 입력받는다.
+            둘 중에 작은 숫자부터 큰 숫자까지 화면에 출력하시오
+            ex) 10, 5 입력시 5, 6, 7, 8, 9, 10
+        */
+        while(true){
+            num1 = prompt('숫자 입력')*1;
+            if(!isNaN(num1)){
+                break;
+            }
+        }
+        while(true){
+            num2 = prompt('숫자 입력')*1;
+            if(!isNaN(num1)){
+                break;
+            }
+        }
+        let result2 = "";
+        function fromTo(a, b){
+            if(a < b){
+                result2 = a
+                while(a < b){
+                    ++a;
+                    result2 += ', ' + a;
+                }
+                console.log(`${num1}~${num2} 사이의 숫자는 ${result2}입니다.`);
+            }else if(a > b){
+                result2 = b
+                while(b < a){
+                    ++b;
+                    result2 += ', ' + b;
+                }
+                console.log(`${num2}~${num1} 사이의 숫자는 ${result2}입니다.`);
+            }else{
+                console.log('두 숫자가 같습니다.');
+            }
+        }
+        
+        fromTo(num1, num2);
+
+        // swap
+        function fromTo(small, big){ 
+            //1. case-1 x > y ===> y++ x까지
+            //2. case-2 x < y ===> x++ y까지
+            //3. case-3 x == y 
+            if(small > big){
+                let swap_; 
+                swap_ = small;
+                small = big;
+                big = small;
+            }
+
+            sum(small, big);
+        
+        }        
+        function sum(s_num, b_num){
+            let msg = "";
+            while(true){
+                if(s_num != b_num){
+                    msg += s_num+", "; 
+                }else{
+                    msg += s_num;
+                }
+                ++s_num; //10
+                if( s_num == (b_num+1) ) break;
+            }
+            console.log(msg);
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

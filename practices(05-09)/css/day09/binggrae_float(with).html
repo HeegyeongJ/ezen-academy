@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../asset/style/reset.css">
+    <style>
+        @font-face{
+            font-family: 'Binggrae-Regular';  
+            src: url(../asset/fonts/Binggrae.eot); 
+            src: local('※'), url(../asset/fonts/Binggrae.woff) format('woff') , url(../asset/fonts/Binggrae.ttf) format('truetype'); 
+        }
+        h1{
+            font:32px 'Binggrae', sans-serif; 
+        }
+        .wrap{
+            margin:0 auto;
+            width:1310px;
+        }
+        .wrap>ul{ overflow:hidden; }
+        .wrap>ul>li{
+            float:left;
+            width:125px;
+        }
+        .wrap>ul>li>a{
+            display:block;
+            text-align:center;
+        }
+        .wrap>ul>li>a>img{
+            width:106px; border-radius:50%;
+            border:2px solid rgba(255,0,0,0);
+            transition:all .3s ease;
+        }
+        .wrap>ul>li:first-child>a>img{
+            border:2px solid rgba(255,0,0,1);
+        }
+        .wrap>ul>li>a>b{
+            display:block;
+            font: 16px/30px 'Binggrae-Regular', sans-serif;  
+        }
+
+        .wrap>ul>li:hover>a>img{
+            border:2px solid rgba(255,0,0,1);
+        }
+
+
+
+       .box1>ul{
+            border:10px solid greenyellow; /* height 값이 float이 아닌 요소의 크기로 가져야 하는데 없으니 overflow로 계산*/
+            overflow:hidden;
+            margin:0 auto;
+            width:80%;
+            max-width:1310px;
+        }
+        .box1>ul>li{
+            float:left;
+            margin:10px;
+            width:calc(25% - 22px); /* calc 는 단위가 다른 것들끼리 계산할 때 사용, 띄어쓰기 필수, border+margin 빼기 */
+            min-width:260px;
+            /* border:1px solid red; */
+        }
+        .box1>ul>li>a{
+            display:block;
+            margin-bottom:15px;
+            border:1px solid rgb(190,190,190,1);
+            border-radius:10px;
+            text-align:center;
+
+            box-shadow: 0 0 0 0 rgba(200,200,200,1);
+            transition:all 0.5s ease;
+        }
+        .box1>ul>li>b{
+            display:block; /* text 속성은 블럭요소한테만 줄 수 있음*/
+            text-align:center;
+        }
+        .box1>ul>li>a>img{
+            width:80%; /* a크기의 80% */
+        /* border: 1px solid blue; */
+        }
+        .box1{
+            margin-bottom:50px;
+        }
+        .box1>ul>li:hover>a{
+            box-shadow: 0 0 10px 5px rgba(200,200,200,1);
+        }
+    </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <ul>
+                <li><a href=""><img src="https://www.bing.co.kr/img/sub/product/ico_list.png" alt=""><b>전체</b></a></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/category/2022/12/6e5e4881-40ba-4150-ac86-6d61173da0ad.png" alt=""><b>아이스크림</b></a></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/category/2022/12/fd6acf22-becc-43e2-923e-c7300f2c8da7.png" alt=""><b>우유/치즈</b></a></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/category/2022/12/1dea8cd4-bdb2-4ac0-a42c-8cd60968aa36.png" alt=""><b>발효유</b></a></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/category/2022/12/8bdfd152-49d3-4430-b64b-9ecb43e9cb09.png" alt=""><b>커피</b></a></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/category/2022/12/99f5db34-3e58-4df7-b43a-e97714ca0287.png" alt=""><b>주스</b></a></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/category/2022/12/481f6075-a2a3-4070-85b0-3000a5817a10.png" alt=""><b>음료</b></a></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/category/2022/12/e9342f3c-4649-4e9a-b147-461282347b20.png" alt=""><b>스낵/디저트</b></a></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/category/2022/12/61bc3400-cd34-429d-bcbf-5471dcee79a0.png" alt=""><b>건강지향</b></a></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/category/2022/12/fbf974f7-e6c8-4df6-87a5-3154b5cd647c.png" alt=""><b>수출제품</b></a></li>
+            </ul>
+        </div>
+        <div class="box1">
+            <h1>플롯</h1>
+            <ul>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/brand/2022/12/56603b6e-6d08-4400-b8a0-bc0c75fb3f07.png" alt=""></a><b>바나나맛우유</b></li>
+                <!-- img한테 float을 주면 a태그와 li도 뛰어넘지 못한다. -->
+                <li><a href=""><img src="https://www.bing.co.kr/upload/product/taste_yo_strawberry.png" alt=""></a><b>요플레 오리지널</b></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/product/taste_melona_original.png" alt=""></a><b>메로나</b></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/product/taste_yodoctor_plain.png" alt=""></a><b>요플레 닥터캡슐</b></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/product/taste_together_original.png" alt=""></a><b>투게더</b></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/brand/2023/04/0e2f3e9b-bf90-4e2f-a2a5-f9ec71be1d62.png" alt=""></a><b>끌레도르</b></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/product/taste_bung_original.png" alt=""></a><b>붕어싸만코</b></li>
+                <li><a href=""><img src="https://www.bing.co.kr/upload/brand/2023/04/00acccc0-f0c5-4065-b025-dde6a97fc8d2.png" alt=""></a><b>슈퍼콘</b></li>
+            </ul>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            단위 px, em, rem, cm, mm... 
+
+            px는 1px를 최소 단위로 작성할 수 있다. 
+            하지만, (레니타 디스플레이 이후로는 소수점도 사용하기는 한다. )
+            em는 font-size의 숫자만큼의 배수를 의미한다. 
+            ex) font-size:16px; 1em은 16px
+                font-size:12px; 1em은 12px
+                font-size:14px; 2em은 28px
+
+            font-family:dotum,'nanum Gothic',sans-serif; fall back 
+            font-weight:100 ~ 900; step은 100씩 400~600(default)
+            font-weight:regular(default)|| bold || black(900); 
+            font-style:italic || normal(default)
+
+            font는 상속을 한다. 
+
+            line-height:;
+
+            /* 축약 : 여러가지 하나의 모듈 속성을 하나로 합쳐서 표현하는 것 
+                font:[style] [weight] [line-height/]size family; size와 family는 생략 불가능하다.
+                     값을 생략할 때는 기본 값이 들어간다. 
+                     style의 기본값은 normal, 
+                     weight의 기본값은 normal, 
+                     line-height의 기본값은 1.2배
+            
+            font:normal bold 1.2/2em dotum,'nanum Gothic', sans-serif;
+            font:2em dotum,'nanum Gothic', sans-serif;
+        */
+        div{font-size:10px;}
+        h1{
+           font-size:2em;  
+        }
+        address{font-style:normal;}
+
+        address>p{
+            /*margin값의 좌우값이 auto이면 부모요소의 가운데 위치한다. */
+
+            margin:0 auto; width:300px; height:200px; border:1px solid red;
+            /*text-align은 문장의 가로정렬*/
+            text-align:center; 
+            line-height:200px; /*200 - 16 = 184/2 = 92*/
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>font 모듈</h1>
+        <p>폰트</p>
+    </div>
+    <address>
+        <p>주소 전화번호 등록번호<br> 이메일 </p>
+    </address>
+</body>
+</html>

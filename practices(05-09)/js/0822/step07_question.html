@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            쇼핑몰에 가입되어 있는 상황
+            물건을 구매할 때마다 포인트가 올라감
+            포인트는 구매한 포인트
+            전체 회원 레벨은 각각 bronze(포인트 0~300), silver(포인트 301~500), gold(포인트 501~800), vip(포인트 801 이상)
+
+            bronze '무료배송' 쿠폰 1개 / console.log('당신은 bronze입니다. 이달의 쿠폰은 무료배송');
+            silver '무료배송', '10% 할인권' 쿠폰 2개 / console.log('당신은 silver입니다. 이달의 쿠폰은 무료배송, 10% 할인권');
+            gold '무료배송', '10% 할인권', '카드 5% 할인권' 쿠폰 3개 / console.log('당신은 gold입니다. 이달의 쿠폰은 무료배송, 10% 할인권, 카드 5% 할인권');
+            vip '무료배송', '10% 할인권', '카드 5% 할인권', 'point 두배' 쿠폰 4개 / console.log('당신은 gold입니다. 이달의 쿠폰은 무료배송, 10% 할인권, 카드 5% 할인권, point 두배');
+        */
+        let point, membership, coupon;
+        point = prompt('포인트 입력')
+        if(point <= 300){
+            membership = 'bronze';
+        }else if(point <= 500){
+            membership = 'silver';
+        }else if(point <= 800){
+            membership = 'gold';
+        }else{
+            membership = 'vip';
+        }
+
+        if(point > 0) coupon = '무료 배송';
+        if(point > 300) coupon += ', 10% 할인권';
+        if(point > 500) coupon += ', 카드 5% 할인권';
+        if(point > 800) coupon += ', point 두배'
+
+        console.log(`당신은 ${membership}입니다. 이달의 쿠폰은 ${coupon}입니다.`);
+
+        /*
+            일당을 받는 job
+            일당은 일하는 능력에 따라서 받는 금액이 다릅니다.
+            경력에 따라서 신입 - 10000, 경력자 - 13000, 기술자 - 20000
+            시간에 따라서 금액이 달라집니다. 최소 3~8시간을 일할 수 있습니다.
+
+            일당이 160,000 ~ 100,000 => 삶이 joyful => bread, egg, ham, juice
+            일당이 70,000 ~ 99,000 => 삶이 normal => bread, egg, ham
+            일당이 30,000 ~ 69,000 => 삶이 yolo => bread, egg
+        */
+
+        const job = 'design_job';
+
+
+
+
+
+
+
+
+
+        let career, pay, work_time, wage, life, life_meal = 'bread, egg';
+        
+        while(true){
+            career = prompt('당신의 커리어를 입력하시오. ex) 신입, 경력자, 기술자');
+            if(career == '신입' || career == '경력자' || career == '기술자'){
+                break;
+            }
+            alert('커리어는 "신입" 또는 "경력자" 또는 "기술자" 중에 입력하시오.');
+        }
+
+        while(true){
+            work_time = prompt('일하는 시간을 입력하시요. 최소 3시간부터 최대 8시간입니다. **일하는 시간의 숫자만 입력하시오.');
+            if(!isNaN(work_time)){
+                if(work_time >= 3 && work_time <=8 ){
+                    break;
+                }else{
+                    alert('시간은 3시간부터 8시간까지 입력가능합니다.');
+                }
+            }else{
+                alert('숫자만 입력하십시오');
+            }
+        }
+
+        if(career == '신입'){ 
+            pay = 10000;
+        }else if(career == '경력자'){
+            pay = 13000;
+        }else if(career == '기술자'){
+            pay = 20000;
+        }
+        wage  = pay*work_time;
+
+        if(wage >= 30000 && wage <= 69000){
+            life = 'yolo';
+        }else if(wage >= 70000 && wage <= 99000){
+            life = 'normal';
+        }else if(wage >= 100000 && wage <= 160000){
+            life = 'joyful';
+        }
+
+        if(wage >= 30000){ 
+            life_meal = 'bread, egg'; 
+        }
+        if(wage >= 70000){
+            life_meal += ', ham';  
+        } 
+        if(wage >= 100000){
+            life_meal += ', juice';
+        }
+        
+        console.log(`오늘 ${career}로써 열심히 일한 당신, 저녁은 ${life_meal}로 즐겨보는게 어떨까요?`);
+
+
+        // if(career = '신입') pay = 10000;
+        // if(career = '경력자') pay = 13000;
+        // if(career = '기술자') pay = 20000;
+       
+        // if(wage >= 30000 ) life = 'yolo';
+        // else if(wage >= 70000 ) life = 'normal';
+        // else if(wage >= 100000 ) life = 'joyful';
+
+        // if(life = 'yolo') life_meal;
+        // if(life = 'normal') life_meal += ', ham';
+        // if(life = 'joyful') life_meal += ', juice';
+
+        // console.log(life_meal);
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

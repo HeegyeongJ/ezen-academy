@@ -1,0 +1,111 @@
+// 사이트맵 이벤트
+.site_map_on{
+    .hd_wrap{height:100vh;background:#fff url(../assets/imgs/binggrae_pc_ham_bg.png) no-repeat 100% -8rem;
+        header{background-color:#fff;
+            nav{display:none;}
+        }
+        nav.site_map{display:flex;justify-content:center;align-items:center;}
+    }
+}
+
+// 헤더
+.wrap{padding-top:14.6rem;background:url(https://www.bing.co.kr/img/main/section01_bg.png) no-repeat 50% 0; 
+    .hd_wrap{position:fixed;left:0;top:0;z-index:100;width:100%;
+        // 네비게이터 이벤트
+        &.depth2_on{border-radius:0 0 5rem 5rem;}
+        header{height:14.6rem;
+            // GNB 이벤트
+            &.active{height:56.6rem;border-radius:0 0 5rem 5rem;box-shadow:0 0.3rem 0.8rem 0.2rem rgba(220, 220, 220, 0.5);}
+            .hd_top{height:3rem;
+                dl{float:right;padding-right:8rem;
+                    dt{}
+                    dd{float:left;font:1.4rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+                        &:first-of-type{padding-right:0.9rem;position:relative;
+                            &:after{content:"";position:absolute;width:0.2rem;height:0.8rem;background-color:#e7e7e7;right:-0.2rem; top:calc(50% - 0.4rem);}
+                        }
+                        &:last-of-type{padding-left:0.9rem;}
+                        a{
+                            img{vertical-align:middle;}
+                        }
+                    }
+                }
+            }
+            .hd_btm{clear:right;display:flex;justify-content:space-between;align-items:center;padding:0 8rem;height:11.5rem;
+                &.active{border-bottom:0.1rem solid #e7e7e7; // 자바스크립트 연계 이벤트
+                    nav{
+                        ul{
+                            &:hover{
+                                li{
+                                    ul.depth2{display:block;}
+                                }
+                            }
+                            li{
+                                &:hover{
+                                    a{position:relative;color:#e0462e;border-bottom:0.2rem solid #e0462e;
+                                        &:after{content:"";position:absolute;right:-1rem;top:calc(50% - 1rem);width:0.6rem;height:0.6rem;border-radius:50%;background-color:#e0462e;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                h1{flex:0 0 auto;}
+                nav{flex:0 1 83.5rem;height:11.5rem;
+                    ul{display:flex;height:11.5rem;
+                        li{position:relative;display:flex;flex:1 1 auto; 
+                            a{display:flex;align-items:center;border-bottom:0.2rem solid rgba(255, 255, 255, 0);font:2rem 'Poppins','Noto Sans KR', sans-serif;}
+                            ul.depth2{position:absolute;left:0;top:100%;display:none;width:100%;padding-top:1.9rem;font:1.8rem/4.2rem 'Poppins','Noto Sans KR', sans-serif;
+                                li{height:4.2rem;word-break:keep-all;
+                                    a{display:block;}
+                                }
+                            }
+                        }
+                    }
+                }
+                // util
+                .util{display:flex;flex:0 0 auto;background:none;   
+                    dl{ position:relative;width:5.4rem;height:2.8rem;
+                        dt{
+                            button{background:none;border:0 none;
+                                span{font:bold 1.6rem/2.8rem 'Poppins','Noto Sans KR', sans-serif;color:#1f1f1f;}
+                                img{vertical-align:middle;}
+                            }
+                        }
+                        dd{position:absolute;left:0;top:100%;border-radius:2rem;padding:1rem;width:3.4rem;background-color:#fff;box-shadow:0 0.3rem 0.7rem 0.3rem rgba(200, 200, 200, 0.2);
+                            ul{font:bold 1.6rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+                                li{
+                                    a{display:block;text-align:center;}
+                                }
+                            }
+                        }
+                    }
+                    p{margin-left:2rem;height:3rem;
+                        button{position:relative;background:none;border:0 none;width:2.8rem;height:3rem;
+                            &:hover{height:0;
+                                .ico_menu{
+                                    &:after{transform-origin:100% 0;transform:rotate(-43deg);}
+                                    &:before{ transform-origin:100% 100%;transform:rotate(43deg);}
+                                }
+                            }
+                            .ico_menu{position:relative;position:absolute;left:0;top:50%;width:2.6rem;height:0.2rem;background-color:#000;transition:all .3s ease;
+                                &:after{content:"";position:absolute;left:0;top:-1rem;width:2.6rem;height:0.2rem;background-color:#000;transition:all .3s ease;}
+                                &:before{content:"";position:absolute;left:0;bottom:-1rem;width:2.6rem;height:0.2rem;background-color:#000;transition:all .3s ease;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        nav.site_map{display:none;width:159rem;margin:0 auto;
+            ul{display:flex;flex:1 0 auto;
+                li{flex:1 1 15%;margin:0 0.5rem;padding:3rem;border:0.1rem solid #ececec;border-radius:3rem;
+                    a{display:block;font:bold 3.2rem/7.5rem 'Binggrae';color:#1f1f1f;}
+                    ul>li{margin:1.5rem 0;font:1.8rem/1 'Poppins','Noto Sans KR', sans-serif;
+                        a{display:block; color:#1f1f1f;}
+                    }
+                }
+            }
+        }
+    }
+}

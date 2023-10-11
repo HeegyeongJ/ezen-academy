@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0; margin:0;}
+        li{list-style:none;}
+        a{text-decoration: none;}
+
+        html{
+            font-family:sans-serif;/*serif(명조체), sans-serif(고딕체-돋움), cursive(손글씨-궁서체)*/
+            font-size:16px; 
+            font-weight:300;/*100 ~ 900*/
+        }
+        .panels{
+            display: flex; /*justify-content:start; align-items:stretch;*/
+            overflow:hidden;
+            height:100vh; /*vw-브라우저의 가로, vh-브라우저의 세로*/
+        }
+        .panels .panel{
+            box-sizing:border-box;
+            flex:1 1 0;
+            display: flex;
+            flex-direction: column;
+            text-align:center;
+            background-color:purple;
+            background-position:center;
+            background-size:cover;/*cover: 이미지의 짧은 쪽이 상자의 긴 부분에 꽉 채워서 보여주기(이미지의 긴 부분은 짤릴 수 있다.), contain은 이미지의 긴 부분을 상자의 짧은 부분에 꽉 채워서 보여주기 (이미지가 모두 보인다.) */
+            color:#fff;
+
+            transition:font-size 0.7s cubic-bezier(.3,-0.19,.7,-0.11), 
+                       flex 0.7s cubic-bezier(.3,-0.19,.7,-0.1),
+                       background 0.2s ease;/*transition(이벤트가 발생했을 때 실행되는 애니메이션)과 animation(이벤트유무와 관계없이 애니메이션을 실행할 수 있다) 기능*/
+
+        }
+        .panels .panel1 {background-image:url(https://images.unsplash.com/photo-1514989801080-431fefd6546e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80);}
+        .panels .panel2 {background-image:url(https://images.unsplash.com/photo-1649800815165-7fc35093edda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80);}
+        .panels .panel3 {background-image:url(https://images.unsplash.com/photo-1562599674-8136e19bd076?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2127&q=80);}
+        .panels .panel4 {background-image:url(https://images.unsplash.com/photo-1517185051431-f92ca046f4f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);}
+        .panels .panel5 {background-image:url(https://images.unsplash.com/photo-1622015910572-48dc37dcce47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);}
+
+        .panels .panel p{
+            box-sizing:border-box;
+            flex:1 0 30%;
+            display: flex; /* text node를 정렬하기 */
+            align-items: center;
+            justify-content: center;
+
+            transition:transform 0.7s, font-size 0.5s;
+
+            font-size:2em;/*36px  이벤트 발생할 때 48px*/
+        }
+        .panels .panel p:first-child{transform:translateY(-100%);}        
+        .panels .panel p:last-child{transform:translateY(100%);}
+
+        .panels .panel p:nth-child(2){font-size:4em;/*72px 이벤트 발생할 때 96px*/}
+
+        /*이벤트 - 클래스의 유무*/
+        .panels .panel.open{
+            flex:2 1 0; /*flex:grow shrink basis*/
+            font-size:24px;
+        }
+        .panels .panel.open-active p:first-child{transform:translateY(0);}
+        .panels .panel.open-active p:last-child{transform:translateY(0);}
+    </style>
+</head>
+<body>
+    <div class="panels">
+        <div class="panel panel1">
+            <p>여러분</p>
+            <p>안녕하세요.</p>
+            <p>js world입니다.</p>
+        </div>
+        <div class="panel panel2">
+            <p>new</p>
+            <p>flex</p>
+            <p>상자들입니다.</p>
+        </div>
+        <div class="panel panel3">
+            <p>html</p>
+            <p>css</p>
+            <p>javascript</p>
+        </div>
+        <div class="panel panel4">
+            <p>한 곳에 모은</p>
+            <p>이벤트</p>
+            <p>핸들링입니다.</p>
+        </div>
+        <div class="panel panel5">
+            <p>열심히</p>
+            <p>배워가는</p>
+            <p>javascript</p>
+        </div>
+    </div>
+    <script>
+       const panels = Array.from(document.querySelectorAll('.panel')); //Array.from(유사배열객체) --> 유사배열 객체를 배열로 변경
+        //console.log(panels);
+        function toggleOpen(){
+           // alert('클릭했다.');
+           //console.log(this.parentElement.children);
+           let panelsElements = Array.from(this.parentElement.children);
+           panelsElements.forEach( panel => panel.classList.remove('open') );
+           this.classList.toggle('open');
+        }
+        panels.forEach( pn => pn.addEventListener('click',toggleOpen) ); //배열객체.forEach(fn); fn함수는 매개변수에 (자동으로) 반복하면서 배열의 각 원소를 자동으로 갖게 되고, 각원소들을 원하는 실행문을 실행시킨다. --> forEach는 fn함수를 배열객체의 개수만큼 자동으로 반복
+
+        function toggleOpenActive (e){      
+            console.log(e);     
+            if(e.propertyName.includes('flex')){ // e.propertyName의 전체명이 예를 들어서 flex-grow라고 한다면, 
+                                       // 사파리 브라우저를 제외한 chrome, ie(internet Explorer),ff(fire fox), opera(opera)
+                                       // 전체명 flex-grow를 정확하게 return
+                                       // 사파리 브라우저 전체명 flex로 지정되어 있다. 
+                this.classList.toggle('open-active');
+            }
+        }
+        panels.forEach( pn => pn.addEventListener('transitionend',toggleOpenActive) ); 
+    </script>
+</body>
+</html>

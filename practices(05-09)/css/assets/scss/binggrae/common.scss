@@ -1,0 +1,61 @@
+main{position:relative;max-width:131rem;width:100%;margin:0 auto;
+    .cnts_section{margin-top:5.4rem;
+        .cnts_sect_hd{height:19.6rem;margin-bottom:10.6rem;
+            .location{margin-bottom:2.4rem;@include fontFac($sz:1.4rem, $lh:3rem);
+                a{position:relative;padding:0 1.2rem;color:#a5a5a5;
+                    &:first-child{padding-left:0;}
+                    &:after{content:"";position:absolute;right:-0.6rem;top:50%;transform:translateY(-50%);width:0.6rem;height:1rem;background:url(https://www.bing.co.kr/img/icon/btn_icon_brec_arrow.png) no-repeat 0 0;}
+                    img{}
+                }
+                .curnt_pg{padding-left:1.2rem;color:#a5a5a5;}
+            }
+            h1{margin-bottom:4.1rem;@include fontFac($conts_h1_fw,$conts_h1_58sz,$conts_h1_line-height,$conts_h1_fm);}
+            .cnts_sect_nav{
+                ul{display:flex;height:4.3rem;
+                    li{flex:0 0 18rem;margin-right:.8rem;border-radius:calc(4.3rem / 2);text-align:center;background:#fbfbfb;@include fontFac($sz:1.6rem, $lh:4.3rem);
+                        // 활성화
+                        &.active{background:#e73029;
+                            a{color:#fff;}
+                        }
+                        // hover
+                        &:hover{background:#e73029;
+                            a{color:#fff;}
+                        }
+                        // normal
+                        a{flex:1 1 auto;display:flex;align-items:center;justify-content:center;color:#1f1f1f;}
+                        // 링크 스트레치,center위치 시키기 위해서 flex 넣어줌
+                    }
+                }
+            }
+        }
+    }
+    /* 공통사항 */
+    .cnts_sect_h2_m-t{margin-top:$conts_h2_m-t;} // 지금은 통일된 마진이 나타나질 않아서 나중에 쓸 일 있을 때 클래스 만들어서 사용하려고
+    .cnts_sect_h2{@include fontFac($conts_h2_fw,$conts_h2_32sz,$conts_h2_line-height,$conts_h2_fm);text-align:center;color:#1f1f1f;}
+    .sect_link{display:flex;justify-content:center;margin-top:1.7rem;height:4.4rem;
+        ul{flex:0 1 30.8rem;display:flex;@include brR(calc(4.4rem / 2));background:#fff;box-shadow:0 0.3rem 0.3rem 0 rgba(210,210,210,.6);
+            li{position:relative;flex:1 0 15.4rem;display:flex;
+                &:not(:last-child):after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:0;height:1.4rem;border-left:.1rem solid #e5e5e5;}
+                a{flex:1 1 auto;display:flex;align-items:center;justify-content:center;@include fontFac($sz:1.6rem);}
+            }
+        }
+    }
+    .diagram_show-box_tit{@include fontFac($sz:1.6rem,$lh:3rem);text-align:center;}
+    .card_txt{display:flex;margin-top:3.8rem;
+        div{flex:1 1 30%;margin:0 0.7rem;padding:3.6rem 0;height:8.2rem;@include brR(2.4rem);
+            &:nth-child(1){background-color:#f3f6e0;}
+            &:nth-child(2){background-color:#eff6fa;}
+            &:nth-child(3){background-color:#fcf4e5;}
+            dd{margin-top:0.7rem;text-align:center;
+                .ico{display:inline-block;margin-right:1.2rem;width:4.4rem;height:4.4rem;@include brR(50%);vertical-align:-.4rem;
+                    &.purse{background:#fff url(https://www.bing.co.kr/img/sub/investment/investment/icon_finance01.png) no-repeat 50% 50%;}
+                    &.pocket{background:#fff url(https://www.bing.co.kr/img/sub/investment/investment/icon_finance02.png) no-repeat 50% 50%;}
+                    &.bag{background:#fff url(https://www.bing.co.kr/img/sub/investment/investment/icon_finance03.png) no-repeat 50% 50%;}
+                    background-color:#fff; // &.iconame이 20점으로(기본값 background:none) .ico 10점보다 이 우선되기 때문에
+                }
+                .bgFtsz{@include fontFac(500,5.3rem);}
+                .smFtsz{@include fontFac(500,1.9rem);}
+            }
+        }
+    }
+}

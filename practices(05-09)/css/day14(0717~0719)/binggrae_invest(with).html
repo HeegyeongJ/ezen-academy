@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Poppins:wght@400;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/binggrae_style/main.css">
+    <style>    
+        /* sticky box 
+        main>.sticky_box{
+            position:sticky;
+            left:100%; top:800px;
+            width:80px; height:120px;
+            background-color:green;
+        }*/
+        footer{background-color:black; color:#fff; height:200px;}
+    </style>
+</head>
+<body> <!--class="site_map_on" -->
+    <div class="wrap">
+        <div class="hd_wrap"><!--사이트맵 열었을 때 header+nav가 position:fixed로 같이 작동하는 한 덩어리-->
+            <header>
+                <div class="hd_top">
+                    <dl>
+                        <dt class="hidden">구매 및 채용</dt>
+                        <dd><a href="" title="새창">구매포털시스템<img src="https://www.bing.co.kr/img/main/link_arrow02.png" alt="Binggrae 외부 링크"></a></dd>
+                        <dd><a href="" title="새창">인재채용<img src="https://www.bing.co.kr/img/main/link_arrow02.png" alt="Binggrae 외부 링크"></a></dd>
+                    </dl>
+                </div>
+                <div class="hd_btm">
+                    <h1><span class="hidden">빙그레 회사</span>
+                        <a href=""><img src="https://www.bing.co.kr/img/main/logo-pc.png" alt="빙그레 회사로고"></a>
+                    </h1>
+                    <nav>
+                        <h1 class="hidden">빙그레 주요 서비스</h1>
+                        <ul>
+                            <li>
+                                <a href="" >회사소개</a>
+                                <ul class="depth2">
+                                    <li><a href="">CEO인사말</a></li>
+                                    <li><a href="">경영이념</a></li>
+                                    <li><a href="">사업분야</a></li>
+                                    <li><a href="">히스토리</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">제품소개</a>
+                                <ul class="depth2">
+                                    <li><a href="">아이스크림</a></li>
+                                    <li><a href="">우유/치즈</a></li>
+                                    <li><a href="">발효유</a></li>
+                                    <li><a href="">커피</a></li>
+                                    <li><a href="">주스</a></li>
+                                    <li><a href="">음료</a></li>
+                                    <li><a href="">스낵/디저트</a></li>
+                                    <li><a href="">건강지향</a></li>
+                                    <li><a href="">수출제품</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">지속가능경영</a>
+                                <ul class="depth2">
+                                    <li><a href="">지속가능경영&nbsp;체계</a></li> <!-- &nbsp;->띄어쓰기인데 글자로 인지 : keep-all값에서 밑으로 내려가지 않을 수 있음 -->
+                                    <li><a href="">Eco-Friendly</a></li>
+                                    <li><a href="">Shared Value</a></li>
+                                    <li><a href="">Global Integrity</a></li>
+                                    <li><a href="">윤리준법경영</a></li>
+                                    <li><a href="">사회공헌</a></li>
+                                    <li><a href="">보고서 및 정책</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">투자정보</a>
+                                <ul class="depth2">
+                                    <li><a href="">재무정보</a></li>
+                                    <li><a href="">주식정보</a></li>
+                                    <li><a href="">전자공고</a></li>
+                                    <li><a href="">공시정보</a></li>
+                                    <li><a href="">IR자료실</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">뉴스룸</a>
+                                <ul class="depth2">
+                                    <li><a href="">새소식</a></li>
+                                    <li><a href="">보도자료</a></li>
+                                    <li><a href="">빙그레 스토리</a></li>
+                                    <li><a href="">미디어 라이브러리</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">고객센터</a>
+                                <ul class="depth2">
+                                    <li><a href="">고객상담</a></li>
+                                    <li><a href="">제품공급문의</a></li>
+                                    <li><a href="">사이버 신고센터</a></li>
+                                    <li><a href="">안전신문고</a></li>
+                                    <li><a href="">개인정보처리방침</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="util">
+                        <dl>
+                            <dt>
+                                <button type="button">
+                                    <span>KR</span>
+                                    <img src="https://www.bing.co.kr/img/layout/lang_btn.png" alt="나라별 사이트 목록보기">
+                                </button>
+                            </dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="" title="새창">KR</a></li>
+                                    <li><a href="" title="새창">EN</a></li>
+                                    <li><a href="" title="새창">CN</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <p>
+                            <button type="button">
+                                <span class="hidden">사이트맵</span>
+                                <span class="ico_menu"><!--햄버거--></span>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </header>
+            <nav class="site_map">
+                <h1 class="hidden">사이트맵</h1>
+                <ul>
+                    <li>
+                        <a href="" >회사소개</a>
+                        <ul>
+                            <li><a href="">CEO인사말</a></li>
+                            <li><a href="">경영이념</a></li>
+                            <li><a href="">사업분야</a></li>
+                            <li><a href="">히스토리</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">제품소개</a>
+                        <ul>
+                            <li><a href="">아이스크림</a></li>
+                            <li><a href="">우유/치즈</a></li>
+                            <li><a href="">발효유</a></li>
+                            <li><a href="">커피</a></li>
+                            <li><a href="">주스</a></li>
+                            <li><a href="">음료</a></li>
+                            <li><a href="">스낵/디저트</a></li>
+                            <li><a href="">건강지향</a></li>
+                            <li><a href="">수출제품</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">지속가능경영</a>
+                        <ul>
+                            <li><a href="">지속가능경영&nbsp;체계</a></li>
+                            <li><a href="">Eco-Friendly</a></li>
+                            <li><a href="">Shared Value</a></li>
+                            <li><a href="">Global Integrity</a></li>
+                            <li><a href="">윤리준법경영</a></li>
+                            <li><a href="">사회공헌</a></li>
+                            <li><a href="">보고서 및 정책</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">투자정보</a>
+                        <ul>
+                            <li><a href="">재무정보</a></li>
+                            <li><a href="">주식정보</a></li>
+                            <li><a href="">전자공고</a></li>
+                            <li><a href="">공시정보</a></li>
+                            <li><a href="">IR자료실</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">뉴스룸</a>
+                        <ul>
+                            <li><a href="">전체보기</a></li>
+                            <li><a href="">새소식</a></li>
+                            <li><a href="">보도자료</a></li>
+                            <li><a href="">빙그레 스토리</a></li>
+                            <li><a href="">미디어 라이브러리</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">고객센터</a>
+                        <ul>
+                            <li><a href="">고객상담</a></li>
+                            <li><a href="">제품공급문의</a></li>
+                            <li><a href="">사이버 신고센터</a></li>
+                            <li><a href="">안전신문고</a></li>
+                            <li><a href="">개인정보처리방침</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <main>
+            <!-- <div class="sticky_box">F&Q</div> -->
+            <section class="cnts_section">
+                <header class="cnts_sect_hd">
+                    <p class="location">
+                        <a href=""><img src="https://www.bing.co.kr/img/icon/btn_icon_home.png" alt="메인페이지로"></a>
+                        <a href="">투자정보</a>
+                        <em class="curnt_pg">재무정보</em> <!--현재 페이지-->
+                    </p>
+                    <h1 class="cnts_sect_h1">투자정보</h1>
+                    <nav class="cnts_sect_nav">
+                        <h1 class="hidden">투자정보 주요 서비스</h1>
+                        <ul>
+                            <li class="active"><a href="">재무정보</a></li>
+                            <li><a href="">주식정보</a></li>
+                            <li><a href="">전자공고</a></li>
+                            <li><a href="">공시정보</a></li>
+                            <li><a href="">IR 자료실</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <section>
+                    <div>
+                        <h1 class="cnts_sect_h2">재무정보</h1>
+                        <nav class="sect_link">
+                            <h1 class="hidden">재무정보 관련 상태표와 손익계산서</h1>
+                            <ul>
+                                <li><a href="">재무상태표</a></li>
+                                <li><a href="">손익계산서</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div>
+                        <h1 class="cnts_sect_h2 cnts_sect_h2_m-t">2023년 현황</h1>
+                        <dl class="card_txt">
+                            <div>
+                                <dt class="diagram_show-box_tit">자산총계</dt>
+                                <dd><span class="ico purse"></span><span class="bgFtsz">7,693</span><span class="smFtsz">억원</span></dd>
+                            </div>
+                            <div>
+                                <dt class="diagram_show-box_tit">부채총계</dt>
+                                <dd><span class="ico pocket"></span><span class="bgFtsz">1,935</span><span class="smFtsz">억원</span></dd>
+                            </div>
+                            <div>
+                                <dt class="diagram_show-box_tit">자본총계</dt>
+                                <dd><span class="ico bag"></span><span class="bgFtsz">5,758</span><span class="smFtsz">억원</span></dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="diagram_bar">
+                        <p class="unit">단위:억원</p>
+                        <dl class="diagram_show-box">
+                            <div class="diagram_show-box_item">
+                                <dt class="diagram_show-box_tit">자산총계</dt>
+                                <dd class="diagram_show-box_conts"></dd>
+                            </div>
+                            <div class="diagram_show-box_item">
+                                <dt class="diagram_show-box_tit">부채총계</dt>
+                                <dd class="diagram_show-box_conts"></dd>
+                            </div>
+                            <div class="diagram_show-box_item">
+                                <dt class="diagram_show-box_tit">자본총계</dt>
+                                <dd class="diagram_show-box_conts"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="asset_status_table">
+                        <h2 class="cnts_sect_h2">재무상태표</h2>
+                        <p class="unit">단위:백만원</p>
+                        <div class="table_outer">
+                            <!-- 웹접근성 측면에서 table 두개로 table*2>caption+thead>tr>th*4^^tbody>tr*2>th+td*3^^tfoot>tr>th+td*3 -->
+                            <table class="asset_table">
+                                <caption class="hidden">재무상태표 구분: 2020년도(제55기) 2021년도(제56기) 2022년도(제57기) 데이터</caption>
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">구분</th>
+                                        <th scope="col">2020<br>(제55기)</th>
+                                        <th scope="col">2021<br>(제56기)</th>
+                                        <th scope="col">2022<br>(제57기)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">유동자산</th>
+                                        <td>325,348</td>
+                                        <td>313,908</td>
+                                        <td>315,268</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">비유동자산</th>
+                                        <td>438,791</td>
+                                        <td>446,337</td>
+                                        <td>453,999</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row">자산총계</th>
+                                        <td>764,138</td>
+                                        <td>760,245</td>
+                                        <td>769,267</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <table class="asset_table">
+                                <caption class="hidden">재무상태표 구분: 2020년도(제55기) 2021년도(제56기) 2022년도(제57기) 데이터</caption>
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead class="hidden">
+                                    <tr>
+                                        <th scope="col">구분</th>
+                                        <th scope="col">2020(제55기)</th>
+                                        <th scope="col">2021(제56기)</th>
+                                        <th scope="col">2022(제57기)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">유동부채</th>
+                                        <td>126,325</td>
+                                        <td>160,011</td>
+                                        <td>152,446</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">비유동부채</th>
+                                        <td>48,283</td>
+                                        <td>42,358</td>
+                                        <td>41,052</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="row">부채총계</th>
+                                        <td>174,607</td>
+                                        <td>202,369</td>
+                                        <td>193,498</td>                              
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">자본총계</th>
+                                        <td>589,531</td>
+                                        <td>557,876</td>
+                                        <td>575,769</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <footer>
+            <h2>마무리 맺음글</h2>
+        </footer>
+    </div>
+</body>
+</html>

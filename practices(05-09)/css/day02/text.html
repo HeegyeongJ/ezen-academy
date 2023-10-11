@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{ 
+            text-align:left; /*left(default), right, center, justify(양쪽정렬)*/
+            text-decoration: underline; /* underline, line-through(취소선), overline */
+            /* white-space: ; pre(공백을 띄우는 만큼 그대로 화면에 나타냄), wrap(default), nowrap */
+        }
+        p:nth-of-type(2){
+            width: 500px; height: 20px; border: 1px solid #000;
+            text-overflow: ellipsis; /* 말줄임 표시*/ white-space: nowrap; overflow: hidden; /* white-space와 overflow해야 줄임표가 표시됨*/
+        } /*overflow(-y, -x): hidden, visible(default), scroll*/
+        p:last-of-type{
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <p>텍스트는 단락, 문장을 의미한다.</p>
+    <p>배우 톰 크루즈가 출연하는 '미션 임파서블 7'은 '미션 임파서블' 시리즈의 일곱 번째 작품으로, 인류를 위협하는 무기가 악당의 손에 넘어가는 것을 막으려는 '에단 헌트'(톰 크루즈)의 이야기다.</p>
+    <p>전국 아파트값은 지난해 2월21일부터 내림세를 보였는데, 약 16개월 만에 하락을 멈춘 것이다. 수도권(0.03%→0.04%)은 상승폭 확대, 서울(0.04%→0.04%)은 유지됐고, 지방(-0.05%→-0.03%)은 하락폭이 축소됐다.</p>
+    <div>
+    
+    </div>
+</body>
+</html>

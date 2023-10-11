@@ -1,0 +1,145 @@
+html{ font-size:62.5%; }
+
+main{
+    margin:0 auto;
+    width:1080px;
+}
+
+main>nav{ 
+    float:left;
+    /* display:inline-block; */
+
+    width:20rem;
+    vertical-align:top; }
+main>nav>h1{
+    height:5.8rem;
+    border-bottom:1px solid #d9d9d9;
+    font: bold 2.1rem/5.8rem 'NanumGothic', sans-serif; letter-spacing: -0.1rem;
+    color: #1e61a8;
+    text-align:center;
+}
+main>nav>ul>li{ border-bottom:1px solid #d9d9d9;}
+main>nav>ul>li>ul{ display:none; } /* 웹 접근성에서도 사라져서 읽히지 않는다.*/
+main>nav>ul>li>a{
+    display:block;
+    padding-left: 1.5rem; 
+    width:18.5rem; height:4.2rem;
+    /* border-top:1px solid #d9d9d9; */
+
+    font: bold 1.3rem/4.2rem 'NanumGothic', sans-serif;
+    letter-spacing: -0.5px;
+    color:#4a4b4b;
+}
+main>nav>ul>li.active>a{background-color:#1e61a8;
+    background-image: url(../imgs/ico_arr_rgt.png), url(https://www.wah.or.kr:444/assets/img/common/left_bg.png);
+    background-repeat:no-repeat, repeat-x;
+    background-position:88% 50%, 0 0;
+    color: #fff;
+}
+main>nav>ul>li.active>ul{ 
+    display:block;
+    padding:0.7rem 1.5rem 0.8rem 1.5rem;
+    border-top:1px solid #2e8cf4; 
+    background-color:#f7f7f7;
+    color: #6b6b6b;
+    font: 1.2rem/2rem 'NanumGothic', sans-serif;
+} /* 클릭하면 숨어있던 보더가 나타남*/
+
+main>nav>ul>li.active>ul>li{
+    background-image:url(../imgs/li_arr.gif);
+    background-repeat:no-repeat;
+    background-position:0 center;
+}
+main>nav>ul>li.active>ul>li>a{
+    display:block;
+    padding-left:0.7rem; /* ??? li에 주면 화살표가 포함이 안돼서 */
+}
+main>nav>ul>li.active>ul>li.active>a{
+    color:#1e61a8; font-weight:bold;
+}
+
+
+
+
+section.cnts_box{
+    float:right;
+    /* display:inline-block; */
+    border:0.1rem solid #dcdcdc;
+    width:84.8rem;
+}
+section.cnts_box>header{
+    height:3.9rem;
+    padding:1.5rem 0 0 1.5rem;
+    border-bottom:1px solid #dcdcdc;
+    box-shadow:0 0.1rem 0.1rem rgb(242,242,242,.8);
+}
+section.cnts_box>header>h1{
+    font: bold 1.8rem/2rem 'NanumGothic', sans-serif;
+    color:#111;
+}
+section.cnts_box>div.cnts_box_padding{ padding:3.4rem 2.5rem 0 2.5rem; }
+section.cnts_box>.cnts_box_padding>article:nth-child(1){
+    background-image:url(../imgs/bg01.jpg);
+    background-repeat:no-repeat;
+    background-position:right top;
+}
+div>.cnts_box_txt>.cnts_box_h1{
+    font:bold 1.6rem/2rem 'NanumGothic', sans-serif;  letter-spacing: -1px; 
+    color:#1e61a8;
+}
+div>.cnts_box_txt>.cnts_box_h1>span.ico_bullet{
+    width:1.7rem; height:1.7rem;
+    display: inline-block;
+    background-image:url(../imgs/h2_bluet.gif);
+    background-repeat: no-repeat;
+    vertical-align: -0.3rem;
+    padding-right: 0.7rem;
+}
+div>.cnts_box_txt>blockquote{
+    margin:47px 0 52px 20px;
+    width:37.5rem;
+    font:bold 2.8rem/3.6rem 'NanumGothic', sans-serif;
+    color:#444;
+}
+div>.cnts_box_txt>blockquote>strong{color:#1f9b0f;}
+div>.cnts_box_txt .cnts_box_txt_p12{
+    font:1.2rem/2rem "돋움", Dotum,"굴림", AppleGothic, sans-serif;
+    color:#444;
+    margin:24px 0;
+}
+div>.cnts_box_txt .cnts_box_txt_p12.first{ width:52.5rem;}
+div>.cnts_box_txt>.cnts_box_txt_p12>a{color:#0024fd;}
+div>.cnts_box_txt>.cnts_box_txt_p12>.ico_new_window{color:#ff4200;}
+
+div>.cnts_box_txt>table{
+    margin-top:1.5rem;
+    border-top:2px solid #1e61a8;
+}
+div>.cnts_box_txt>table>thead th{
+    font:bold 1.3rem/2rem 'NanumGothic', sans-serif;
+    color:#444;
+    background-color:#f2f2f2;
+    padding:7px 0;
+    border:1px solid #dadada;
+}
+div>.cnts_box_txt>table>tbody th{
+    /* font:bold 1.2rem/2rem "돋움", Dotum,"굴림", AppleGothic, sans-serif; p태그 공통되는 특징*/ font-weight:bold;
+    text-align:left;
+    width:24.8rem; /* colgruop 열에 넣어주기*/
+    vertical-align:middle;
+    border:1px solid #dadada;
+    padding:0.7rem 1rem;
+}
+div>.cnts_box_txt>table>tbody td{
+    /* font:1.2rem/2rem "돋움", Dotum,"굴림", AppleGothic, sans-serif; */
+    color:#444;
+    border:1px solid #dadada;
+    vertical-align:middle;
+    padding:0.7rem 1rem;
+}
+div>.cnts_box_txt>table>tbody>tr>th span{color: #3D7F12;}
+div>.cnts_box_txt>table>tbody>tr em{ color:#C54304;}
+div>.cnts_box_txt>table>tbody>tr>th>.fw_normal{font-weight:normal;}
+div>.cnts_box_txt>table tr>:first-child{border-left:none;}
+div>.cnts_box_txt>table tr>:last-child{border-right:none;}
+

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            javascript 객체(참조타입, 복합데이터 타입)
+            array(배열) 타입(Object 타입) : 하나의 속성에 대해서 많은 값들의 모임
+            [value1, value2,,,] 인덱스 0, 1, 2,,,, ==> 배열이름명[인덱스 번호]
+                배열은 우선, Array(래퍼객체) 클래스로부터 메소드들을 상속 받는다. 
+                그 다음에 Object(래퍼객체) 클래스로부터 메소드들을 상속 받는다.
+            
+
+            복합데이터 타입은 자신만의 메소드(객체가 메소드명에 맞는 행동을 하는 함수)들을 갖고 있다.
+            .length
+            .push() : 배열의 마지막 원소로 전달인자를 할당한다.
+            .pop() : 배열의 마지막 원소를 삭제
+            .unshift() : 배열의 첫 번째 원소로 전달인자를 할당한다.
+            .shift() : 배열의 첫 번째 원소를 삭제한다.
+            .map( function (value){실행문}) : 배열의 원소만큼 반복하고 콜백함수의 전달인자는 반복할 때마다의 원소를 가리킨다.  
+                - 자동으로 return;문이 들어간다. (콜백함수 정의할 때 return문을 넣는다면, 그 return문을 return한다. )
+                - return으로 새로운 배열(forEach는 새로운 배열을 생성하지 않는다)을 생성한다. 
+            .filter( function (value){ 실행문 } ) : 배열의 원소만큼 반복하고 콜백함수의 전달인자는 반복할 때마다의 원소를 가리킨다.
+                - 자동으로 return;문은 만들지 않는다. (콜백함수 정의할 때 return문을 넣는다면, 그 return문을 return한다. )
+            .reduce((accumulate, value, array)=>{}[, defalut])
+
+            
+            object 타입(Object 타입) : 하나의 고유한 의미가 있는 집합
+            {key:value,,,} 순서 의미X 
+            Object(래퍼객체) 클래스로부터 메소드들을 상속받는다.
+                Object.keys(객체명) == 전달인자 객체명의 속성들을 배열로 return ==> 변수로 저장해야함
+        */
+
+
+        let arr = [10, 20, 30, 40, 50];
+        arr[0]
+        arr.length
+        for(let i = 0; i < arr.length; ++i ){
+            console.log(arr[i]);
+        }
+
+
+
+        let obj = {x:1, y:10, z:100}
+        let keys_arr = Object.keys(obj);
+        console.log('================= obj의 key =================');
+        console.log(keys_arr);
+        console.log(keys_arr.length);
+
+
+
+
+        let class_A = {
+            teacher:'교사A',
+            studentA:{name:'학생A',age:11},
+            studentB:{name:'학생B',age:10},
+            studentC:{name:'학생C',age:11},
+        }
+        let classA_nameS = [];
+        for(key in class_A){
+            if(key != 'teacher'){
+                classA_nameS.push(class_A[key].name);
+            }
+        }
+        console.log(classA_nameS);
+
+        let students_names = ['학생A', '학생B', '학생C']
+        let students_ages = [12, 13, 10]
+        let students_bloodtyeps = ['A', 'B', 'C']
+
+
+
+
+
+
+
+        //회원정리 테이블 
+        //회원정보 
+        let users = [
+            {name:'홍길동', age:17, grade:'gold', buyAmount:500000},
+            {name:'고길동', age:34, grade:'vip', buyAmount:1000000},
+            {name:'둘리', age:13, grade:'silver', buyAmount:20000},
+            {name:'훈이', age:19, grade:'silver', buyAmount:50000},
+        ]
+
+        let vips = [];
+        let golds = [];
+        let sivers = [];
+        users.forEach((user)=>{
+            if(user.grade == 'vip'){ 
+                vips.push(user) 
+            }else if(user.grade == 'gold'){
+                golds.push(user);
+            }else if(user.grade == 'silver'){
+                sivers.push(user);
+            }; 
+        });
+        console.log(vips);
+        console.log(golds);
+        console.log(sivers);
+
+        //이름순으로 users 데이터를 정리
+        users.sort((next, prev)=>{
+            return next.name < prev.name ? -1: next.name > prev.name ? 1: 0;
+        });
+
+        console.log('===================== users 이름 오름차순 출력 =======================');
+        console.log(users);
+
+        //구매 순으로 users 데이터를 정리
+        users.sort((next, prev)=>{
+            return next.buyAmount < prev.buyAmount ? 1: next.buyAmount > prev.buyAmount ? -1: 0;
+        });
+
+        console.log('===================== users 구매가격순 내림차순 출력 =======================');
+        console.log(users);
+
+
+
+
+
+
+
+
+        const inventors = [
+        { first: '앨버트', last: '아인슈타인', year: 1879, passed: 1955 },
+        { first: '아이작', last: '뉴턴', year: 1643, passed: 1727 },
+        { first: '갈릴레오', last: '갈릴레이', year: 1564, passed: 1642 },
+        { first: '마리', last: '큐리', year: 1867, passed: 1934 },
+        { first: '요한슨', last: '켈퍼', year: 1571, passed: 1630 },
+        { first: '니콜라스', last: '코레르니쿠스', year: 1473, passed: 1543 },
+        { first: '맥스', last: '플랭크', year: 1858, passed: 1947 },
+        { first: '캐서린', last: '블라제', year: 1898, passed: 1979 },
+        { first: '에이다', last: '러브레이스', year: 1815, passed: 1852 },
+        { first: '사라 이.', last: '구디', year: 1855, passed: 1905 },
+        { first: '리사', last: '메이트너', year: 1878, passed: 1968 },
+        { first: '한나', last: '햄머스톤', year: 1829, passed: 1909 }
+        ];
+        const people = ["홍 길동","이 몽룡","성 춘향","제갈 공명","주몽", "배 장화","배 홍련","홍 길동","연 흥부","연 놀부", "이 성계", "이 장원", "김 철수", "장 예련", "주 윤발", "성룡"]
+
+
+        //나이가 작은(높은) 순에서 나이가 높은(작은)순으로 inventors를 정렬한다. 
+        inventors.sort((next, prev)=>{
+            let nxt_year = next.passed - next.year;
+            let prv_year = prev.passed - prev.year;
+            return nxt_year < prv_year ? -1: nxt_year > prv_year ? 1: 0
+        });
+
+        console.table(inventors);
+
+        // map 예시
+        let nums = [11, 21, 30, 4, 55, 6];
+        let resultEven = nums.map((value)=>{
+            if(value%2 == 0){
+                return '짝수';
+            }
+            //return;
+        });
+        console.log(resultEven);
+        //짝수의 개수를 가져오시오.
+        let even_count = 0; 
+        resultEven.forEach((val)=>{
+            if(val % 2 == 0){
+            ++even_count;
+            }
+        });
+        console.log(resultEven);
+
+        // Q. inventors데이터에서 full name으로 완성한 배열을 완성하시오. 
+        let fullNames = inventors.map( val => `${val.first} ${val.last}` );
+        console.log(fullNames);
+
+
+
+        // filter 예시
+        let odds = nums.filter(val => {
+            if(val%2 == 1) return val;
+        });
+        console.log(odds.length);
+
+
+        // reduce 예시
+        //[11, 21, 30, 4, 55, 6, 71, 99];
+        let newArr = [];
+        let newValue = nums.reduce((acc, val)=>{
+            newArr.push(acc+val);
+            return acc+val;
+        },0)
+
+        console.log(newArr);
+        console.log(newValue);
+
+
+        // Q. 모든 inventors의 나이를 합친 값은?
+        let totalLife = inventors.reduce((total, inventor) => {
+            return total + (inventor.passed - inventor.year)
+        }, 0);
+
+
+        const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
+
+        //이동 수단이 겹치면 겹치는 이동수단의 개수를 구하시오.
+        let result_data = data.reduce((obj, transport_way )=>{ // obj = {'car':3, 'truck':2,'bike':1, 'walk'}, transport_way = 'car'  - 속성에 접근하는 방식은 obj['속성']
+            if(!obj[transport_way]){
+                obj[transport_way] = 0;
+            }
+            ++obj[transport_way];
+            return obj;
+        },{});
+        console.table(result_data);
+    </script>
+</body>
+</html>

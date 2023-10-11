@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            반복문: for문, foreach, while, do, ...
+            for문 == for(시작변수: 조건 : 증감){실행문} 
+                - 처음과 끝이 시작할 때 미리 정해져 있는 반복문
+                - 조건이 true가 되면 실행문 반복, 조건이 false가 되면 반복을 실행하지 않음
+                - 1.시작변수, 2.조건, 3.실행문, 4.증감
+            while문 == while(조건){실행문}
+                - 처음은 존재하지만, 끝은 정해져 있지 않은 반복문
+                - 조건이 true이면 무조건 반복, 조건이 false가 되면 더이상 반복을 실행하지 않음
+
+            공통점: {실행문} 실행문이 계속해서 반복, break로 반복문을 끊을 수 있다.
+                    continue 문을 만나면 continue문 다음은 skip하고 다시 처음부터 반복한다.
+        */
+
+        //for문
+        /*for(let i=0; i<10; ++i){
+            // alert(i); if문 앞에 있을 때는 5까지 다 나온다.
+            if(i == 5 ){
+                break; // i가 5가 되는 순간 반복문이 끊긴다.
+            }
+            if(i == 3) continue;
+            alert(i); // if문 뒤에 있을 때는 4까지만? interpreter언어이기 때문에 break에서 끝내고 바깥으로 나가서 읽기 시작
+        }*/
+
+        /* Q. 원하는 숫자를 입력해서 1부터 원하는 숫자까지 cosole.log로 화면에 출력하시오
+        let num1 = prompt('원하는 숫자를 입력하시오')*1;
+        for(let i=1; i<=num1; ++i){
+            console.log(i);
+        }
+        */
+
+        /* Q. 원하는 숫자를 입력하면 원하는 숫자까지의 짝수만 console.log로 화면에 출력하시오
+        let num2 = prompt('원하는 숫자를 입력하시오')*1;
+        for(let i=0; i<=num2; ++i){ // 시작변수에 0을 넣고 싶다면, if에 논리연산자로 자연수부터 갈 수 있도록(i!=0, i>1)
+            if(i % 2 == 0 && i != 0){
+               console.log(i);
+            }
+        }
+        */
+       
+        /* Q. 원하는 숫자를 입력하면 1부터 그 숫자까지 홀수일 때는 홀수, 짝수일 때는 짝수라고 출력하시오
+        let num3 = prompt('원하는 숫자를 입력하시오')*1;
+        for(let i=0; i<=num3; ++i){
+            if(i % 2 == 0 && i != 0){
+                console.log(i + '는 짝수');
+            }else{
+                console.log(i + '는 홀수');
+            }
+        }
+        */
+
+        /* Q. 원하는 숫자를 입력하면 1부터 그 숫자까지의 합산을 출력하시오
+        let num4 = prompt('원하는 숫자를 입력하시오')*1, sum=0; // undefined + 숫자 = NaN
+        for(let i = 1; i<=num4; ++i){
+            sum += i; // 그냥 0이 오류나는 이유? 저장할 공간이 없어서
+            if(i == num4){console.log('1~' + num4 + '까지의 합은 ' + sum + '이다.');}
+        }
+        */
+
+
+        // while문
+        /*let num5 = prompt('원하는 숫자를 입력하시오')*1;
+        let start_num = 1;
+        while(start_num < num5){
+            console.log(start_num);
+            ++start_num;
+        }
+
+
+        let num6 = prompt('원하는 숫자를 입력하시오')*1;
+        alert('1~10까지 중 임의의 숫자를 입력하시오');
+        while(num6){// 데이터 타입이 조건에 다른 조건없이 입력되면 그 자체가 true로 인식
+            if(num6 == 7) break;
+            num6 = prompt('원하는 숫자를 입력하시오');
+        }
+        */
+
+
+        
+        
+
+        //Q. 입력된 값이 number type 이면, '숫자 탈출'을 출력하고 반복문을 빠져나온다. 숫자 타입이 아니라면 '숫자 타입이 아닙니다.'라고 출력하고, 계속해서 숫자 타입을 입력받을 수 있게 하시오
+        let num7 = prompt('원하는 숫자를 입력');
+        while(num7){
+            if(num7 > 0){
+                alert('숫자 탈출');
+                break;
+            }else{
+                alert('숫자 타입이 아닙니다');
+                num7 = prompt('원하는 숫자를 입력');
+            }
+        }
+
+        /* A.
+        while(true){
+            let num7 = prompt('원하는 숫자를 입력');
+            if(num7 > 0 || num7 <= 0){
+                alert('숫자 탈출');
+                break;
+            }else{
+                alert('숫자 타입이 아닙니다');
+            }
+        }
+
+
+        isNaN(변수) ==> NaN이면 true, NaN아니라면 false
+        while(true){
+            let num7 = prompt('')*1;
+            if(typeof num7 == 'number' && !isNaN(num7)){
+                console.log('숫자 탈출');
+                break;
+            }else{
+                console.log('숫자 타입이 아닙니다');
+            }
+        }
+        */
+
+
+        // Q. string type 입력시 '문자 타입입니다. 탈출' 출력 후 빠져나가고, number type이라면 '문자 타입이 아닙니다' 출력 후 계속 값을 입력받도록 하시오
+        /* A.
+        while(true){
+            let num8 = prompt('문자 입력');
+            if(num8 > 0 || num8 <= 0){
+                alert('문자 타입이 아닙니다.');
+            }else{
+                alert('문자 타입입니다. 탈출');
+                break;
+            }
+        }
+
+        while(true){
+            let num8 = prompt('');
+            let tmp = num8*1;
+            if(typeof tmp == 'number' && !isNaN(num8)){
+                console.log('문자 타입이 아닙니다.');
+            }else{
+                console.log(`${num8}문자 타입입니다. 탈출`); 문자 변환 '`' = 백틱 ==> `${변수/함수이름} 문자문자` ==>'+' 사용안해도됨
+                break; 
+            }
+        }
+        */
+
+
+        /*
+            유아용 문제
+            >좋아하는 색상을 입력하도록 예시 3개 준다. ex) 빨강, 파랑, 노랑
+             색상을 입력하면 그에 맞는 과일을 출력 ex) '빨강하면 맛있는 사과','파랑하면 새콤달콤 블루베리', '노랑하면 달콤한 바나나' 등
+             예시 이외의 값이 입력되면 계속해서 값을 입력받을 수 있도록 하시오   
+        */
+
+        while(true){
+            let color = prompt('예시 3가지의 색상 중 하나를 골라 입력하시오 ex)빨강, 파랑, 노랑');
+            if(color =='빨강'){
+                alert('빨강하면 맛있는 사과');
+                break;
+            }else if(color == '파랑'){
+                alert('파랑하면 새콤달콤 블루베리');
+                break;
+            }else if(color == '노랑'){
+                alert('노랑하면 달콤한 바나나');
+                break;
+            }else{
+                alert('다시 입력해주세요')
+            }
+        }
+
+        /* A.
+        let like_clr, like_clr_stop = true;
+        while(like_clr_stop){
+            like_clr = prompt('좋아하는 색상을 3가지 중 선택해서 입력하시오. 색상은 다음과 같습니다. 빨강, 노랑, 파랑');
+            if(like_clr == '빨강' || like_clr == '노랑' || like_clr == '파랑'){
+                like_clr_stop = false;
+                if(like_clr == '빨강'){
+                    console.log('맛있는 빨간 사과');
+                }esle if(like_clr == '노랑'){
+                    console.log('달콤한 노란 바나나');
+                }else if(like_clr == '파랑'){
+                    console.log('새콤달콤한 파란 블루베리');
+                }
+            }else{
+                console.log('빨강이나 파랑이나 노랑을 쓰지 않았습니다.');
+            }
+        }
+        ==
+        switch(like_clr){
+            case '빨강' :
+                like_clr_stop = false;
+                break;
+            case '노랑' :
+                like_clr_stop = false;
+                break;
+            case '파랑' :
+                like_clr_stop = false;
+                break;
+        }
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

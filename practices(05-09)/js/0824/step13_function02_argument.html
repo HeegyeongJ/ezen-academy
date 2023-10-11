@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 전달인자
+        
+        let num = 1;
+
+        function foo(x){ // num을 직접 쓰지 않는 이유? num 값이 바뀌어야 하기 때문에
+            alert('함수 실행' + x);
+        }
+
+        while(true){
+            foo(num);
+            ++num;
+            if(num == 11) break;
+        }
+
+        while(true){
+            if(num%2 == 1){ // 홀수
+                foo(num);
+            }
+            ++num;
+            if(num == 31) break;
+        }
+
+        function foo2(a, b){ // 전달인자의 값을 파라미터의 순서에 맞춰서 할당
+            alert(`${a}와 ${b}를 전달 받았습니다.`);
+        }
+
+        foo2(10);
+        foo2(10, 20);
+        
+        function foo3(a = 100, b){ // a의 기본값 설정, 변할 수 있다.
+            if(typeof a == 'undefined' || typeof b == 'undefined'){
+                alert('적당한 값이 들어오지 않았습니다');
+                return;
+            }else{
+                alert(`${a}와 ${b}를 전달 받았습니다.`);
+            }
+        }
+
+        foo3(1,2);
+        foo3();
+        foo3('AAA');
+        foo3(undefined, 'BBB'); // undefined로 넣으면 기본 값으로 설정
+
+
+        // Q. 전달인자로 foo3에 undefined가 하나라도 할당이 되면 '적당한 값이 들어오지 않았습니다'를 띄우고 함수를 즉시 끝내기 ==> 함수 정의할 때 넣어야함
+
+        // Q. add라는 함수를 정의한다. 전달인자로 유저가 원하는 숫자 2개를 각각 전달받으면 각 숫자를 더해서 전역에 사용할 수 있도록 하시오
+
+        let num1 = prompt('숫자1 입력')*1, num2 = prompt('숫자2 입력')*1, sum = add(num1, num2);
+        
+        function add(a, b){ // 파라미터 = 함수만의 변수로 지역변수 let 처럼 사용(TDZone 존재)
+            return a + b;
+        }
+        
+        console.log(sum);
+
+        
+        // 파라미터의 TDZ
+        function show_TDZ(prev = next , next){ // prev = next --> 호출시 전달인자 아무것도 입력하지 않으면 오류 == next 선언되기 전이라 TDZ
+            alert(`${prev}와 ${next}`);
+        }
+
+        show_TDZ();
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

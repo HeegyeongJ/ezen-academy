@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../asset/style/reset.css">
+    <style>
+        h1{ position:static; } /* html 입력하면 자동으로 주는 값*/
+        
+        p:nth-of-type(4){ background-color: red;}
+        .pos_rel{
+            position:relative;
+            margin:0 auto;
+            width:800px;
+            height:400px;
+            border: 1px solid black;
+        }
+        .pos_abs{
+            position:absolute;
+            /* left:0; top:0; */
+            right:100px; bottom:300px;
+            width:200px; height:200px; background-color: red;
+            opacity:0.5;
+        }
+        .pos_rel2{
+            position:relative;
+            left:300px; top:200px;
+            width:300px; height:200px;
+            background-color:darkcyan;
+        }
+
+        .boxes{height:100vh;} /* vh,vw 브라우저 크기 만큼 - height:;는 자식의 크기만큼인데 자식이 몇 갠지 모르니 % 쓸수 없음, 부모요소의 % 작용X */
+        div:nth-child(11){
+            background-color:pink;
+        }
+        div:nth-child(12){
+            background-color:beige;
+        }
+        div:nth-child(13){
+            background-color:skyblue;
+        }
+        div:nth-child(14){
+            background-color:aquamarine;
+        }
+        div:nth-child(15){
+            background-color:chocolate;
+        }
+        div.pos_fixed{
+            position:fixed;
+            left:0; right:0; top:0;
+            height:50px;
+            background:black;
+            color:#fff;
+        }
+        div:nth-child(13)>div.pos_sticky{
+            position:sticky; right:0; top:0;
+            width:80px; height:160px;
+            background-color:blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>position</h1>
+    <p>static(default), relative, absolute, sticky, fixed</p>
+    <p>공통 사항 : static을 제외한 나머지 값들은 z-index라는 공간 값을 갖는다.<!--float 공간보다 위에 뜸-->
+        <!--z-index 층으로 어떤 요소가 제일 위에 있을지 결정-->
+    </p>
+    <!--z 방향으로 튀어나와 있어서 다른 요소에 영향을 받지 않는다. but 대부분 의미를 연결하고 작동해서 무조건 쓰지 않는 게 좋다.-->
+    <p>absolute : 기준점(기본적으로 body가 기준점)을 기준으로 top은 top으로부터, left는 left로부터, right는 right로 부터, bottom은 bottom으로부터 내부로 이동한다.(음수 일 때 바깥쪽으로 이동) 방향 값을 지정하지 않으면 원래 static이었던 자리에 있으려고 한다.
+        - 가로 방향 left와 right 두가지 값이 있을 때는 left가 우선,
+          top과 bottom 두가지 값이 있을 때는 top이 우선
+
+        absolute 쓰는 경우
+        1.대부분 겹쳐져 사용하는 경우 
+        2.배너같은 움직이는 요소 - 다른요소와 관계없이 움직임
+        3.static이었던 상태로는 절대 위치할 수 없는 경우 (더보기 같은 버튼 - html상 내용 끝, 마지막에 있는데 css로 위치를 위로 변경해야함)
+
+        기준점 변경 가능
+        조상 요소 중에서 static이 아닌 가장 가까운 요소가 기준이 된다. <!--현재 css 상에서는 static아닌 relative를 부여받은 pos_rel이 기준이 됨, 보통은 기준을 relative로 90%이상 설정-->
+    </p>
+    <div class="pos_rel">
+        <div class="pos_abs"></div>
+    </div>
+    <p>relative: absolute와 비슷한 개념, 투명한 static과 눈에 보이는(붕 떠있는) absolute가 동시에 작동하는 방식</p><!--방향을 잘 조정하진 않는다.-->
+    <p>absolute는 기준 body로부터 움직임, relative는 기준이 원래 자기가 있던 자리</p>
+    <div class="pos_rel2"></div>
+    <p>단락</p>
+
+    <p>fixed: 브라우저를 기준으로 고정되는 포지션 값</p>
+    <div class="pos_fixed">fixed는 브라우저에 고정되는 값을 의미한다.</div>
+    <div class="boxes">1</div>
+    <div class="boxes">2</div>
+    <div class="boxes">3
+        <div class="pos_sticky">sticky요소</div>
+    </div>
+    <div class="boxes">4</div>
+    <div class="boxes">5</div>
+</body>
+</html>

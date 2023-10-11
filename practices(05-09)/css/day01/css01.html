@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 선택자 {속성: 값; 속성: 값; ...} 
+            선택자 - id, class, [속성=값], tag, 선택자>선택자(자식), 선택자 선택자(자손), 선택자: 가상선택자*/
+        h1{ color: red; text-decoration: none;} /* 태그 선택자 1점 */
+        .txt_underline{ text-decoration: underline; } /* 클래스 선택자 10점  */
+        #tit{ text-decoration: line-through; } /* 아이디 선택자 100점 */
+       
+
+        .only_test{ color: black;}
+        ul>li{color: blueviolet;} /* li요소는 a요소 보다 컨텐츠로부터 멀다*/
+        a{color: darkgreen;} /* a요소는 li요소보다 컨텐츠로부터 가깝다 */
+        /* ul>li>ul>li>a = ul ul a */
+        ul ul a{ color: hotpink;}
+        
+    </style>
+</head>
+<body>
+    <h1 class="txt_underline" id="tit">css</h1>
+    <ul>
+        <li>
+            <a href="">menu1</a>
+            <ul>
+                <li><a href="" class="only_test">menu1-1</a></li>
+                <li><a href="">menu1-2</a></li>
+                <li><a href="">menu1-3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">menu2</a>
+            <ul>
+                <li><a href="">menu2-1</a></li>
+                <li><a href="">menu2-2</a></li>
+                <li><a href="">menu2-3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">menu3</a>
+            <ul>
+                <li><a href="">menu3-1</a></li>
+                <li><a href="">menu3-2</a></li>
+                <li><a href="">menu3-3</a></li>
+            </ul>
+        </li>
+    </ul>
+    <p>단락1</p>
+    <p class="txt_underline">단락2</p>
+    <p class="txt_underline">단락3</p>
+</body>
+</html>

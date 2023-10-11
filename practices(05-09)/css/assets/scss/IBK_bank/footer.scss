@@ -1,0 +1,27 @@
+footer{min-height:12rem;height:100%;@include bdr(top,#d6e0df);background:#f8f8f8;
+    .footer_cnts_center{margin:0 auto;padding-top:2.5rem;max-width:100rem;width:100%;
+        .footer_left{float:left;margin-left:3rem;@include fontFac(300,1.2rem,1.9rem);letter-spacing:-0.1rem;
+            .footer_util_list{display:flex;flex-wrap:wrap;max-width:59rem;
+                .footer_util_list_item{position:relative;padding-right:1.4rem;
+                    &:first-of-type, &:nth-of-type(7){padding-left:0;}
+                    &:after{@include after_bar(0.9rem,#b9bbb8,0.7rem);}
+                    &.clr_blue{
+                        a{color:#0f53a8;}
+                    }
+                    a{display:block;color:#575757;}
+                }
+            }
+            .copyright{}
+        }
+        .footer_right{float:right;padding-right:3rem;
+            .selectBox{
+                select{width:13.9rem;height:2.3rem;@include bdr(all,#bec9ca);
+                    &:first-of-type{margin-right:0.6rem;}
+                }
+            }
+            .logos{display:flex;justify-content:flex-end;align-items:center;margin-top:1rem;
+                .sns_link{display:flex;margin-left:3rem;}
+            }
+        }
+    }
+}

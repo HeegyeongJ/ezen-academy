@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../asset/style/reset.css">
+    <style>
+        img{
+            float:left;
+            width:200px; /* 비율 그대로 줄어듦*/
+        }
+        p:nth-of-type(3){
+            background:pink;
+            overflow:hidden; /* overflow 설정하는 순간 끊어놨던 높이 계산 다시 연결 
+            부모 항상 높이를 가져야함: 높이를 설정하거나 overflow:hidden을 하던가 */
+            /* height:150px; 높이 설정하면 높이만큼 컨텐츠 보임
+             overflow-y:scroll; */
+        }
+        p:nth-of-type(4){
+            clear:both;
+            border:4px solid red; background:blue; color:white;
+        }
+    </style>
+</head>
+<body>
+    <h1>float</h1>
+    <p>float 속성 = 이미지와 글을 정렬</p>
+    <p>float: left, right, none;</p>
+    <p><img src="https://images.unsplash.com/photo-1688759973983-fa77fec09bf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" alt="등대">이미지는 인라인 요소로 baseline에 위치한다. 이미지는 inline-block의 성격을 갖고 있다. <img src="https://images.unsplash.com/photo-1682687221073-53ad74c2cad7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="산양"> 크기를 가질 수 있다.</p>
+    <p>플롯이 아닌 일반 단락</p>
+    <ul>
+        <li>플롯은 플롯요소 주변으로 글자를 흐르게 한다.</li><!--글자만 float 밑으로 빨려 들어가지 않는다.-->
+        <li>플롯은 자신보다 위에 있는 일반 요소를 뛰어넘지 못한다.</li>
+        <li>플롯은 붕 뜬다.</li> <!--화면 제일 위로 -->
+        <li>플롯의 부모 요소의 height(height가 auto일 때)는 float이 아닌 요소의 컨텐츠를 높이로 크기를 갖는다.</li>
+        <li>플롯의 하단에 위치한 요소는 clear:left, right, both를 사용해서 플롯 요소의 영향에서 벗어난다.</li>
+        <li>플롯의 부모요소가 플롯의 높이를 알아내서 크기를 갖게 하는 방식으로는 overflow:hidden을 사용할 수 있다.</li>
+        <li>플롯 요소끼리는 일행 정렬하려고 한다.</li>
+        <li>플롯 요소는 최대한 위로 올라가려고 한다.</li>
+        <li>플롯 요소는 마진겹침이 없다.</li>
+    </ul>
+    <!-- float일때 부모는 높이를 가져야함 ex)overflow:hidden; 
+        float 밑의 요소는 clear를 가져야함-->
+</body>
+</html>

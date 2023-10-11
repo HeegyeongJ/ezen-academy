@@ -1,0 +1,55 @@
+footer{ background-color:#f8f8f8;border-top:0.1rem solid #d6e0df; padding-top:2.6rem; padding-bottom:2.9rem;
+    .center{display:flex; justify-content:space-between; margin:0 auto; width:94rem;
+        .foot_left_box{
+            .foot_util{display:flex;@include fontFac(300,1.2rem,1.9rem);
+                dd{position:relative; padding-right:0.8rem; margin-right:0.6rem; letter-spacing: -0.1rem;
+                    &:not(:last-child):after{@include afterBd(0.9rem, #ccc);}
+                }
+            }
+            address{margin-top:0.3rem;@include fontFac(300,1.2rem,1.9rem);}
+        }
+        .foot_right_box{
+            .foot_rt_top{display: flex;justify-content:end;
+                select{box-sizing:border-box; border-color:#ccc; width:14.1rem; height:2.5rem; 
+                    &:first-child{margin-right:0.6rem;}
+                }
+            }
+            .foot_rt_btm{display: flex;justify-content:end; margin-top:1rem;
+                p{margin-right:2.7rem;}
+                ul{display: flex;
+                    li{margin-right:0.2rem;
+                        a{
+                            img{width:2.1rem;;height:2.1rem;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media($m:767px){
+    footer{ padding:2.6rem 1.5rem 1.4rem 1.5rem;
+        .center{display:block; width:auto;
+            .foot_left_box{
+                .foot_util{flex-wrap:wrap;
+                    dd{position:relative; padding-right:0.8rem; margin-right:0.6rem; letter-spacing: -0.1rem;
+                        &:not(:last-child):after{@include afterBd(0.9rem, #ccc);}
+                    }
+                }
+                address{padding:0.5rem 0;}
+            }
+            .foot_right_box{padding-top:1rem; @include bd(top,black);
+                .foot_rt_top{justify-content:start;
+                    select{box-sizing:border-box; border-color:#ccc; width:14.1rem; height:2.5rem; 
+                        &:first-child{margin-right:0.6rem;}
+                    }
+                }
+                .foot_rt_btm{display: flex;justify-content:space-between; margin-top:1rem;
+                    .mobile{margin-right:0;}
+                }
+            }
+        }
+    }
+
+}

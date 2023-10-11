@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../asset/style/reset.css">
+    <style>
+        ul{
+            display:flex;
+            /* display:flex 하면 기본 값 자동 실행 
+            flex-wrap:nowrap; 행 밑으로 내려가지 않음
+            flex-direction:row; 
+            justify-content: flex-start; 가로정렬
+            align-items:stretch;
+            */
+
+            border:1px solid green;
+        }
+        ul>li{
+            flex:1 1 auto; 
+            /* display:flex 하면 기본 값 (0 1 auto) 자동 실행 */
+        }
+        ul>li:nth-child(1){flex:4; border:1px solid green;} /* 기준점 auto 일때 빈공간 총 4+1+1+1씩 나누고 그만큼 가져감 */
+        ul>li:nth-child(2){border:1px solid red;}
+        ul>li:nth-child(3){border:1px solid blue;}
+        ul>li:nth-child(4){border:1px solid hotpink;}
+    </style>
+</head>
+<body>
+    <h1>flex</h1>
+    <p>flex 는 종(열), 횡(행) 정렬을 하는 속성과 값이다.</p>
+    <p>
+        flex 는 기본값이 행 정렬로, 부모요소(container)와 컨텐츠(contents)간의 속성과 값의 협력관계가 이루어져야 한다. <br>
+        항상 부모요소에서 diplay:flex;라고 속성과 값을 적용한 다음 방향과 위치 값을 지정한다. <br>
+        이후 컨텐츠에서 flex값으로 기준을 중심으로 두고 얼만큼 커질 것인지 작아질 것인지 적용한다.
+    </p>
+    <p>
+        flex-direction: row(default), column; <br>
+        flex-wrap: nowrap(default)(1행 정렬), wrap(여러행 정렬) <br>
+        justify-content: flex-start(default), space-between(처음과 끝에 첫 번째 마지막이 각각 위치하고 나머지는 똑같은 여백을 갖는다), space-around(모든 자식들의 좌우 여백이 똑같이 갖는다), center, flex-end; <br>
+        <!-- flex-start + margin:0 auto = space-around -->
+        align-content: stretch(default)(처음부터 끝까지 균등하게 늘어난다), flex-start, space-between, space-around, center, flex-end; 2행 이상일 때 세로정렬 -> 마진과 패딩이 합쳐져서 크기가 더해지니 주의<br> 
+        align-items: stretch(default)(처음부터 끝까지 균등하게 늘어난다), flex-start, center, flex-end; 1행일 때 세로정렬
+        align-self: flex-start, center, flex-end; 각각 값을 가짐
+    </p>
+    <p>flex:0 1 auto; 기본 값 (flex-grow flex-shrink flex-basis)<br>
+        flex-grow는 container의 여유공간(빈공간)을 중심으로 숫자의 비율만큼 각 flex요소들이 나눠 갖는다.
+        <!-- (컨텐츠보다 커서 남은 빈공간을 등분시켜 얼마나 가져가려고 하는지?) -->
+        flex-shrink는 container가 각 flex를 합친 것보다 더 작아질 때 그 크기만큼 flex요소들이 숫자의 비율만큼 나눠서 없앤다. 
+        flex-basis(기준점-가장 중요), flex-grow flex-shrink로 커지거나 작아질 수 있는 기준점(auto는 컨텐츠만큼의 크기)
+        <!-- 기준점이 auto일 때, flex-grow값은 빈공간을 몇등분하여 몇 개씩 가져갈지 == 컨텐츠 만큼 크기를 가져서 컨텐츠 큰 자식이 크기 큼
+        기준점이 수치일 때, 수치를 기준으로 총 공간(빈공간X)을 나눠서 남은 공간을 flex-grow에 적은 값만큼 각자 가져감  -->
+    </p>
+    <p>flex요소의 margin:auto값은 container값의 빈공간의 값을 자동으로 갖게 된다.</p>
+    <ul>
+        <li>1</li>
+        <li>2222</li>
+        <li>3333333</li>
+        <li>4</li>
+    </ul>
+</body>
+</html>

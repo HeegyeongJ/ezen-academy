@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../asset/style/reset.css">
+    <style>
+        html{font-size:62.5%;}
+        header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            height:18.5rem;
+            border-top:0.1rem solid black;
+        }
+        header>h1{ margin-left:8rem;}
+        header>nav{ width:89.5rem; }
+        header>nav>ul{
+            display:flex;
+            height:18.5rem;
+        }
+        header>nav>ul>li{
+            display:flex;
+
+            flex:0 1 auto;
+            margin-right:auto;
+            border:1px solid red;
+            font:1.6rem/3rem 'malgun Gothic', sans-serif;
+        }
+        header>nav>ul>li>a{
+            display:flex;
+            align-items:center;
+        }
+        header>div{ margin-right:8rem;}
+        header>.util{ display:flex; }
+        .hidden{
+            font-size:0; line-height:0; /* 임시방편 - 접근성 안 읽힘 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>빙그레</h1>
+        <nav>
+            <h1>빙그레 주요 서비스</h1>
+            <ul>
+                <li><a href="">회사소개</a></li>
+                <li><a href="">제품소개</a></li>
+                <li><a href="">지속가능경영</a></li>
+                <li><a href="">투자정보</a></li>
+                <li><a href="">뉴스룸</a></li>
+                <li><a href="">고객센터</a></li>
+            </ul>
+        </nav>
+        <div class="util">
+            <dl>
+                <dt class="hidden">언어</dt>
+                <dd>ko</dd>
+            </dl>
+            <p><a href="">사이트맵</a></p>
+        </div>
+    </header>
+</body>
+</html>

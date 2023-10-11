@@ -1,0 +1,67 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1; /* 원래 값 승계 */
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table thead tr th, table tbody tr th{vertical-align:middle;}
+/* table thead tr td, table tbody tr td{vertical-align:middle;} */
+a{
+	text-decoration: none;
+}
+
+.hidden {
+    visibility: visible; /* visible(default), hidden(화면에 안보일 뿐 화면에 존재) vs display:none; 화면 자체 삭제라서 웹 접근성X */
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px); /* 항상 자르는 기준이 왼쪽 상단, right/bottom은 left/top에서부터 얼마나 보일지? - 안보일 뿐 화면에 존재 */
+    clip-path: inset(50%); /* svg(scalable vector graphic) 요소를 숨기기 위한 방편 */
+    width: 1px;
+    height: 1px;
+    font-size: 100%;
+    line-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}

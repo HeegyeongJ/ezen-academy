@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var hoit_1;
+        console.log(hoit_1);
+        console.log(hoit_2);
+
+        var hoit_1;
+        var hoit_2 = 3;
+        console.log(hoit_1);
+        console.log(typeof hoit_1);
+        console.log(hoit_2);
+        console.log(typeof hoit_2);
+
+        /*
+            hoisting : 변수, 함수에서 일어나는 javascript 언어의 구조방식
+            변수를 interpreter할 때 엔진에서 자동으로 선언부만 최상단으로 끌어올린다. 밑에 다시 선언될 때 변수종류는 자동으로 지워진다.
+            hoisting zone 에서 다시 선언될 때까지 부분을 temporary zone 이라고 하며 자동으로 생긴다.
+            hoisting시 바로 undefined 값 할당
+
+            이런 hoisting 때문에 변수, 함수는 최상단에 선언(및 정의)하는 것이 좋다.
+        */
+
+
+
+        
+        /* 
+            let 변수는 var 변수처럼 hoisting 되지만, TDZone(temporary dead zone)이 생긴다 -> TDZ에서는 값을 못 넣게함 
+            let 변수는 var 변수와 달리 다른 언어처럼 사용하기 위해 만들어진 키워드 
+            hoisting시 바로 undefined 값 할당되지 않고 변수 선언된 곳에서 undefined 되고 바로 값 할당
+        */
+        console.log(test_let_1);
+
+        let test_let_1 = 10;
+        let test_let_2 = 20;
+
+        console.log(test_let_1);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

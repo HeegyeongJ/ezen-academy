@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* !(not), @(~에), #(지정), $(마지막 끝), %(나누기), ^(ctrl대신 || 시작), &(and), *(all), (, ) */
+
+        /* 속성 선택자 */
+        a[href ^="https://www.nav"]{ color: red;} /*2점*/
+        [href *= "v"]{ color: aqua;} /*1점*/
+        [href $=".net"]{color: brown;}
+        [href *="te"]{ color: coral;}
+
+        /* 순서 선택자 : nth-child(n) 자식요소 중 n번째 순서를 선택 
+            n 대신 공식이 들어갈 수 있다 ex) 홀수 2n+1 || odd, 짝수 2n || even, 3의 배수 3n, 
+            :first-child{} 자식요소 중 첫 번째 순서를 선택
+            :last-child{} 자식요소 중 마지막 순서를 선택 */
+        
+        /* 문제 1 : menu3-4~7까지 색상을 빨간색으로 */
+        /* .Q1{color: red;} */
+        /* ul>li:nth-child(3)>ul>li:nth-child(n+4)>a{color: red;} */
+
+        /* 태그선택자:nth-of-type(n)  형제 태그 선택자 중에서 순서에 맞는 태그를 선택
+                    :last-of-type    형제 태그 선택자 중에서 첫 번째 태그를 선택
+                    :first-of-type   형제 태그 선택자 중에서 마지막 태그를 선택*/
+        ul ul>li:last-of-type>a{ color: goldenrod;}
+
+        /* 선택자:not(제외 선택자){}   선택자 중에서 제외 선택자를 빼고 선택
+                    이미 만들어져 있는 클래스이기 때문에 10점 */
+        ul>li:not(:last-child)>a, ul>li:not(:first-child)>a{text-decoration: none;}
+
+        /* 이벤트 선택자 - 슈도클래스
+            선택자:hover    선택자 위에 마우스가 올라가 있을 때
+            선택자:active   선택자를 마우스가 클릭하고 있을 때 - 잘 활용하지X
+            선택자:visited  a 요소 같은 경우 방문한 곳이 이미 있을 때 - 잘 활용하지X
+
+            선택자:target   a 요소를 클릭했을 때 선택자가 목적지가 됐을 때 발생한다
+            선택자:checked  radio나 checked가 선택되면 발생한다 */
+        h1:hover{ color:green; }
+        #tit:target{ color: red;}
+
+        p>input[type ^="ra"]:checked + label{color: red; text-decoration: underline;}
+
+        /* 기타 선택자 
+            1. +는 형제요소를 의미
+            2. ~는 형제요소를 넘어서  */
+
+        h1:hover~p:last-of-type{color:green;}
+        /* = h1:hover~p:nth-of-type(2){color:green;} */
+    </style>
+</head>
+<body>
+    <h1 id="tit">css</h1>
+    <ul>
+        <li>
+            <a href="https://www.naver.com"  id="first">menu1</a>
+            <ul>
+                <li><a href="#tit" class="only_test">menu1-1</a></li>
+                <li><a href="">menu1-2</a></li>
+                <li><a href="">menu1-3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://www.daum.net">menu2</a>
+            <ul>
+                <li><a href="">menu2-1</a></li>
+                <li><a href="">menu2-2</a></li>
+                <li><a href="">menu2-3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://www.nate.com">menu3</a>
+            <ul>
+                <li><a href="">menu3-1</a></li>
+                <li><a href="">menu3-2</a></li>
+                <li><a href="">menu3-3</a></li>
+                <li><a href="" class="Q1">menu3-4</a></li>
+                <li><a href="" class="Q1">menu3-5</a></li>
+                <li><a href="" class="Q1">menu3-6</a></li>
+                <li><a href="" class="Q1">menu3-7</a></li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        <input type="radio" id="rd1" name="radio" checked><label for="rd1">선택1</label>
+        <input type="radio" id="rd2" name="radio"><label for="rd2">선택2</label>
+    </p>
+    <p>단락</p>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{ width:300px; border:1px solid #000;} 
+        table th, table td{ border:1px solid #000;}
+    </style>
+</head>
+<body>
+    <h1>table</h1>
+    <p>
+        테이블은 많은 데이터를 정리하기 위해서 사용하며 대체적으로 게시판에 많이 사용한다.
+        (예외 - 포토/ 동영상 또는 일반 게시판 같은 경우 반응형에 따라서 개수나 위치가 변하는 레이아웃은 
+         목록태그(ul)를 사용하는 것이 좋다.)
+    </p>
+    <!-- ul>li*10>img+dl>dt+dd*2 서울시청 : https://www.seoul.go.kr/thismteventfstvl/list.do -->
+    <!-- table>(colgroup>col*3)+(thead>tr>th*3)+(tfoot>tr>td*3)+tbody>tr>td*3 -->
+
+    <h2>1-1 시험 점수</h2>
+    <!-- summary태그를 table태그 내부에 넣으면 안된다. -->
+    <table>
+        <colgroup>
+            <col><!--단독 태그-->
+            <col>
+            <col>
+        </colgroup>
+        <thead><!--thead 생략X-->
+            <tr>
+                <th></th>
+                <th scope="col">국어</th><!--웹 접근성 - scop: 제목의 영역 / 시각적 약자를 위한 제목으로 행이나 열에 대한 제목이라고 지칭하는 표시, 그룹으로 묶은 것은 colgroup 또는 rowgroup으로 표기하고 한 열이나 한 행씩 담당하는 것은 col, row로 각각 표기한다.-->
+                <th scope="col">수학</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th scope="row">합계</th>
+                <td>250</td>
+                <td>250</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th scope="row">철수</th>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <th scope="row">영수</th>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <th scope="row">진구</th>
+                <td>80</td>
+                <td>80</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table><!--https://news.seoul.go.kr/gov/seoul_patner-->
+        <caption>시민의 목소리를 정책에 반영하기 위한 9개 부분의 명예시장 목록</caption><!--제목을 전혀 알 수 없는 상황에서의 caption, 그냥 summary -->
+        <thead>
+            <tr>
+                <th colspan="3">9개 분야 명예시장 목록</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>청년</td>
+                <td>장애인</td>
+                <td>소상공인</td>
+            </tr>
+            <tr>
+                <td>1인가구</td>
+                <td>교육</td>
+                <td>관광</td>
+            </tr>
+            <tr>
+                <td>도시안전</td>
+                <td>스마트도시</td>
+                <td>도시계획</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>열, 행 합치기 연습</h2>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th colspan="4" scope="colgroup">과목</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th scope="col">국</th>
+                <th scope="col">영</th>
+                <th scope="col">수</th>
+                <th scope="col">과</th>
+            </tr>
+        </thead>
+        <tbody><!--tr*6>th*2+th*4-->
+            <tr>
+                <th rowspan="3" scope="rowgroup">1-1</th>
+                <th>학생A</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">학생B</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">학생C</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th rowspan="3">1-2</th>
+                <th scope="row">학생D</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">학생E</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">학생F</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+</body>
+</html>

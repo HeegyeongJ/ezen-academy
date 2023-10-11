@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: green;
+            font-size: 32px;
+            width: 600px; height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="slctH1">요소</h1>
+    <button id="btn_clr">색상</button>
+    <button id="btn_font">폰트</button>
+    <button id="btn_size">크기</button>
+
+    <ul class="list_box">
+        <li class="list_0">A</li>
+        <li class="list_1">B</li>
+        <li class="list_2">C</li>
+        <li class="list_3">D</li>
+        <li class="list_4">E</li>
+        <li class="list_5">클릭시 모두삭제</li>
+    </ul>
+
+    <script>
+        // add (h1, button)
+        let h1_elm = document.querySelector('#slctH1');
+        document.querySelector('#btn_clr').onclick = function(){
+            h1_elm.classList.add("clr");
+        }
+        document.querySelector('#btn_font').onclick = function(){
+            h1_elm.classList.add("fontSz");
+        }
+        document.querySelector('#btn_size').onclick = function(){
+            h1_elm.classList.add("size");
+        }
+
+
+        // remove (ul)
+        let _ul = document.querySelector('.list_box');
+        let _lis = _ul.children;
+
+        for(let i = 0; i < _lis.length; ++i){
+            if(i < _lis.length - 1){
+                _lis[i].onclick = function(){
+                    console.log(this);
+                    this.remove();
+                    // return () => {
+                    //     console.log(this); // 이벤트하고 연결된 함수에서 내부의 화살표 함수 this는 외부함수를 가리키지 않고 window 객체를 가리킨다.
+                    // }
+                }
+            }else{
+                _lis[i].onclick = function (){
+                    this.parentElement.remove();
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            예약어(keyword)
+            - 이미 내장된 것을 사용하며, 예약어는 기존에 있는 것이기 때문에 변수명(식별자)이나 함수 명 등으로 사용할 수 없다.
+            ex) let, var, const, alert(전달인자), console.log(전달인자), confirm(전달인자), prompt(전달인자)....
+            - 예약어 등은 사용하는 방법을 아는 것으로 우리가 재정의하거나 작성하지 않는다.
+
+            confirm
+                alert처럼 브라우저에 창을 띄우고 결과 값으로 boolean을 return
+            prompt
+                alert처럼 브라우저에 창을 띄우고 결과 값으로 유저가 쓴 값을 string으로 return
+                number type으로 바꾸고 싶다면 숫자와 함께 계산 ex) *1
+            공통점: 전달인자를 문장으로 띄운다. 화면에 뜨는 순간 interperter가 멈춘다. 결과 값 return(함수가 괄호와 함께 실행하고 사라지면서 남겨두는 값)
+
+            괄호가 있는 것 = 함수를 호츨한다
+            괄호 앞이 함수식별자
+        */
+
+        let tmp;
+
+        tmp = alert('경고창'); // alert은 값을 저장하지 않기 때문에 변수로 저장할 필요 X = return값 없음
+        console.log(tmp);
+
+        tmp = confirm('당신은 학생입니까?');
+        console.log(tmp); // 결과 값 true || false
+
+        if(tmp){
+            alert('열심히 공부하세요')
+        }else{
+            alert('좋은 결과 있기를 바랍니다')
+        }
+
+        tmp = prompt('당신의 사는 지역을 입력하시오.');
+        console.log(tmp); // 결과 값 = '입력 값'
+
+        let num = prompt('정수를 입력하시오')*1;
+        console.log(typeof num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

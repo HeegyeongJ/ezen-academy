@@ -1,0 +1,98 @@
+.index_mobile{display:none;}
+@media only screen and (max-width:960px){
+    .web{display:none;}
+    .mobile{display:block;}
+    body.mob_nav{height:100vh;min-height:58rem;overflow:hidden;
+        .mob_nav_curtain{display:block;position:fixed;top:0;left:0;z-index:900;width:100vw;height:100vh;background:rgba(0,0,0,.5);}
+        .m_nav_box{display:block;}
+    }
+    
+    .mob_nav_curtain{background:rgba(0,0,0,0);}
+    header{height:5.2rem;background:#fff url(https://www.ibk.co.kr/img/navigation/bg_mgnb_02.gif) repeat-x 50% 100%;
+        .cnts_center{display:block;
+            h1{margin:0 auto;width:14rem;height:5rem;
+                .IBK_logo{display:block;width:14rem;height:5rem;
+                    a{display:block;line-height:5rem;
+                        img{display:inline-block;vertical-align:-0.9rem;width:14rem;height:3rem;}
+                    }
+                }
+            }
+            .nav_box{
+                .nav_box_btm{display:block;
+                    .m_nav_box{
+                        .btn_menu{position:absolute;top:0.5rem;right:0;width:4rem;height:4rem;margin-right:1rem;
+                            button{
+                                img{width:4rem;height:4rem;}
+                            }
+                        }
+                        .m_drawer{display:none;overflow:hidden;position:fixed;top:0;right:0;width:32rem;height:100vh;background:#fff;z-index:1000;transition:all .3s ease;
+                            .drawer_util{background:#10408c;padding:1rem 1.5rem 1.2rem 1.5rem;
+                                .drawer_util_list{display:flex;padding:0 3.3rem 0.8rem 0;height:3rem;
+                                    dd{flex:0 0 2.1rem;margin-right:1.8rem;@include fontFac(300,1.2rem,1.5rem);letter-spacing:-0.1rem;height:3rem;
+                                        &:first-of-type{flex:0 0 auto;}
+                                        &:nth-of-type(4){flex:0 0 3.1rem;}
+                                        &:last-child{height:0;line-height:3rem;}
+                                        a{color:#fff;}
+                                    }
+                                }
+                                form{position:relative;width:29.1rem;height:4rem;
+                                    input{padding:0 0 0 1.2rem;width:27.9rem;height:4rem;}
+                                    button{position:absolute;top:0;right:1.1rem;cursor:pointer;
+                                        span{position:relative;@include fontFac(400,1.3rem,4rem);color:#09ace9;
+                                        &:before{content:"";position:absolute;top:50%;transform:translateY(-50%);left:-1.3rem;height:1.4rem;width:0;border-left:0.1rem dashed #09ace9;}
+                                        }
+                                    }
+                                }
+                            }
+                            .drawer_tit{background:#09ace9;height:5rem;@include bdr(top,#5fc9f1);@include bdr(bottom,#0c85cb);
+                                .location{position:relative;text-align:center;line-height:5rem;
+                                    button{position:absolute;left:1.4rem;top:50%;transform:translateY(-50%);display:inline-block;width:5rem;height:5rem;background:url(https://www.ibk.co.kr/img/navigation/bg_ctg_icon.png)no-repeat -14.8rem 1rem / 30rem 4.8rem;}
+                                    img{display:inline-block;vertical-align:middle;width:11.1rem;height:2rem;}
+                                }
+                            }
+                            .m_nav{position:relative;left:0;width:64rem;background:url(https://www.ibk.co.kr/img/navigation/bg_ctg_line.png) repeat-x 0 0;right:-64rem;
+                                &.active{left:-32rem;
+                                    .m_nav_list{
+                                        .m_nav_item.active{
+                                            .m_nav_depth_2_list{display:block;
+                                            }
+                                        }
+                                    }
+                                }
+                                .m_nav_list{padding:0 2rem;width:28rem;
+                                    .m_nav_item{margin:0;@include bdr(bottom,#dedede);@include fontFac(bold,1.8rem,5.2rem);
+                                        a{display:block;color:#000;}
+                                        .m_nav_depth_2_list{display:none;position:absolute;top:0;right:0;padding:0 2rem;margin-top:0.6rem;width:28rem;
+                                            .m_nav_depth_2_item{@include bdr(bottom,#dedede);
+                                                &.active{
+                                                    span{background-position:26.3rem -5.3rem;}
+                                                }
+                                                &:first-child{@include bdr(top,#dedede);}
+                                                span{display:block;background:url(https://www.ibk.co.kr/img/navigation/bg_ctg_menu.png) no-repeat 26.3rem 0;background-size:1.7rem 15.9rem;
+                                                    
+                                                }
+                                                .m_nav_depth_3_list{@include bdr(top,#474747);
+                                                    dt{@include fontFac(700,1.6rem);
+                                                        a{display:block;padding:1.6rem 0 1.3rem 0;color:#06c;}
+                                                    }
+                                                    dd{@include fontFac(400,1.4rem,3rem);
+                                                        a{position:relative;display:block;padding:0 0 0.8rem 0.7rem;color:#555;
+                                                            &:before{@include after_bar(0.3rem,#555,100%);border-width:0.3rem;}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .btn_close{position:absolute;top:0;right:0;width:4.8rem;height:4.8rem;
+                                button{width:4.8rem;height:4.8rem;background:url(https://www.ibk.co.kr/img/navigation/bg_ctg_icon.png) no-repeat -5rem 0;background-size:30rem 4.8rem;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

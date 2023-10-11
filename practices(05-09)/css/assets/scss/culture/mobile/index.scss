@@ -1,0 +1,385 @@
+@media only screen and (max-width:1279px){
+    // 관련 사이트 목록
+    .wrap{
+        main{
+            .main_sect{
+                &.related_site_box{margin:0 0 12rem 0;
+                    .related_site{flex-wrap:wrap;justify-content:space-around;align-items:flex-start;
+                        .related_site_item{flex:1 1 25%;margin-top:3.6111vw;
+                            a{
+                                .logo_box{height:4.5rem;
+                                    .site_logo{width:auto;}
+                                }
+                                em{font-size:1.2rem;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:768px){
+    .wrap{
+        main{
+            .banner{height:138.8021vw;
+                .banner_cnts{bottom:4.0833vw;display:block;margin:0;max-width:85.026vw;height:auto;
+                    .banner_ab{display:block;height:auto;
+                        h1{margin:0;padding:0 4.44vw;border-bottom:0.25vw solid #eee;@include fontFac(500,3.88vw,12.1094vw);}
+                        ul{padding:0 4.44vw;@include fontFac(400,3.33vw,12.222vw);}
+                        .noti_btn_box{width:20.0521vw;height:10.026vw;margin:0;
+                            button{width:10.026vw;height:10.026vw;
+                                &.ico_down{width:10.026vw;height:10.026vw;@include bg_img(url(https://www.culture.go.kr/assets/images/common_new/mo/slide_rolling_next.png));}
+                                &.ico_up{width:10.026vw;height:10.026vw;@include bg_img(url(https://www.culture.go.kr/assets/images/common_new/mo/slide_rolling_prev.png));}
+                            }
+                        }
+                    }
+                    .notice{position:relative;margin-right:0;height:auto;
+                        .noti_list{height:12.222vw;
+                            .noti_item{height:12.222vw;}
+                        }
+                        .noti_btn_box{position:absolute;top:1.0417vw; right:2.778vw;}
+                    }
+                    .ticket{position:relative;margin:4.4271vw 0 0 0;
+                        .tick_list{height:17.5781vw;
+                            .tick_item{height:17.5781vw;
+                                a{position:relative;display:block;padding:3.125vw 0 0 12.5vw;
+                                    .sale{position:absolute;top:3.125vw;left:0;width:10.026vw;height:10.026vw;@include brR(50%);font-size:3.333vw;line-height:10.026vw;}
+                                    p{@include fontFac(400,3.333vw,5.599vw);}
+                                    .date{display:block;@include fontFac(400,3.333vw,4.1667vw,$ff:'Montserrat');}
+                                }
+                            }
+                        }
+                        .noti_btn_box{position:absolute;top:1.0417vw; right:2.778vw;}
+                    }
+                }
+            }
+            .main_sect{padding-bottom:12rem;
+                &.btm_line{border-bottom:2.2222vw solid #f5f5f5;}
+                .main_cnt_center{margin:0;padding:0 1.5rem;width:calc(100% - 3rem);
+                    .cnts_h1{padding-top:11.111vw;font-size:6.667vw;line-height:10vw;}
+                    .cnts_h1_p{display:none;}
+                    .culture_card_list{display:flex;
+                        .culture_card_item{
+                            a{
+                                .imgBox{
+                                    img{}
+                                }
+                                .keyword_box{margin-top:4.4271vw;
+                                    .keyword{margin-bottom:2.222vw;height:5.833vw;padding:0 3.333vw;@include fontFac(normal,2.778vw,5.833vw);@include brR(2.4rem);border-width:0.278vw;
+                                        &.part{}
+                                        &.location{}
+                                    }
+                                }
+                                .culture_card_tit{@include fontFac(400,1.6rem,2.4rem);@include text_ellipsis(2);}
+                            }
+                        }
+                    }
+                    .culture_card_btns{margin-top:1.1rem;margin-bottom:0;height:10vw;
+                        .culture_card_btn_box{height:10vw;
+                            .culture_card_btn_list{justify-content:center;height:10vw;
+                                .culture_card_btn_item{height:10vw;
+                                    &.culture_card_btn_item_1{width:10vw;
+                                        button{width:10vw;height:10vw;@include brR(50%);box-shadow:0.2rem 0.5rem .8rem 0 rgba(120,120,120,0.1);background:url(https://www.culture.go.kr/assets/images/common_new/slide_prev.png) no-repeat 50% 50%;}
+                                    }
+                                    &.culture_card_btn_item_2{margin:0 2.7778vw;@include fontFac(500,4.4444vw,10vw,$ff:'Montserrat');
+                                    }
+                                    &.culture_card_btn_item_3{width:10vw;
+                                        button{width:10vw;height:10vw;@include brR(50%);box-shadow:0.2rem 0.5rem .8rem 0 rgba(120,120,120,0.3);background:url(https://www.culture.go.kr/assets/images/common_new/slide_next.png) no-repeat 50% 50%;}
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // 주요서비스
+                    .main_serv_lists{flex-wrap:wrap;justify-content:start;align-content:space-between;margin-top:1.9531vw;width:100%;height:58.2031vw;
+                        .main_serv_item{flex:0 1 20%;margin:0;height:22.2656vw;border:0 none;
+                            &:hover{
+                                &:after{border:0 none;}
+                            }
+                            a{font-size:3.333vw;line-height:5vw;letter-spacing:0;height:22.2656vw;
+                                .ico{margin-bottom:0;height:12.2396vw;background-size:11.111vw auto;background-position:50% 50%;
+                                    &.spc{
+                                        &:after{top:8.8542vw;}
+                                    }
+                                }
+                            }
+                            &:nth-child(1){
+                                .ico{background-image:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_service_house.png);}
+                            }
+                            &:nth-child(2){
+                                .ico{background-image:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_service_eye.png);}
+                            }
+                            &:nth-child(3){
+                                .ico{background-image:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_service_tv.png);}
+                            }
+                            &:nth-child(4){
+                                .ico{background-image:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_service_sympathy.png);}
+                            }
+                            &:nth-child(5){
+                                .ico{background-image:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_service_tradition.png);}
+                            }
+                            &:nth-child(6){
+                                .ico{background-image:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_service_book.png);}
+                            }
+                            &:nth-child(7){
+                                .ico{background-image:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_service_search.png);}
+                            }
+                            &:nth-child(8){
+                                .ico{background-image:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_service_calendar.png);}
+                            }
+                            &:nth-child(9){
+                            .ico{background-image:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_service_api.png);}              
+                            }
+                        }
+                    }
+                    // 내 주변 문화콘텐츠
+                    .srch_box{
+                        .srch_condition{display:block;margin-top:8.7240vw;height:auto;
+                            .selec_loc{justify-content:space-between;}
+                            dd{margin:0;
+                                select{padding-left:2.474vw;width:45.5729vw;height:10vw;font-size:3.889vw;line-height:10vw;}
+                                &.result{margin-top:4.4271vw;
+                                    select{width:100%;}
+                                    button{
+                                        img{width:10vw;height:10vw;}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .near_cnts_result{margin-top:8.889vw;
+                        .culture_card_list{overflow-x:scroll;overflow-y:hidden;
+                            .culture_card_item{flex:0 0 18rem;
+                                &:not(:last-child){margin-right:2rem;}
+                                a{width:100%;
+                                    .imgBox{}
+                                    .culture_card_tit{height:13.0208vw;font-size:4.444vw;line-height:6.667vw;}
+                                    .time_box{margin-top:4.444vw;@include fontFac(400,3.611vw,4.444vw,$ff:'Montserrat');}
+                                    .place_box{margin-top:2.222vw;@include fontFac(normal,3.611vw,4.444vw);}
+                                }
+                            }
+                        }
+                    }
+                }
+                // 문화자료관
+                &.bg_red{background-color: $mainRd;
+                    .cnts_h1{color:#fff;}
+                    .cnts_h1_p{color:#fff;margin-bottom:6.5104vw;}
+                    .culture_data{@include bdr(bottom,#fff);
+                        form{margin:3.5156vw 0 3.9063vw 0;width:100%;
+                            input[type="text"]{height:12.2396vw;
+                                @include brR(calc(12.2396vw / 2));@include fontFac(normal,3.889vw,12.222vw);color:#222;
+                                &:focus{}
+                            }
+                            input[type="submit"]{width:10vw;height:10vw;background:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_search.png) no-repeat 50% 50% / 100%;}
+                        }
+                    }
+                    //문화드림
+                    .culture_support{padding-bottom:0;
+                        .culture_support_box{margin-top:3.3854vw;height:106.7708vw;@include brR(5.2083vw);
+                            .culture_support_list{overflow-x:scroll;justify-content:start;
+                                dt{flex:0 0 auto;margin:0 2.8646vw;height:15.556vw;
+                                    &.active{}
+                                    button{height:15.556vw;@include fontFac(400,3.889vw,15.556vw);}
+                                }
+                                dd{top:17.9688vw;border:0 none;
+                                    &.active{}
+                                    ul{flex-wrap:wrap;justify-content:start;padding-top:10vw;height:21.6146vw;
+                                        li{flex:0 1 33%;min-width:30.9896vw;margin-bottom:6.7708vw;
+                                            &:not(:last-child){margin-right:0;}
+                                            &.active{
+                                                &:after{top:0;right:0;width:5.56vw;height:5.56vw;background-size:100%;}
+                                            }
+                                            .ico{width:11.9792vw;height:11.9792vw;
+                                                &.all{background-size:100%;}
+                                                &.all_nation{background-size:100%;}
+                                                &.gen_nation{background-size:100%;}
+                                                &.foreigner{background-size:100%;}
+                                            }
+                                            em{margin-top:4.6875vw;@include fontFac(400,3.333vw,5vw);}
+                                        }
+                                    }
+                                }
+                                .culture_support_link{left:50%;transform:translateX(-50%);top:calc(100% - 19.7917vw);width:80.5990vw;height:13.2813vw;@include brR(calc(13.2813vw/2));@include fontFac(400,4.444vw,13.2813vw);}
+                            }
+                        }
+                    }
+                }
+                // 특화 콘텐츠
+                .spc_cnts{padding:0;width:100%;
+                    .cnts_h2{margin-bottom:2.222vw;@include fontFac(bold,5.556vw,8.056vw);}
+                    .cnts_h2_p{@include fontFac(normal,3.889vw,5.833vw);}
+                    .spc_box{@include brR(4rem);box-shadow:0.1rem 0.1rem 3rem 0.1rem rgba(200,200,200,0.4);margin-bottom:6.6406vw;
+                    }
+                    .direct_link{@include fontFac(bold,3.333vw,5vw);
+                        .ico_link_arr{vertical-align:-1.0417vw;width:4.444vw;height:4.444vw;background-size:100%;}
+                        a{}
+                    }
+
+                    .spc_top{display:block;margin:3.3854vw 0 6.6406vw 0;padding:0 1.5rem;
+                        //tv 박스
+                        .spc_tv{width:100%;height:131.5104vw;margin-right:0;padding:6.667vw 4.1667vw;
+                            .cnts_h2_p{margin-bottom:6.667vw;}
+                            .tv_outer{height:auto;
+                                .culture_card_list{
+                                    .culture_card_item{
+                                        .imgBox{
+                                            img{}
+                                        }
+                                        .keyword_box{
+                                            .keyword{margin-right:2.2135vw;height:6.667vw;@include fontFac(normal,3.611vw,6.667vw);@include brR(calc(6.667vw/2));border-width:0.2604vw;}
+                                        }
+                                        .culture_card_tit{@include fontFac(400,4.444vw,6.667vw);}
+                                    }
+                                }
+                            }
+                        }
+                        .spc_pattern{display:flex;flex-wrap:wrap;justify-content:space-between;align-content:space-between;height:100%;margin-right:0;
+                            .cnts_h2_p{display:none;}
+                            .pattern_top{margin-bottom:6.6406vw;height:auto;padding:6.667vw 4.1667vw;
+                                .pattern_list{text-align:center;margin-top:6.667vw;
+                                    li{flex:0 1 20.3125vw;
+                                        &:not(:last-child){margin-right:0;}
+                                        a{
+                                            .ico{margin-bottom:2.2135vw;width:14.4531vw;height:14.4531vw;}
+                                            .pattern_txt{display:block;text-align:center;@include fontFac(normal,3.3333vw,5vw);}
+                                        }
+                                    }
+                                }
+                                .direct_link{top:9.1146vw;
+                                }
+                            }
+                            // 공감마당
+                            .front{flex:0 0 calc(50% - 1.3889vw);margin:0;height:52.5vw;padding:6.667vw 4.1667vw;@include fontFac(normal,3.8889vw,5.5556vw);
+                                .front_list{
+                                    .front_item{
+                                        a{padding-left:1.1719vw;
+                                        &:before{@include after_bar(0.5556vw,#000,100%);border-width:0.5556vw;}
+                                        }
+                                    }
+                                }
+                                .direct_link{bottom:6.667vw;font-weight:bold;}
+                            }
+                            // 예술용어사전
+                            .term{position:relative;flex:0 0 calc(50% - 1.3889vw);margin-top:0;padding:6.667vw 4.1667vw;height:52.5vw;@include fontFac(normal,3.8889vw,5.5556vw);
+                                p{}
+                                .direct_link{bottom:6.667vw;font-weight:bold;}
+                            }
+                        }
+                        .space{height:auto;
+                            .cnts_h2{padding:6.667vw 4.1667vw 0 4.1667vw;}
+                            // input radio
+                            form{padding:4.6875vw 4.1667vw 6.667vw 4.1667vw;height:72.0052vw;
+                                .radio_box{height:14.0625vw;margin-bottom:0;
+                                    label{vertical-align:1.4323vw;@include fontFac(normal,3.889vw,5.556vw);}
+                                    input[type="radio"]{margin:0 2.3438vw 0 0;width:5.4688vw;height:5.4688vw;}
+                                }
+                                .select_box{display:block;height:10vw;
+                                    dd{
+                                        &:nth-of-type(odd){margin-right:0;}
+                                        select{margin-top:4.444vw;padding-left:2.4740vw;width:100%;height:10vw;border-width:0.2604vw;@include fontFac(normal,3.889vw,10vw);
+                                            &:focus{outline:0.2rem solid $mainBk;@include brR(0.3906vw);}
+                                        }
+                                        input[type="text"]{margin-top:4.444vw;border-width:0.2604vw;padding:0 0 0 2.4740vw;width:100%;height:10vw;font-size:3.889vw;}
+                                        input[type="submit"]{top:4.444vw;transform:translateY(0);right:-0.6510vw;width:10vw;height:10vw;@include bg_img(url(https://www.culture.go.kr/assets/images/common_new/mo/icon_search.png));}
+                                    }
+                                }
+                            }
+                            .direct_link{top:9.1146vw;}
+                            .ico_ex{padding:0.6510vw 4.1667vw 6.667vw;
+                                dd{margin-top:4.444vw;
+                                    a{
+                                        .ico{margin-bottom:2.4740vw;width:14.4531vw;height:14.4531vw;
+                                        }
+                                        .space_txt{display:block;text-align:center;@include fontFac(normal,3.333vw,5vw);letter-spacing:-0.05em;}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .spc_btm{display:block;@include fontFac(400,3.3333vw,5.5556vw);
+                        // spc_btm 공통사항
+                        .notice{box-sizing:border-box;padding:0 1.5rem;}
+                        .cnts_h2{margin-bottom:4.4444vw;}
+                        time{font-size:3.8889vw;}
+                        .spc_btm_tit{border-width:0.2604vw;margin-bottom:4.4444vw;}
+                        .more_btn{right:1.5rem;top:0.651vw;width:6.6406vw;height:6.6406vw;background-size:100%;}
+                        a{line-height:6.6406vw;}
+                        ul{
+                            li{@include text_ellipsis(1);
+                                &:not(:last-child){margin-bottom:2.2222vw;}
+                                p{float:none;margin-top:2.2222vw;font-family:'Montserrat';letter-spacing: -0.03rem;color:#666;}
+                            }
+                        }
+                        // 이벤트 공지
+                        .evnt{position:relative;margin:11.111vw 0;padding-bottom:11.1111vw;width:100%;border-bottom:2.2222vw solid #f5f5f5;
+                            .keyword{margin-right:1.1111vw;padding:0 3.3333vw;height:6.6406vw;@include fontFac(normal,3.3333vw,6.6406vw);@include brR(3.6111vw);border-width:0.2604vw;}
+                            .evnt_date{width:100%;}
+                        }
+                        // 채용 공지
+                        .recruit{position:relative;
+                            .recruit_date{width:8rem;}
+                        }
+                    }
+                }
+                // SNS채널
+                &.bg_gray{padding:0 1.5rem 19.5313vw 1.5rem;
+                    .sns_lists{margin:4.2969vw auto 13.5417vw auto;width:56.25vw;}
+                    .sns_box{height:34.7rem;
+                        .sns_news{overflow-x:hidden;
+                            .sns_news_item{flex:1 0 calc(50% - 1rem);padding:3.3854vw;border-width:0.2778vw;background:#fff;
+                                &:not(:last-child){margin-right:1rem;}
+                                .sns_news_tit{margin-bottom:3.3333vw;height:11.1112vw;@include fontFac(400,3.8889vw,5.5556vw);
+                                    img{padding-bottom:4.2rem;margin-right:2.6042vw;}
+                                }
+                                .sns_news_desc{padding-top:3.3333vw;margin-bottom:2.1rem;border-width:0.2778vw;height:10.4167vw;@include fontFac(400,1.4rem,2rem);overflow:hidden;
+                                }
+                                .sns_news_date{
+                                    .ico{display:block;width:6.6406vw;height:6.6406vw;
+                                        &.insta{@include bg_img(url(https://www.culture.go.kr/assets/images/common_new/mo/icon_instagram.png));}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .participate{&.web{display:none;}}
+                }
+                // SNS 하단 배너
+                &.parti_sect{display:block;padding:11.1111vw 0;
+                    ul{display:flex;overflow:hidden;
+                        li{flex:0 0 100%;height:15.625vw;
+                            img{width:100%;height:100%;}
+                        }
+                    }
+                    .partic_1{margin-bottom:5.5556vw;}
+                }
+                &.related_site_box{margin:0;
+                    .related_site{
+                        .related_site_item{
+                            a{
+                                .logo_box{
+                                    img{}
+                                }
+                                em{font-size:3.3333vw;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .nav_bar{position:fixed;bottom:0;z-index:9999;width:100vw;height:12.8rem;
+            ul{display:flex;
+                li{flex:1 1 25%;}
+            }
+        }
+        .fixed_banner{position:fixed;z-index:9999;right:1rem;bottom:6rem;width:12rem;
+            .fixed_banner_list{
+                .fixed_banner_item{
+                    img{width:100%;}
+                }
+            }
+        }
+    }
+}

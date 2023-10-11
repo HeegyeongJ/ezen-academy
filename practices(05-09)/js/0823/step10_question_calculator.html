@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            계산기(4칙연산)
+            각각 입력
+            첫 번째 입력하는 것은 원하는 숫자
+            두 번째 입력하는 것은 수식(+, -, *, /)중 한 가지를 입력합니다.
+            세 번째 입력하는 것은 원하는 숫자
+            세 개의 caracters를 입력하면, 수식이 계산이 되도록 작성하시오.
+            ex) 첫 번째로 3을 입력하고, 두 번째로 + 입력, 마지막으로 숫자 2를 입력하면,
+                출력 문구는 '3 + 2 = 5'가 출력되도록 하시오.
+        */
+        let num1, operator, num2, val;
+
+        while(true){
+            num1 = prompt('숫자 1을 입력')*1;
+            if(!isNaN(num1)){
+                break;
+            }else{
+                alert('숫자가 아닙니다.');
+            }
+        }
+        while(true){
+            operator = prompt('수식을 입력(+, -, *, / 중 하나)');
+            if(operator == '+' || operator == '-' || operator =='*' || operator == '/'){
+                break;
+            }else{
+                alert('4가지 수식 중 하나를 입력해주세요');
+            }
+        }
+        while(true){
+            num2 = prompt('숫자2를 입력')*1
+            if(!isNaN(num2)){
+                break;
+            }else{
+                alert('숫자가 아닙니다.');
+            }
+        }
+        if(operator == '+'){
+            val = num1 + num2;
+        }else if(operator == '-'){
+            val = num1 - num2;
+        }else if(operator == '*'){
+            val = num1 * num2;
+        }else if(operator == '/'){
+            val = num1 / num2;
+        }
+        console.log(`${num1} ${operator} ${num2} = ${val}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

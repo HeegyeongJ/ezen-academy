@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="" class="slct_item">
+        <option value="item_0">샤인머스켓_보통</option>
+        <option value="item_1">샤인머스켓_고급</option>
+        <option value="item_2">샤인머스켓_특품</option>
+    </select>
+    <ul class="show_slct_item">
+     
+    </ul>
+    <!-- <button id="btn_plus">+</button>
+    <button id="btn_minus">-</button> -->
+    <script>
+        let items = {
+            item_1 : {name:'샤인머스켓_보통', price:15000, cnt:0, cost:0, id:'item_1'},
+            item_2 : {name:'샤인머스켓_고급', price:18000, cnt:0, cost:0, id:'item_2'},
+            item_3 : {name:'샤인머스켓_특품', price:21000, cnt:0, cost:0, id:'item_3'}
+        }
+
+        console.log('========================== 객체 속성에 접근하는 방식 2가지 ==========================');
+        console.log(items.item_1.id); //속성명을 변수처럼 사용할 때
+        console.log(items['item_1'].id); //속성명을 string처럼 사용할 때 
+
+
+        function closure_outer( item ){
+            //증가
+            function print(){
+                item.cost = item.cnt * item.price;
+                let cnt = document.querySelector(`strong.${item.id}`);
+                let cost = document.querySelector(`em.${item.id}`);
+                
+                cnt.textContent = item.cnt;
+                cost.textContent = item.cost;
+            }
+            
+            return { 
+                increase : function (){
+                    ++item.cnt;
+                    print();
+                },
+                decrease : function (){
+                    --item.cnt;
+                    if(item.cnt < 1) item.cnt = 1;
+                    print();
+                }
+            }
+        }
+
+
+
+
+        let slct_input = document.querySelector('.slct_item');
+        let show_ul = document.querySelector('.show_slct_item');
+
+
+         //input요소들의 값이 변화되는 것은 onchange라고 한다. 
+        slct_input.onchange = function (){
+            //select 요소에서만 사용하는 메소드(행동-여기서 행동은 selec요소의 options을 모두 get한다.-을 하는 속성) select요소객체.options
+            //this.options는 select 자식요소인 option들을 의미
+            //순번 0부터 시작
+            //0 - 첫번째
+            //1 - 두번째
+            //2 - 세번째
+            //
+            //개수는 1부터 시작 : 0은 없는 것이기 때문에 1부터 시작
+            //  select요소객체.selectedIndex : select요소의 options을 선택할 때 사용할 수 있는 메소드(행동-여기서 행동은 option중 한가지를 선택했을 때 순번을 get한다.-을 하는 속성)
+            //options[this.selectedIndex] //this.seletedIndex는 select요소 중 선택한 option의 순번을 가리킨다. 
+
+            let id_val = this.options[this.selectedIndex].value;
+
+        //for in 문 : 
+            //객체의 속성만큼 반복문을 실행할 때 사용하는 반복문
+            //for 변수(속성으로 치환되는 변수) in 객체 { 반복실행문; }
+
+            // 1. ul의 자식요소 li가 있는지 없는지부터 확인
+            console.log('--------------------------#show_ul의 자식요소------------------------');
+            let lis = show_ul.children; // li요소가 하나라도 있다면 HTMLCollection요소를 return, li요소가 하나라도 없다면 비어있는 HTMLCollection요소를 return
+            let insert_bool = true;
+            if(lis.length == 0){
+                insertLi(id_val);
+            }else{
+                //forEach(){}
+                console.log(lis);
+                for(key in lis){//lis는 HTMLCollection으로 li가 여러개 있다면 li여러개들을 모은 객체이다. 
+                                //key는 HTMLCollection으로 각 li(value-값)와 연결된 속성(key-속성)을 의미한다. 
+                                //여기서 key는 순서대로 0, 1, 2... 각 li의 개수만큼을 연결된다. 
+                                //모든 프로그래밍 언어에서 첫번째는 0을 의미한다. 
+                    if(  lis[key].getAttribute('class') == id_val){
+                        insert_bool = false;
+                    }
+                };
+                if(insert_bool){
+                    insertLi(id_val);
+                }
+            }
+           
+
+            // 2. li가 존재한다면 li클래스와 id_val 값을 비교해서 똑같은 값이 있으면 선택한 option을 넣으면 안되고,
+            //    li가 존재하더라도 li클래스와 id_val 값을 비교해서 똑같은 값이 없다면 하단의 for문을 실행해서 li를 생성한다.
+
+            //1. 객체.속성(객체).속성
+            //2. 객체['속성'].속성
+
+        } // onchange End
+        function insertLi(id_val){
+            for(key in items){ //key값은 string타입으로 변환
+                //console.log(key); // items의 속성: 'item_1', 'item_2', 'item_3' 이들이 각각 key로 치환된다. 
+                if( items[key].id == id_val ){
+                    let tmp_li = document.createElement('li');
+                    tmp_li.classList.add(items[key].id)
+                    let tmp_name = items[key].name;
+                    
+                    let btn_p = document.createElement('button');
+                    btn_p.textContent='+';
+                    //요소객체.addEventListener('click',function (){}) , 요소객체.onclick = function (){} -- 함수표현식
+                    btn_p.onclick = closure_outer( items[key] ).increase;
+                    let btn_m = document.createElement('button');
+                    btn_m.textContent='-';
+                    btn_m.onclick = closure_outer( items[key] ).decrease;
+
+                    let strong_elm = document.createElement('strong');
+                    // 요소객체.classList.add = 클래스명; 클래스명 추가
+                    // 요소객체.classList.remove = 클래스명; 클래스명 삭제
+                    strong_elm.classList.add(items[key].id);
+                    strong_elm.textContent = items[key].cnt;
+
+                    let em_elm = document.createElement('em');
+                    em_elm.classList.add(items[key].id);
+                    em_elm.textContent = items[key].cost;
+
+                    let btn_remove = document.createElement('button');
+                    btn_remove.textContent = 'X';
+                    btn_remove.onclick = function(){
+                        this.parentElement.remove();
+                    }
+
+                    tmp_li.append(tmp_name , " : ",  btn_p, btn_m , '개수 : ', strong_elm, '가격 : ', em_elm);
+
+                    show_ul.append(tmp_li);
+                    break;
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table thead tr th, table tbody tr th{vertical-align:middle;}
+/* table thead tr td, table tbody tr td{vertical-align:middle;} */
+a{
+	text-decoration: none;
+}
+
+.hidden {
+    visibility: visible;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%); 
+    width: 1px;
+    height: 1px;
+    font-size: 100%;
+    line-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+html{font-size:62.5%;}
+
+/* 변수는 변수명 앞에 $ 붙이기 - 색상, 폰트 등 스타일 가이드 미리 작성하기
+ 변수는 저장하는 곳
+ ------------예제------------
+ $common_font_family:"Poppins,'Noto Sans KR', sans-serif"; // 바깥쪽에 더블 쿼테이션 주의
+
+ $primary_100: rgba(255,57,57,1);
+ $primary_80: rgba(255,57,57,0.8);
+ $primary_60: rgba(255,57,57,0.6);
+
+ $font_hd_h1_50sz:50;
+ $font_hd_h2_18sz:18;
+
+ $font_bd_p_20sz:20;
+ $font_bd_p_14sz:14;
+
+ $font_tit_fm:Binggrae;
+ $font_cnts_fm:Poppins;
+ $font_sub_fm:"Noto Sans KR";*/
+
+
+
+/* 스타일 가이드 */
+//fonts
+// 컨텐츠h1
+$conts_h1_fw:bold;
+$conts_h1_58sz:5.8rem;
+$conts_h1_line-height:1;
+$conts_h1_fm:"Binggrae,'Noto Sans KR', sans-serif";
+// 컨텐츠h2
+$conts_h2_m-t:6.3rem; 
+$conts_h2_fw:50;
+$conts_h2_32sz:3.2rem;
+$conts_h2_line-height:1;
+$conts_h2_fm:"Binggrae,'Noto Sans KR', sans-serif";
+// mixin
+@mixin brR($radius_value){
+	border-radius:$radius_value;
+}
+@mixin fontFac($wt:normal, $sz:1.6rem, $lh:1.2, $ff:"'Poppins'"){
+	font-weight:$wt;
+	font-size:$sz;
+	line-height:$lh;
+	font-family:unquote($ff),'Noto Sans KR', sans-serif;
+}
+@mixin bdr($clr){
+	border:0.1rem solid $clr;
+}

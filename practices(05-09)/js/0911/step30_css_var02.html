@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            1. 그래픽 툴을 사용 : 페이지 디자인 완성
+            2. style_guide : font-size 또는 color, padding, maring, border-width, borcr-color
+            3. 2번(style_guide)에서 지정한 기본 값을 기본 요소에 지정을 한다. - 기본적인 html완성
+            4. css를 사용해서 styling도중에 지정된(3번) 요소 중에서 특정요소에 special styling을 적용하고 싶다. 
+               (새로운 적용은 기본지정보다 아래 위치한다.
+               ex> .default_font  {}
+                   .specail_font {}
+                )
+            
+        */
+        .default{
+            --font-size:20px;
+            font-size:var(--font-size);
+        }        
+        .special{
+            --font-size:40px;
+            font-size:var(--font-size);
+        }
+    </style>
+</head>
+<body>
+    <!-- 모든 요소 default_color, default_margin...... -->
+    <h1 class="default">동적인 css변수 (기본값) </h1>
+    <ul>
+        <li class="default"> 목록1 (기본값)</li>
+        <li class="default special"> 목록2 (기본값)</li>
+    </ul>
+    <p class="default"> 단락 (기본값)</p>
+</body>
+</html>

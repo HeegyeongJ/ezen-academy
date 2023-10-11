@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* Q1.
+            세 개의 숫자를 각각(한번에 입력받는 것X) 입력 받습니다.
+            그 숫자 중에서 가장 큰 숫자를 알아내시오.
+        */
+
+        // while문으로 검사
+        while(true){
+            let num1 = prompt('숫자1')*1, num2 = prompt('숫자2')*1, num3 = prompt('숫자3');
+            if(!isNaN(num1)){
+                if(!isNaN(num2)){
+                    if(!isNaN(num3)){
+
+                        break;
+                    }else{
+                        alert(`${num3}은 숫자가 아닙니다.`)
+                    }
+                }else{
+                    alert(`${num2}은 숫자가 아닙니다.`)
+                }
+            }else{
+                alert(`${num1}은 숫자가 아닙니다.`)
+            }
+        }
+
+        let num1 = prompt('숫자1')*1, num2 = prompt('숫자2')*1, num3 = prompt('숫자3');
+        if(num1 > num2){
+            if(num1 > num3){
+                console.log(num1);
+            }else{
+                console.log(num3);
+            }
+        }else{
+            if(num2 > num3){
+                console.log(num2);
+            }else{
+                console.log(num3);
+            }
+        }
+       
+
+
+        /* Q2.
+            네 개의 숫자를 각각(한번에 입력받는 것X) 입력 받습니다.
+            그 숫자 중에서 가장 작은 숫자를 알아내시오.
+            ==> 'a, b, c, d 숫자 중에서 가장 작은 숫자는 n입니다.'
+        */
+        let num4 = prompt('숫자4')*1, small;
+        if(num1 < num2 && num1 < num3 && num1 < num4){
+            small = num1;
+        }else{
+            if(num2 < num1 && num2 < num3 && num2 < num4){
+                small = num2;
+            }else{
+                if(num3 < num4){
+                    small = num3;
+                }else{
+                    small = num4;
+                }
+            }
+        }
+        console.log(`${num1}, ${num2}, ${num3}, ${num4} 중에서 가장 작은 숫자는 ${small}입니다.`);
+
+        /* Q3.
+            임의의 숫자를 검사할 때
+            1의 자리인지 검사 - 임의의 숫자는 '1의 자리 숫자'라고 띄웁니다.
+            , 10의 자리인지 검사 - 임의의 숫자는 '10의 자리 숫자'라고 띄웁니다.
+            , 100의 자리인지 검사 - 임의의 숫자는 '100의 자리 숫자'라고 띄웁니다.
+            숫자의 자릿수를 검사합니다.
+            그 이외의 숫자(음수 및 1000이상)는 검사하지 않습니다.
+        */
+        
+        let num = prompt('1~999까지의 숫자 입력')*1;
+        if(!isNaN(num) && num > 0 && num < 1000){
+            if(num > 0 && num < 10){
+                console.log(num);
+            }else{
+                if(num >= 10 && num < 100){
+                    alert('10의 자리 숫자');
+                    console.log((num - num%10)/10);
+                }else{
+                    alert('100의 자리 숫자');
+                    console.log((num - num%100)/100);
+                }
+            }
+        }else{
+            alert('범위 밖의 숫자입니다.');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

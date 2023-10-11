@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre{font-weight:bold; font-size:24px;}
+        .box{width:300px; height:200px; border:1px solid red;}
+        li:nth-child(odd){background:rgb(250, 164, 133);}
+        li:nth-child(even){background:rgb(174, 223, 243);}
+    </style>
+</head>
+<body>
+    <h1>DOM 모델</h1>
+    <p>단락1</p>
+    <ul>
+        <li>목록 1</li>
+        <li>목록 2</li>
+        <li>목록 3</li>
+    </ul>
+    <pre>
+        유형                    리턴 상수 값                    설명
+        Node.ELEMNET_NODE           1                       각종 태그 &lt;div&gt;&lt;/div&gt;
+        Node.TEXT_NODE              3                       일반적인 글자 Text
+        Node.COMMENT_NODE           8                       주석처리 &lt;!--주석--&gt;
+        Node.DOCUMENT_NODE          9                       문서(html) document
+        Node.DOCUMENT_TYPE_NODE     10                      
+    </pre>
+    <div id="top_">
+        Text Node
+        <div>div Element Node 1</div>
+        <div>div Element Node 2</div>
+    </div>
+    <div id="txt">
+        'Hello javascript'
+    </div>
+
+
+
+    <ul id="uList"></ul>
+    <script>
+        /*
+            DOM 모델 (예전 BOM - ie, ff, netscape....) *브라우저 점유율 https://gs.statcounter.com/browser-market-share 
+            = document object model - 호환성 up
+            Node 객체는 전체 문서에 해당하는 트리구조를 속성과 값으로 갖고 있는 객체이다.
+            DOM을 조작할 때는 대부분 ELEMENT 형식으로 작동합니다.
+            하지만, NodeList를 원한다면 그에 맞는 형식도 반환할 수 있다.
+
+            html의 것을 선택해서 script 내부로 가져올 때는 객체가 되어야 하는데, 그 객체는 2가지로 분리할 수 있다.
+            1. HTMLCollection
+                document.getElementById('id'), document.getElementsByClassName('class'), document.querySelector('css선택자')
+            2. NodeList
+                document.getElementByName('name'), document.querySelectorAll('선택자1', '선택자2', ...)
+        */
+       const top_ = document.getElementById("top_");
+       console.log(top_);
+
+        //html요소객체(element).children ===> return 값 : HTMLCollection
+        //html요소객체(element).childNodes ===> return 값 : NodeList
+
+        console.log('-----------------------------HTMLCollection-------------------------------------');
+        console.log(top_.children);
+        console.log('--------------------------------NodeList---------------------------------');
+        console.log(top_.childNodes);
+
+        // return 상수 값 확인
+        let txt = document.getElementById('txt');
+        console.log(txt.nodeType);
+        console.log(txt.firstChild.nodeType);
+
+
+
+       
+    </script>
+</body>
+</html>

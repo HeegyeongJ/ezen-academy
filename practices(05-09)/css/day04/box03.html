@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../asset/style/reset.css"> 
+    <style>
+        /* 
+        with teacher
+
+        div#box02{
+            margin:100px 0 0 100px;
+            border:5px solid red;
+            width:1000px; height:600px; 
+        }
+        div#box02>div{
+            margin:200px auto 50px auto; 
+            border:3px solid blue;
+            width:700px; height:344px; 
+        }
+        div#box02>div>div{
+            margin:50px 0 0 298px;
+            border:1px solid green;
+            height:242px;
+        }
+
+
+        <body>
+            <div id="box02">
+                <div>
+                    <div></div>
+                </div>
+            </div> 
+        </body>
+        */
+
+
+        /* self */
+        .box1{ 
+            margin: 100px 100px;
+            width: 1000px; height: 600px; border: 5px solid red;
+        }
+        .box2{
+            height: 344px;
+            margin: 200px 147px 50px 147px;
+            /* = 200px auto 50px auto */
+            border: 3px solid skyblue;
+        }
+        .box3{
+            height: 242px;
+            margin: 50px 0 50px 298px;
+            border: 1px solid rgb(16, 199, 16);
+        }
+        
+        div#box_2{
+            margin: 100px 100px;
+            width: 1000px; height: 400px;
+            border: 5px solid red;
+            padding: 200px 0 50px 0;
+        }
+
+        div#box_2>div{
+            width: 402px;
+            /* height:244px; */
+            margin: 0 auto;
+            padding: 50px 0 50px 298px; 
+            border: 3px solid blue;
+        }
+
+        div#box_2>div>div{
+            /* width: 400px;  */
+            height: 244px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+            <div class="box3"></div>
+        </div>
+    </div>
+
+    <div id="box_2">
+        <div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>

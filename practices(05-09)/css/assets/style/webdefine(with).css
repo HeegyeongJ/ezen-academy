@@ -1,0 +1,155 @@
+html{ font-size: 62.5%; }
+
+main{ 
+    margin: 0 auto;
+    width: 1080px;
+    overflow:hidden; /* height 값 맞춰주기*/
+    /* background: green; */
+}
+
+/* 페이지 네비게이터 */
+main>nav{
+    float:left;
+    vertical-align: top;
+    width:20rem; 
+}
+main>nav>h1{
+    height:5.8rem;
+    border-bottom:0.1rem solid #d9d9d9;
+    font:bold 2.2rem/5.8rem 'Nanum Gothic', sans-serif;
+    color: #1e61a8;
+    text-align: center;
+    letter-spacing: -0.1rem;
+}
+main>nav>ul{
+
+}
+main>nav>ul>li{
+    border-bottom:0.1rem solid #d9d9d9;
+}
+main>nav>ul>li>a{
+    display: block;
+    padding-left:1.4rem;
+    height:4.2rem; 
+    font: bold 1.3rem/4.2rem 'Nanum Gothic', sans-serif;
+    color: #4a4b4b;
+}
+/* display:block; inline, inlin-block, table, none
+    display:none; 사라진다. 
+    웹접근성에서도 읽히지 않는다. 
+*/
+main>nav>ul>li>ul{
+    display: none;
+}
+main>nav>ul>li>ul>li{}
+main>nav>ul>li>ul>li>a{}
+
+/* 이벤트 - 클릭 */
+main>nav>ul>li.active>a{
+    background-color:#1e61a8;
+    background-image:
+                url(https://www.wah.or.kr:444/assets/img/common/arrow.png), 
+                url(https://www.wah.or.kr:444/assets/img/common/left_bg.png);
+    background-repeat:no-repeat, repeat-x;
+    background-position:88% 50%,0 0; 
+    color:#fff;
+}
+main>nav>ul>li.active>ul{
+    display: block;
+    padding:0.7rem 1.5rem 0.8rem 1.5rem; 
+    border-top:0.1rem solid #2e8cf4;
+    background-color:#f7f7f7;
+    color:#6b6b6b;
+    font:1.2rem/2.3rem 'Nanum Gothic', sans-serif;
+}
+main>nav>ul>li.active>ul>li{
+    background-image:url(https://www.wah.or.kr:444/assets/img/common/bluet01.gif);
+    background-repeat: no-repeat;
+    background-position:0 50%;
+}
+main>nav>ul>li.active>ul>li>a{
+    display:block; 
+    padding-left:0.7rem;
+}
+main>nav>ul>li.active>ul>li.active>a{
+    font-weight:bold;
+    color:#1e61a8;
+}
+
+
+
+section.cnts_box{
+    float:right;
+    border:0.1rem solid #dcdcdc;
+    width: 84.8rem;
+}
+section.cnts_box>header{
+    padding:15px;
+    border-bottom:0.1rem solid #dcdcdc;
+    height:2.4rem;
+    box-shadow:0 0.1rem 0.1rem 0 rgba(242,242,242, .8);
+}
+section.cnts_box>header>h1{
+    font: bold 1.8rem/2rem 'Nanum Gothic', sans-serif;
+}
+
+div.cnts_box_padding{
+    padding: 34px 25px 16px 25px;
+}
+div.cnts_box_padding>.cnts_box_txt>.cnts_box_h1{
+    font: bold 1.8rem/2rem 'Nanum Gothic', sans-serif;
+    color:#1e61a8;
+}
+div.cnts_box_padding>.cnts_box_txt .cnts_txt_p12{
+    font: 1.2rem/2rem "돋움", Dotum,"굴림", sans-serif;
+}
+
+div.cnts_box_padding>.cnts_box_txt>blockquote{
+    margin:44px 0 52px 18px;
+    width:400px;
+    font:bold 2.8rem/3.6rem 'Nanum Gothic', sans-serif;
+    color:#444;
+}
+div.cnts_box_padding>.cnts_box_txt>blockquote>p>strong{ color:#1f9b0f; }
+div.cnts_box_padding>.cnts_box_txt .cnts_txt_p12{ margin:24px 0; }
+div.cnts_box_padding>.cnts_box_txt .cnts_txt_p12>a{ color:#0024fd; }
+
+div.cnts_box_padding>.cnts_box_txt>table{
+    margin-top:1.5rem;
+    border-top:0.2rem solid #1e61a8;
+}
+div.cnts_box_padding>.cnts_box_txt>table>colgroup>col:nth-of-type(1){width:24rem;}
+/* table 레이아웃 border-collapse: seperate(default), collapse */
+div.cnts_box_padding>.cnts_box_txt>table>thead>tr>th{
+    border:0.1rem solid #dadada; 
+    height:30px;
+    font:bold 1.3rem/3rem 'Nanum Gothic', sans-serif;
+    background-color:#f2f2f2;
+}
+div.cnts_box_padding>.cnts_box_txt>table>tbody>tr>th{
+    padding:0.7rem 1rem; vertical-align:middle;
+    border:0.1rem solid #dadada;
+    font-weight:bold; 
+    text-align:left;
+}
+div.cnts_box_padding>.cnts_box_txt>table>tbody>tr>th span{  
+    color:#3D7F12;
+}
+div.cnts_box_padding>.cnts_box_txt>table>tbody>tr>td{
+    border:0.1rem solid #dadada;
+    padding:0.7rem 1rem;
+    vertical-align: middle;
+}
+div.cnts_box_padding>.cnts_box_txt>table tr>:first-child{ 
+    border-left:none;
+}
+div.cnts_box_padding>.cnts_box_txt>table tr>:last-child{
+    border-right:none;
+}
+
+div.cnts_box_padding>.cnts_box_txt>table>tbody>tr>th a.fw_normal{
+    font-weight: normal; color: #444;
+}
+div.cnts_box_padding>.cnts_box_txt>table>tbody>tr>td>em{
+    color:#C54304;
+}

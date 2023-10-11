@@ -1,0 +1,72 @@
+@media only screen and (max-width:1200px){
+    .mobile{display:block;
+        &.parti_sect{display:none;}
+    }
+    .web{display:none;}
+    // 모바일 네비게이터 open
+    body.m_nav_active{overflow:hidden;
+        .hd_top{
+            .hd_srch{
+                h1{@include bdr(bottom,#eee);}
+            }
+        }
+        .m_menu_box.active{
+            .m_menu_btn{display:none;}
+            .m_menu{display:block;
+                .m_util_list{position:fixed;z-index:1001;top:5.5833vw;right:6.3333vw;display:flex;justify-content:space-between;align-items:center;margin-right:9.4167vw;
+                    .m_util_item{margin-left:2.75vw;
+                        a{display:block;width:6.6667vw;height:6.6667vw;}
+                        &.login{@include bg_img(url(https://www.culture.go.kr/assets/images/common_new/mo/icon_login.png));}
+                        &.register{@include bg_img(url(https://www.culture.go.kr/assets/images/common_new/mo/icon_tabbar_join.png));}
+                    }
+                }
+                .m_nav{overflow-y:scroll;position:absolute;z-index:999;top:16.6667vw;left:0;padding:4.4167vw 6.5vw;width:100vw;height:calc(100vh - 16.6667vw);@include fontFac(400,3.5vw,6.6667vw); background:#fff;
+                    .m_nav_list{
+                        .m_nav_item{margin-bottom:5.4167vw;}
+                    }
+                }
+                .btn_close{position:fixed;z-index:1001;top:5.5833vw;right:7.25vw;width:6.6667vw;height:6.6667vw;
+                    button{display:block;width:6.6667vw;height:6.6667vw;background:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_close.png) no-repeat 50% 50% / auto 100%;}
+                }
+            }
+        }
+    }
+
+    //헤더
+    header{position:relative;height:auto;
+        .hd_top{max-width:120rem;
+            .util{display:none;}
+            .hd_srch{display:block;
+                h1{position:fixed;z-index:1000;top:0;left:0;margin:0;padding:4.1667vw 6.3333vw;max-height:8.3333vw;width:90%;height:100%;background:#fff;
+                    a{height:100%;background-size:auto 100%;}
+                }
+                .srch_md{padding-top:18vw;max-width:78.9167vw;width:100%;
+                    form{width:100%;
+                        input[type="text"]{height:6rem;@include brR(3rem);border-width:0.2778vw;
+                            &:focus{outline:0.2rem solid #000;box-shadow:0 none;}
+                        }
+                        input[type="submit"]{background:url(https://www.culture.go.kr/assets/images/common_new/mo/icon_search.png) no-repeat 0 0 / 6rem 6rem;right:0;padding:0;width:6rem;height:6rem;}
+                    }
+                    .keyword{padding:3.3333vw 0;
+                        dd{margin:0 1.4167vw 0 0;@include brR(4.3rem);
+                            &:nth-of-type(4){margin-right:0;}
+                            a{padding:0 3.6667vw;@include fontFac(500,3vw,7.1667vw);color:#000;}
+                        }
+                    }
+                }   
+            }
+        }
+        .m_menu_box{
+            .m_menu_btn{position:fixed;z-index:1001;top:7.0833vw;right:7.25vw;
+                button{width:5vw;height:3.5833vw;
+                    .ico_ham{display:inline-block;vertical-align:middle;width:100%;height:0.25vw;background:#000;
+                        &:after{content:"";position:absolute;bottom:0;left:0;width:100%;height:0.25vw;background:#000;}
+                        &:before{content:"";position:absolute;top:0;left:0;width:100%;height:0.25vw;background:#000;}
+                    } 
+                }
+            }
+            .m_menu{display:none;}
+        }
+    }
+    .wrap{main{padding-top:0;}}
+}

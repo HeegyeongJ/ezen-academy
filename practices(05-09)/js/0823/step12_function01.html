@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            함수 == statement(값을 저장할 수 없음) || expression(변수에 저장)
+            키워드 function 식별자(){실행문}
+            화살표 함수 1.기본() => {실행문}
+            1. 함수는 호출할 때만 실행한다.
+                호출 ==> 식별자();
+            2. 함수는 hoisiting 되기 때문에 최상단에 정의하는 것이 좋다. (타 언어에서는 변수이던 함수이던 최상단에 정의할 수 있게 한다.)
+            3. 전달인자를 가질 수 있다.
+                함수를 호출할 때 외부의 값을 함수 내부로 전달해준다.
+                함수의 파라미터가 존재, 파라미터의 개수는 정해져 있지 않다.
+                파라미터에 전달인자가 할당된다.
+                function 식별자(파라미터,,,,){실행문}
+            4. return문을 만나면 그 즉시 함수 실행 종료 ==> 저장은 안되고 값만 도출
+                return 값; ==> return 부터 ; 까지 있는 값을 호출한 쪽에 반환한다.
+
+            5. 호출하고 난 다음에는 reset 된다.
+                
+
+
+            관례적으로 변수는 명사형을 사용하고, 함수는 동사형을 사용
+        */
+
+
+        let test = prompt('숫자 입력')*1;
+        let test2 = prompt('숫자 입력')*1;
+        let result, result2;
+        result = foo(test);
+        
+        function foo(x){ // x = test
+            alert('함수를 실행하고 있는 중입니다.');
+            alert(`${x}를 받아냈습니다.`);
+            if(x != 10){
+                return;
+            }else{
+                alert('제대로 된 값을 입력하셨습니다.');
+            }
+            alert(`값 ${x} 입니다.`);
+
+            return x*2;
+        }
+
+        result2 = foo(test2);
+
+        console.log(`result의 값은 ${result}입니다.`);
+        console.log(`resul2의 값은 ${result2}입니다.`);
+
+        let global = 1000;
+        foo2();
+        function foo2(){
+            // alert('global'); == TDZone이라서 오류
+            let global = 100;
+            let local = 10;
+
+        }
+
+
+
+        let val1, val2;
+        val1 = foo3(test);
+        val2 = foo3(test2);
+        function foo3(p){
+            alert(`${p}는 전달인자의 값입니다.`);
+            if(isNaN(p)){
+                return;
+            }
+            
+            return p*p;
+        }
+        
+        
+        console.log(`val1의 값은 ${val1}입니다`);
+        console.log(`val2의 값은 ${val2}입니다`);
+
+        /*
+         전역변수(global variable)은 어디에서나 사용가능하다.
+         지역변수(local variable)은 그 block에서만 사용가능하다.
+        */
+
+        foo4();
+        function foo4(){
+            let local = 10;
+            console.log(`지역 변수 함수 내부의 local 값은 ${local}입니다.`);
+        }
+        if(true){
+            let local = 100;
+            console.log(`지역 변수 if문 내부의 local 값은 ${local}입니다.`);
+        }
+        for(let i=0; i<2; ++i){
+            let local = 1000;
+            console.log(`지역 변수 for반복문 내부의 local 값은 ${local}입니다.`);
+        }
+
+        if(true){
+            let local = 100;
+            console.log(`지역 변수 if문 내부의 local 값은 ${local}입니다.`);
+            while(local < 101){
+                local++;
+                console.log(`지역 변수 if문 내부의 while문의 local 값은 ${local}입니다.`);
+            }
+        }
+        for(let i=0; i<2; ++i){
+            let local = 1000;
+            console.log(`지역 변수 for반복문 내부의 local 값은 ${local}입니다.`);
+            ++local;
+            if(true){
+                console.log(`지역 변수 for반복문 내부의 if문의 local 값은 ${local}입니다.`);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

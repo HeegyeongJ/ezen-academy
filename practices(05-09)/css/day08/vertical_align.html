@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* vertical-align : inline요소(inline-block특성을 갖는 요소도 가능)에게만 적용하는 속성으로 span, img, a … 등에 해당 - baseline을 중심으로 수직정렬
+        inline요소를 감싸고 있는 부모요소의 font-size와 line-height의 영향을 받는다.
+        정렬하는 inline요소의 line-height를 기준으로 작동된다.
+        ex)vertical-align:top; ==> 부모요소의 line-height의 상단 부분과 해당요소의  line-height의 top이 맞닿게 된다.
+
+        baseline(default), top(line-height의), bottom(inline요소 중 가장 하단), text-top(font-size의), text-bottom(font-size의), middle(x-height의 가운데 위치) sub(잘 사용X), sup(잘 사용X), 수치(px, rem, em...)
+
+        table th는 vertical-align:middle;과 text-align:center;가 default
+        table th, td의 vertical-align: top, middle, bottom; 3가지 값만 있음
+            각각 th, td셀 안에서 여유공간이 존재하면 각각 상단, 중간, 하단에 위치
+         */
+        .vertical{
+            font-size:32px; line-height:100px;
+        }
+        .vertical>img{
+            vertical-align: top; 
+            /* line-height를 갖고 있진 않아서 text-top은 안먹는다 */
+        }
+        .vertical>span{
+            font-size:20px; line-height:40px; vertical-align: text-top;
+            /* 자식이 갖고있는 line-height를 부모의 text top에 맞춤 */
+        }
+        .vertical>em{
+            font-size:20px; line-height:20px; vertical-align: top;
+            /* 자식이 갖고있는 line-height를 부모의 line-height top에 맞춤 */
+
+        }
+        .vertical_1>input.btn_srch{
+            vertical-align: middle; /* 또는 수치로 위치 조정 */
+        }
+        .vertical_2{
+            font-size: 50px; line-height:140px;
+        }
+        .vertical_2>span{ font-size:20px; vertical-align: text-bottom; }
+        .vertical_2>em{ font-size:20px; vertical-align: bottom;}
+
+        .vertical_3{ font-size:30px; line-height:100px; }
+        .vertical_3>img{ vertical-align:text-top; }
+        .vertical_3>span{ font-size:20px; line-height:20px; vertical-align: text-top;}
+        .vertical_3>em{ font-size:20px; line-height:20px; vertical-align: bottom;
+        /* top이나 bottom은 이미지가 더 클 때 이미지 기준으로 */
+        }
+    </style>
+</head>
+<body>
+    <p class="vertical">
+        인라인 요소는 <img src="https://www.bing.co.kr/img/main/logo_mo.png" alt=""> 부모요소의 <span>font-size</span>와 <em>line-height</em>의 영향을 받는다.
+    </p>
+    <p class="vertical_1">
+        <input type="text"><input type="image" class="btn_srch" src="https://www.wah.or.kr:444/assets/img/common/btn_search.gif" alt="검색하기">
+    </p>
+
+    <p class="vertical_2">
+        인라인 요소는 부모요소의 <span>font-size</span>와 <em>line-height</em>의 영향을 받는다.
+    </p>
+
+    <p class="vertical_3">
+        인라인 요소는 부모요소의 <img src="../asset/imgs/big_img.png" alt="큰이미지"> <span>font-size</span>와 <em>line-height</em>의 영향을 받는다.
+    </p>
+</body>
+</html>

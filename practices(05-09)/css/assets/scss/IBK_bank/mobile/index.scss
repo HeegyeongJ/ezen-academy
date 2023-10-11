@@ -1,0 +1,165 @@
+@media only screen and (max-width:1200px){
+    .main_sect{
+        &.service_sect{@include brR(0 0 0 0);}
+    }
+}
+@media only screen and (max-width:767px){
+    .index_web{display:none;}
+    .index_mobile{display:block;}
+    body{overflow-x:hidden;}
+    .wrap{width:100%;
+        .main_sect{padding:0 1.5rem;width:calc(100% - 3rem);
+            .main_cnts_center{max-width:76.7rem;position:relative;
+                .banner{
+                    .banner_util{left:1.3rem;width:18.5rem;height:3rem;
+                        .banner_util_item{flex:0 0 9rem;@include brR(1.5rem);height:3rem;@include fontFac(300,1.4rem,3rem);
+                            .util_item_txt{width:9rem;@include brR(1.5rem);}
+                            .banner_util_depth2{display:none;}
+                        }// 뱅킹로그인에 a 태그 어떻게??
+                        a{display:block;color:#004ca5;}
+                    }
+                    .banner_wrap{
+                        .banner_list{height:40rem;top:9.4rem;
+                            .banner_list_item{height:100%;
+                                .banner_txt{top:0;left:1.5rem;
+                                    .banner_sub_tit{margin-bottom:1.5rem;@include fontFac(300,1.6rem,1.8rem);}
+                                    .banner_tit{@include fontFac(300,2.2rem,2.5rem);}
+                                    .banner_desc{margin:1.4rem 0 2rem 0;@include fontFac(300,1.4rem,1.7rem);}
+                                    .more{@include fontFac(300,1.3rem,2rem);}
+                                }
+                                img{float:none;display:block;margin:13.2rem auto 0 auto;width:33rem;height:22.8rem;}
+                            }
+                        }
+                    }
+                    .banner_controller{width:10.5rem;top:3.6rem;right:1.4rem;
+                        button{width:1.8rem;height:1.8rem;}
+                        .pg_txt{@include fontFac(300,1.3rem,1.8rem);}
+                    }
+                }
+                .main_nav{bottom:-4rem;max-width:72rem;width:100%;
+                    .main_nav_list{flex-wrap:wrap;justify-content:center;margin:0 auto;padding:1rem 0;width:34rem;
+                        .main_nav_item{@include fontFac(300,1.5rem,3rem);
+                            &:not(:last-child):after{@include after_bar(0,#2669ac);}
+                            &:not(:nth-child(n+4)){
+                                a{padding:0 2rem;}
+                            }
+                            &:nth-child(3){margin-right:1rem;}
+                        }
+                    }
+                }
+                .main_services{display:block;padding:6rem 0 2rem 0;width:100%;min-height:0;
+                    section{margin:0 0 2rem 0;
+                        &:not(:nth-of-type(3)):nth-of-type(3n){top:0;}
+                        &.date_listed{margin-bottom:2rem;
+                            li{
+                                &:not(:last-child){@include bdr(bottom,#f0f0f0);}
+                                .date{display:block;margin:1.4rem 0 0.6rem 0;@include fontFac(300,1.6rem,1.9rem);color:#0082c1;}
+                                .cnts_txt{height:5rem;}
+                            }
+                            .more_btn{text-align:center;@include fontFac(300,1.6rem,2.4rem);
+                                a{}
+                            }
+                        }
+                    }
+                    .cnts_h1{font-size:1.7rem;line-height:1.9rem;}
+                    .cnts_tit{margin-bottom:0.5rem;font-size:2rem;line-height:2.2rem;}
+                    .IBK_card_btns{@include fontFac(300,1.3rem,1.8rem);
+                        .IBK_card_btn_box{width:8.1rem;
+                            .IBK_card_btn_list{
+                                .IBK_card_btn_list_item{
+                                    button{width:1.8rem;height:1.8rem;}
+                                }
+                            }
+                        }
+                    }
+
+                    
+                    .recommend{padding:3rem 0 0 0;height:29rem;
+                        .cnts_h1{margin:0 0 2.1rem 3rem;}
+                    }
+                    .event{height:32rem;margin:0 0 2rem 0;padding-top:3rem;background-size:auto 15.7rem;
+                        .cnts_h1{margin-top:0;}
+                        .event_txt_box{margin:0 0 1rem 3rem;width:30rem;}
+                        img{margin:0 auto;}
+                    }
+                    .notify{
+                        .notify_list{
+                            .notify_list_item{
+                                &:first-child{margin-bottom:2rem;}
+                                a{
+                                    .ico{margin-right:2rem;width:6rem;height:6rem;}
+                                    .cnts_txt{
+                                        strong{@include fontFac(600,1.6rem,1.9rem);}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .article{top:0;}
+                    .mall{margin:0 0 2rem 0;
+                        .cnts_h1{margin-bottom:4rem;}
+                        .mall_list{
+                            .mall_list_item{flex:1 1 33%;height:8rem;
+                                a{width:100%;
+                                    .ico{display:block;margin:0 auto;width:4.8rem;height:4.8rem;}
+                                }
+                            }
+                        }
+                    }
+                    .tab_box{position:relative;display:flex;justify-content:space-between;align-items:start;margin:0 auto;width:100%;height:29rem;
+                        .cnts_h1{flex:1 0 30%;text-align:center;font-weight:300;color:#333;
+                            &.active{color:#0082c1;font-weight:700;}
+                        }
+                        .tab_cnts_box{display:none;position:absolute;top:6.6rem;left:3rem;width:calc(100% - 6rem);
+                            &.active{display:block;}
+                            .date{font-size:1.3rem;}
+                            .cnts_txt{font-size:1.5rem;}
+                        }
+                    }
+                    .esg{top:0;@include bg_img(#fff,url(https://www.ibk.co.kr/img/main2023/bg_ibk_esg_mo.png),$loc:50% 100%);background-size:auto 8.9rem;height:17.6rem;}
+                    .bank_info{position:static;@include bg_img(#fff,url(https://www.ibk.co.kr/img/main2023/bg_ibk_intro_mo.png), 50% 100%);background-size:auto 8.9rem;height:17.6rem;}
+                    .IBK_sky{top:0;display:block;height:17.6rem;text-align:left;background-image:url(https://www.ibk.co.kr/img/main2023/bg_changgong_up_mo.png), url(https://www.ibk.co.kr/img/main2023/bg_changgong_mo.png);background-position:100% 0, 50% 0;background-size:auto 100%;
+                        .IBK_sky_cnts{display:block;float:left;height:100%;background:none;}
+                    }
+                    .more_service{top:0;
+                        .more_service_list{display:flex;flex-wrap:wrap;
+                            li{flex:1 1 45%;font-size:1.4rem;
+                                a{color:#333;}
+                            }
+                        }
+                    }
+                }
+            }
+            &.etc_cnts{width:calc(100% - 3rem);height:100%;
+                .half_div{display:block;padding:4rem 0;
+                    .app_sect{margin:0 0 3rem 0;
+                        .app_list{display:flex;
+                            .app_list_item{flex:1 1 25%;
+                                a{display:block;margin:0 auto;width:8rem;height:100%;
+                                    .app_ico{display:block;margin:0 auto 1.1rem auto;width:5rem;height:5rem;
+                                        &.personal_i-one_bank{background:url(https://www.ibk.co.kr/img/main2023/ico_app_01.png) no-repeat 50% 50% / contain;}
+                                        &.company_i-one_bank{background:url(https://www.ibk.co.kr/img/main2023/ico_app_02.png) no-repeat 50% 50% / contain;}
+                                        &.ibk_cube{background:url(https://www.ibk.co.kr/img/main2023/ico_app_03.png) no-repeat 50% 50% / contain;}
+                                        &.i-one_noti{background:url(https://www.ibk.co.kr/img/main2023/ico_app_04.png) no-repeat 50% 50% / contain;}
+                                    }
+                                    .cnts_txt{height:3.6rem;font-size:1.2rem;line-height:1.8rem;}
+                                }
+                            }
+                        }
+                    }
+                    .ad_sect{
+                        .ad_list{display:flex;
+                            .ad_list_item{flex:0 1 calc(50% - 0.5rem);
+                                &:first-child{margin-right:1rem;}
+                                a{
+                                    img{display:block;margin-bottom:1.3rem;width:100%;height:70%;}
+                                    .cnts_txt{margin:0 auto;width:15rem;height:4.8rem;font-size:1.3rem;line-height:2.4rem;word-break:keep-all;}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

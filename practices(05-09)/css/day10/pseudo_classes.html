@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/style/reset.css">
+    <style>
+        div{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            border:10px solid blue;
+            height:300px;
+        }
+        div>ul{
+            display:flex;
+            border:2px solid red;
+        }
+        div>ul>li{
+            margin:0 20px;
+        }
+        div>ul>li>a{
+            display:block;
+        }
+        /*div>ul>li:hover
+        다음 슈도클래스(가상클래스)는 해당하는 요소에게 가상의 컨텐츠(자식)를 갖게 한다.
+        ::before = 처음 컨텐츠(자식)
+        ::after = 마지막 컨텐츠(자식)
+            필수 속성 content
+        */
+        div>ul>li:hover>a::before{
+            display:inline-block; content:""; width:0; height:0; border:3px solid #fff; border-left-color:black;
+            font-size:0; line-height:0; vertical-align:middle;
+        }
+        div>ul>li::after{
+            display:inline-block;
+            content: ""; width:0; height: 8px; border-left:1px solid black;
+        } /*패딩 안쓰고 보더 넣기*/
+    </style>
+</head>
+<body>
+    <h1>가상 클래스:befor, :after</h1>
+    <div>
+        <ul>
+            <li><a href="">menu_1</a></li>
+            <li><a href="">menu_2</a></li>
+            <li><a href="">menu_3</a></li>
+            <li><a href="">menu_4</a></li>
+        </ul>
+    </div>
+</body>
+</html>

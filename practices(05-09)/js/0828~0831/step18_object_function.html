@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            함수 표현식  |    함수정의
+            
+            
+            - 함수 정의
+            function 식별자(){실행문}
+            function fn(){alert('함수 fn실행');}
+
+            - 함수표현식
+            let 식별자 = function(){}
+
+            (function fn(x){alert(`${x} 번호 함수 fn실행`);}(30)); 뒤에 괄호가 전달인자
+
+        */
+
+       
+        (function fn(x){ alert(`${x} 번호 함수 fn실행`); }(30));
+        (function (k){ alert(`${k}를 실행`); })('익명함수');
+       
+        // foo(); error --> hoisting으로 TDZ
+        let foo = function foo2(){alert('함수 실행');}
+        foo();
+        // foo2(); error
+
+
+
+        (function fn2(x){
+            let local = '은닉화된 지역변수';
+            alert(`${x} 번호 함수 실행`);
+        }(30)); // 즉시함수
+
+        function sooFn(x){alert(x+'함수를 즉시 실행');}
+        sooFn(10);
+        // function (k, x, y){ alert(`${})}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

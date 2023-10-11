@@ -1,0 +1,42 @@
+main{
+    .cnts_section{
+        section{
+            .unit{text-align:right;margin-bottom:2rem;@include fontFac(bold,1.5rem,3rem);}
+            .diagram_bar{margin-top:10rem;
+                .diagram_show-box{display:flex;padding:3rem;@include brR(3rem);background:#f7f7f7;
+                    .diagram_show-box_item{flex:1 0 calc(30% - 6rem);padding:3rem;height:23rem;@include brR(2rem);background-color:#fff;
+                        &:nth-child(2){margin:0 2.5rem;}
+                        .diagram_show-box_tit{text-align:left;}
+                        .diagram_show-box_conts{}
+                    }
+                }
+            }
+            .asset_status_table{margin-top:14.5rem;
+                .cnts_sect_h2{text-align:left;}
+                .table_outer{padding:1.5rem;@include brR(2.8rem);@include bdr(#ececec);
+                    .asset_table{text-align:center;@include fontFac(normal,1.6rem,1.31);
+                        colgroup{
+                            col{width:30rem;
+                                &:first-child{width:38rem;}
+                            }
+                        }
+                        thead{
+                            tr{
+                                th{height:8rem;background:#f9f9f9;
+                                    &:first-child{border-radius:2rem 0 0 2rem;}
+                                    &:last-child{border-radius:0 2rem 2rem 0;}
+                                }
+                            }
+                        }
+                        tbody, tfoot{
+                            tr{
+                                th,td{height:7.9rem;border-bottom:0.1rem solid #ececec;vertical-align:middle;}
+                            }
+                        }
+                        tfoot{font-weight:500;}
+                    }
+                }
+            }
+        }
+    }
+}

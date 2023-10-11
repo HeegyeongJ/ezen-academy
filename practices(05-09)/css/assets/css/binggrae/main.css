@@ -1,0 +1,34 @@
+ /* main */
+ main{
+    position:relative;
+    max-width:131rem;
+    width:100%;
+    height:3000px;
+    margin:0 auto;
+}
+main>section.cnts_section{margin-top:5.4rem;}
+main>section.cnts_section>.cnts_sect_hd{height:19.6rem;} /* 안줘도 상관 없음 */
+main>section.cnts_section>.cnts_sect_hd>p{
+    font:1.4rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+}
+main>section.cnts_section>.cnts_sect_hd>p>a{
+    position:relative;
+    padding:0 1.2rem;
+    color:#a5a5a5;
+}
+main>section.cnts_section>.cnts_sect_hd>p>a:first-child{padding-left:0;}
+main>section.cnts_section>.cnts_sect_hd>p>a::after{
+    content:""; position:absolute; right:-0.6rem; 
+    top:50%; transform:translateY(-50%); /* top, transform 같이 해서 세로 중간 */
+    width:0.6rem; height:1rem;
+    background:url(https://www.bing.co.kr/img/icon/btn_icon_brec_arrow.png) no-repeat 0 0;
+}
+main>section.cnts_section>.cnts_sect_hd>p>a>img{}
+main>section.cnts_section>.cnts_sect_hd>p>em.curnt_pg{padding-left:1.2rem; color:#a5a5a5;}
+
+/* main contents section header */
+main>section.cnts_section>.cnts_sect_hd>h1.cnts_sect_h1{}
+main>section.cnts_section>.cnts_sect_hd>h1.cnts_sect_nav{}
+main>section.cnts_section>.cnts_sect_hd>h1.cnts_sect_nav>ul{}
+main>section.cnts_section>.cnts_sect_hd>h1.cnts_sect_nav>ul>li{}
+main>section.cnts_section>.cnts_sect_hd>h1.cnts_sect_nav>ul>li>a{}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            학사관리
+            점수를 입력하는 프로그램
+            2개의 과목에 점수를 입력하고 그 점수의 평균을 내서 점수를 내는 프로그램
+            91~100사이면 A
+            81~90사이면 B
+            71~80사이면 C
+            61~70사이면 D
+        */
+        
+        let subject_1, subject_2, average, rank;
+        while(true){
+            subject_1 = prompt('1과목의 성적을 입력')*1;
+            if(!isNaN(subject_1) && ( subject_1 >= 0 && subject_1 <=100 )){ // 괄호가 없다면 subject_2는 isNaN과 같이 비교가 안돼서
+                break;
+            }else{
+                alert('올바른 형식으로 입력하시오');
+            }
+        }
+        while(true){
+            subject_2 = prompt('2과목의 성적을 입력')*1;
+            if(!isNaN(subject_2) && ( subject_2 >= 0 && subject_2 <=100 )){
+                break;
+            }else{
+                alert('올바른 형식으로 입력하시오');
+            }
+        }
+        
+        average = (subject_1 + subject_2)/2;
+        if(average > 90){
+            rank = 'A';
+        }else if(average > 80){
+            rank = 'B';
+        }else if(average > 70){
+            rank = 'C';
+        }else if(average > 60){
+            rank = 'D';
+        }else{
+            rank = 'F';
+        }
+        
+        console.log(`학생의 이번 학기 1과목 점수는 ${subject_1}점, 2과목 점수는 ${subject_2}점이고, 평균 ${average}점으로 학점 ${rank}입니다.`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

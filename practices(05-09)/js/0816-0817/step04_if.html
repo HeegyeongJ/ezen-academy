@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            조건문: 어떠한 조건이 만족한다면 실행문 실행한다.
+            3항연산, if문 if else문, if else if문, if else if else문, switch문
+            - 3항연산 = 간단하고 짧은 조건문 == expression
+                (조건)? 조건이 true일 때 실행문 : 조건이 false일 때 실행;
+            - if문은 한가지 또는 여러가지 조건에 한해서 실행, 한 줄일때 {} 생략가능
+                if(조건){조건이 ture일 때 실행문}
+                if(조건){조건이 ture일 때 실행문}else{조건이 false일 때 실행}
+                if(조건1){조건1이 true라면 실행}else if(조건2){조건2가 true일 때 실행}else if(조건3){ 조건3이 true일 때 실행}.....
+                if(조건1){조건1이 true라면 실행}else if(조건2){조건2가 true일 때 실행}else if(조건3){ 조건3이 true일 때 실행}.....else{ 모든 조건이 true가 아닐 때 실행 }
+            - switch문은 같다라는 조건을 여러개로 나눌 때
+                조건이 같다라는 조건만 가능하다. 
+                    switch(변수){
+
+                        case(=같다) 변수에 대한 값조건1:
+                        실행문1
+                        [break]
+
+                        case 변수에 대한 값조건2:
+                        실행문2
+                        [break]
+
+                        case 변수에 대한 값조건3:
+                        실행문3
+                        [break]
+
+                        default:
+                        모든 조건이 만족하지 않는다면, 기본 실행문
+                    }
+        */
+
+
+        // 3항연산
+        let num = 10;
+        (num == 11)? alert('num은 10과 같다') : alert('num은 10과 같지 않다.');
+
+        //Q.3항연산을 사용해서 num이 10과 같다면 num은 2배로 만들고, num이 10과 같지 않다면 5를 뺀 num을 만드시오.
+        (num == 10)? num = num * 2 : num = num - 5; // num *= 2 : num -= 5;
+        console.log(num);
+
+        //Q.num의 값이 100보다 작고 50보다 크다면, 'num 50과 100사이다' 경고장(alert)을 띄우시오, 그렇지 않다면, 'num은 50보다 작거나 100보다 크다'라고 경고창(alert)을 띄우시오.
+        (num < 100 && num > 50 )? alert('num은 50과 100사이다'): alert('num은 50보다 작거나 100보다 크다');
+
+        // if문
+        if( num < 100 && num > 50 ){
+            alert('num은 50과 100사이다');
+        }else{
+            alert('num은 50보다 작거나 100보다 크다');
+        }
+        /* ifQ.1
+            매운 정도가 100 ~ 1000 , step은 100씩 
+            매운 단계에 따라서 300전(미만)까지는 일반음식
+            매운 단계가 300~500전까지는 약간 매운맛
+            매운 단계가 500~700전까지는 매운맛
+            매운 단계가 700~900전까지는 아주 매운맛
+            매운 단계가 900~1000 까지는 핵 매운맛
+
+            + prompt문으로 실행
+        */
+            
+        let spicy_level =  prompt('100~1000까지 100단위로 맵기 정도를 입력')*1;
+
+        // if( spicy_level >= 100 && spicy_level < 300 ){ //조건 >= 300 else로 이동
+        //     alert('일반 음식');
+        // }else if( spicy_level<500 ){ // 조건 >= 300  조건 < 500 , //조건에 들지 않는다는 것은 조건 >= 500
+        //     alert('약간 매운맛');
+        // }else if( spicy_level<700 ){ // 조건 >= 500  조건 < 700 , //조건에 들지 않는다는 것은 조건 >= 700
+        //     alert('매운맛');
+        // }else if( spicy_level<900 ){ // 조건 >= 700  조건 < 900 , //조건에 들지 않는다는 것은 조건 >= 900
+        //     alert('아주 매운맛');
+        // }else if( spicy_level<= 1000 ){ // 조건 >= 900  조건 <= 1000  
+        //     alert('핵 매운맛');
+        // }else{
+        //     alert('매운 맛이 없는 심심한 맛');
+        // }
+
+        // while문
+        let spicy_level_condition = true;
+        while(spicy_level_condition){
+            spicy_level = prompt('맵기의 단계를 입력하시오')*1;
+            let tmp = !isNaN(spicy_level);
+            if(tmp){ // 숫자, 100단위, 범위밖
+                if(spicy_level % 100 == 0){
+                    if(spicy_level < 0 || spicy_level > 1000){
+                        alert('범위 밖의 숫자를 입력하셨습니다.')
+                    }else{
+                        spicy_level_condition = false;
+                        if( spicy_level >= 100 && spicy_level < 300 ){ 
+                        alert('일반 음식');
+                        }else if( spicy_level<500 ){ 
+                            alert('약간 매운맛');
+                        }else if( spicy_level<700 ){ 
+                            alert('매운맛');
+                        }else if( spicy_level<900 ){ 
+                            alert('아주 매운맛');
+                        }else if( spicy_level<= 1000 ){
+                            alert('핵 매운맛');
+                        }else{
+                            alert('매운 맛이 없는 심심한 맛');
+                        }
+                    }
+                }else{
+                    alert('100단위의 숫자로 입력해주세요')
+                }
+            }else{
+                alert('숫자가 아닌 값을 입력하셨습니다.');
+            }
+        }
+        
+                
+
+        /* ifQ.2
+            출근시간 평균에 따라서 평가고가 달라집니다.
+            출근시간 평균이 40분 미만이면 평가고가는 80점
+            출근시간 평균이 40분부터 ~ 55 미만이면 평가고가는 100점
+            출근시간 평균이 55분부터 ~ 59 미만이면 평가고가는 90점
+            나머지는 출근시간은 70점입니다. 평가고가는 alert으로 띄웁니다. 
+
+            + prompt문으로 실행
+        */
+
+        let office_hour = prompt('출근 시간 평균을 분 단위로 입력하시오.'), evalue;
+
+        if(office_hour < 40){
+            evalue = 80;
+        }else if(office_hour < 55){
+            evalue = 100;
+        }else if(office_hour < 59){
+            evalue = 90;
+        }else{
+            evalue = 70;
+        }
+
+        alert(evalue + '점이 출근 고가 점수입니다.');
+
+        /* ifQ.3
+            100m 달리기 
+            A라는 선수의 기록이 9초~10초 미만 금메달
+            A라는 선수의 기록이 10초~11초 미만 은메달
+            A라는 선수의 기록이 11초~12초 미만 동메달
+            A라는 선수의 기록이 나머지는 참가상
+
+            + prompt문으로 실행
+        */
+
+        const distance = 100, sportsman = "A"; 
+        let record = prompt('100m 기록시간을 입력하시오.')*1, prize;
+
+        if( record >=9 && record < 10){
+            prize = '금메달';
+        }else if( record < 11 ){
+            prize = '은메달';
+        }else if( record < 12 ){
+            prize = '동메달';
+        }else{
+            prize = '참가상';
+        }
+
+        alert(distance+"m 육상 경기 / 선수 : "+ sportsman + "/ 경기기록 : " + record + " / 메달 : " + prize);
+
+        //조건문은 조건문을 내부에 품을 수 있다. 단계를 밟을 때 사용
+
+        /* Q.
+            자전거 '고고싱' 모임
+            지역: 서울 사람만 가입될 수 있는 자전거 모임 '고고싱'이 있다.
+            서울 사람이면 가입절차 alert('1단계 시작'), 그 외 지역은 alert('가입 불가') - 첫번째 가입조건
+            자전거 - 자전거(MTB, 로드(사이클), 하이브리드)를 로드(사이클)로 타고 모임을 가는 곳이기 때문에 - 두번째 조건
+            로드(사이클)을 갖고 있는 지 유무가 중요하다. 
+            로드(사이클) 갖고 있는지 없는지 확인
+            있으면  alert('2단계 가입절차') 시작 없으면  alert('가입 불가')
+            나이 - 마지막으로 비슷한 연령대끼리 가입을 하기 위해서 연령을 30대만 가입되도록 한다. -- 세번째 조건
+            30대라면 가입  alert('승인') 아니면  alert('가입 불가') 
+         */ 
+
+        const club = '고고싱';
+        /* if문 기본
+        let area = '서울', bycicle = '사이클', age = 31;
+        if(area == '서울'){
+            alert('가입절차 1단계 시작'); 
+            if(bycicle == '로드' || bycicle == '사이클'){
+                alert('2단계 가입절차');
+                if(age >= 30 && age <= 39){
+                    alert(club+' 가입 승인');
+                }else{
+                    alert('가입불가');
+                }
+            }else{
+                alert('가입불가');
+            }
+        }else{
+            alert('가입불가');
+        }
+        */
+
+        // + prompt문
+        let area = prompt('사는 지역을 입력하시오 ex)서울, 경기, 전라 ...');
+        if(area == '서울'){
+            alert('가입절차 1단계 시작'); 
+            let bycicle = prompt('자전거의 종류를 입력하시오. ex)로드, 사이클, MTB, 하이브리드');
+            if(bycicle == '로드' || bycicle == '사이클'){
+                alert('2단계 가입절차');
+                let age = prompt('나이를 입력하시오.')*1;
+                if(age >= 30 && age <= 39){
+                    alert(club +' 가입 승인');
+                }else{
+                    alert('30대만 가입 가능합니다. 그외 나이대는 가입불가합니다.');
+                }
+            }else{
+                alert('사이클(로드)만 가입가능합니다. 나머지 자전거 종류는 가입불가합니다.');
+            }
+        }else{
+            alert('서울 지역만 가입 가능합니다. 타 지역은 가입불가합니다.');
+        }
+
+        
+        // switch문
+        //성별 gender
+        let gender, gender_condition = true;
+        // prompt문 ---> let gender = prompt('당신의 성별을 입력하세요');
+    
+        switch (gender){
+            case '남':
+                alert('남성화장실');
+                break;
+            case '여':
+                alert('여성화장실');
+                break;
+            default:
+                alert('화장실 이용에 애로사항이 있으시겠군요');
+        }
+
+        // if문으로 똑같이 한다면?
+        if(gender == '남' || gender == '남성'){
+            alert('남성 화장실을 이용하십시오.');
+        }else if(gender == '여' || gender == '여성'){
+            alert('여성 화장실을 이용하십시오.');
+        }else{
+            alert('화장실 이용에 애로사항이 있으시겠군요');
+        }
+
+        // while문으로
+        while(gender_condition){
+            gender = prompt('당신의 성별을 입력하시오. ex)남, 여');
+            if(gender == '남' || gender == '남성'){
+                gender_condition = false;
+                alert('남성 화장실을 이용하십시오.');
+            }else if(gender == '여' || gender == '여성'){
+                gender_condition = false;
+                alert('여성 화장실을 이용하십시오.');
+            }else{
+                alert('화장실 이용에 애로사항이 있으시겠군요');
+        }
+        }
+
+
+
+        /* switchQ.1
+            지역에 따라서 - 지역 변수
+            전화번호가 국번이 변경됩니다. - 국번 변수
+            서울 02, 경기도 032, 충청남도 041, 충청북도 043, 강원도 033, 전라남도 061, 전라북도 063, 경상남도 055, 경상북도 054, 
+            인천 032, 세종 044, 광주 062, 대전 042, 부산 051, 대구 053, 제주 064
+        */ 
+        let local = '', area_code;
+
+        switch(local){
+            case '서울':
+                area_code = '02';
+                break;
+            case '경기도':
+                area_code = '032';
+                break;
+            case '충청남도':
+                area_code = '041';
+                break;
+            case '충청북도':
+                area_code = '043';
+                break;
+        }
+
+        // if문으로 똑같이 한다면?
+        if(local == '서울'){
+            area_code = '02';
+        }else if(local == '경기'){
+            area_code = '032';
+        }else if(local == '충청남도'){
+            area_code = '041';
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

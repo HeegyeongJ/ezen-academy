@@ -1,0 +1,54 @@
+@media only screen and (max-width:1279px){
+    footer{
+        .footer_cnts_center{margin-bottom:12.9rem;}
+        .footer_top{
+            .footer_cnts_center{display:block;
+                .use_info{justify-content:center;}
+                .fam_site{width:100%;padding:0;
+                    select{flex:0 1 calc(100% - 5.4rem);margin-top:0;padding-left:2rem;height:5rem;background-color:#333;color:#fff;}
+                }
+            } 
+        }
+        .footer_btm{display:block;padding:7.5rem 0 0 0;
+            .footer_btm_left{margin-bottom:2.5rem;
+                .accom_logos{justify-content:center;}
+                address{text-align:center;}
+            }
+            .footer_btm_right{width:100%;
+                .sns_logos{justify-content:center;
+                    .sns_logos_item{
+                        &:not(:last-child){margin-right:1.2rem;}
+                    }
+                }
+                .certification_mark{justify-content:center;}
+            }
+        }
+    }
+}
+@media only screen and (max-width:768px){
+    footer{
+        .footer_top{@include fontFac(400,3.3333vw,5vw);
+            &.bg_f1{height:16.9271vw;}
+            .footer_cnts_center{
+                .use_info{flex-wrap:wrap;align-content:center;height:16.9271vw;padding:0 1.5rem;
+                    dd{flex:1 1 calc(33% - 3rem);padding:0;             
+                        &:nth-of-type(n+4){margin-top:1.3889vw;}
+                        &:not(:last-child):after{content:none;}
+                        a{
+                            &.em_txt{font-size:3.3333vw;}
+                        }
+                    }
+                }
+                .fam_site{width:100%;padding:0;
+                    select{flex:1 1 calc(100% - 5.4rem);margin-top:0;padding-left:1.5rem;height:14.4531vw;background-color:#d5d5d5;color:#222;font-size:3.8889vw;}
+                }
+            }
+        }
+        .footer_btm{display:block;margin-top:14.4531vw;padding:3.2552vw 0 0 0;
+            .footer_btm_left{margin-bottom:5.5556vw;
+                .accom_logos{margin-bottom:6.1111vw;}
+                address{text-align:center;@include fontFac(400,3.6111vw,6.6667vw);}
+            }
+        }
+    }
+}

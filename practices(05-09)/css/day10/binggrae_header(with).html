@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../asset/style/reset.css">
+    <style>
+        html{font-size:62.5%;}
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height:18.5rem;
+            border-top:0.1rem solid black;
+        }
+        header>h1{
+            margin-left:8rem;
+        }
+        header>div{
+            margin-right:8rem;
+        }
+
+
+        header>nav{width:89.5rem;}
+        header>nav>ul{ 
+            display: flex;
+            height:18.5rem;
+        }
+        header>nav>ul>li{
+            display:flex;
+            position:relative;
+
+            flex:0 1 auto;
+            margin-right:auto;
+            /* border:1px solid red; */
+            font:1.4rem/3rem 'malgun Gothic',sans-serif;
+        }
+        header>nav>ul>li>a{
+            position:relative;
+            display:flex; 
+            align-items: center;
+            border-bottom:0.2rem solid rgba(255,255,255,0); /* 흔들림 방지 */
+        }
+        header>nav>ul>li>ul{
+            display:none;
+            position:absolute;
+            left:0; top:100%;
+            background-color:azure;
+        }
+        header>nav>ul>li>ul>li{
+            display:block;
+            word-break:keep-all; /* 한글 기본 값 break-all(글자 하나별), 영문 기본 값 keep-all (단어별)*/
+        }
+
+        header>nav>ul>li:hover>a::after{
+            content: ""; width:0.6rem; height:0.6rem; border-radius:50%;
+            position:absolute; right:-1rem; top:calc(50% - 1rem);
+            background-color:#e0462e;
+        }
+        header>nav>ul>li:hover>a{
+            border-bottom:0.2rem solid #e0462e;
+        }
+        header>nav>ul>li:hover>ul{
+            display:block;
+        }
+
+        .hidden{ font-size:0; line-height:0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="hidden">빙그레 회사</span> <img src="https://www.bing.co.kr/img/main/logo-pc.png" alt="빙그레 회사로고"></h1>
+        <nav>
+            <h1 class="hidden">빙그레 주요 서비스</h1>
+            <ul>
+                <li>
+                    <a href="" >회사소개</a>
+                    <ul class="depth2">
+                        <li><a href="">CEO인사말</a></li>
+                        <li><a href="">경영이념</a></li>
+                        <li><a href="">사업분야</a></li>
+                        <li><a href="">히스토리</a></li>
+                    </ul>
+                </li>
+                <li><a href="">제품소개</a>
+                    <ul class="depth2">
+                        <li><a href="">아이스크림</a></li>
+                        <li><a href="">우유/치즈</a></li>
+                        <li><a href="">발효유</a></li>
+                        <li><a href="">커피</a></li>
+                        <li><a href="">주스</a></li>
+                        <li><a href="">음료</a></li>
+                        <li><a href="">스낵/디저트</a></li>
+                        <li><a href="">건강지향</a></li>
+                        <li><a href="">수출제품</a></li>
+                    </ul>
+                </li>
+                <li><a href="">지속가능경영</a>
+                    <ul class="depth2">
+                        <li><a href="">지속가능경영&nbsp;체계</a></li> <!-- &nbsp;->띄어쓰기인데 글자로 인지 : keep-all값에서 밑으로 내려가지 않을 수 있음 -->
+                        <li><a href="">Eco-Friendly</a></li>
+                        <li><a href="">Shared Value</a></li>
+                        <li><a href="">Global Integrity</a></li>
+                        <li><a href="">윤리준법경영</a></li>
+                        <li><a href="">사회공헌</a></li>
+                        <li><a href="">보고서 및 정책</a></li>
+                    </ul>
+                </li>
+                <li><a href="">투자정보</a>
+                    <ul class="depth2">
+                        <li><a href="">재무정보</a></li>
+                        <li><a href="">주식정보</a></li>
+                        <li><a href="">전자공고</a></li>
+                        <li><a href="">공시정보</a></li>
+                        <li><a href="">IR자료실</a></li>
+                    </ul>
+                </li>
+                <li><a href="">뉴스룸</a>
+                    <ul class="depth2">
+                        <li><a href="">새소식</a></li>
+                        <li><a href="">보도자료</a></li>
+                        <li><a href="">빙그레 스토리</a></li>
+                        <li><a href="">미디어 라이브러리</a></li>
+                    </ul>
+                </li>
+                <li><a href="">고객센터</a>
+                    <ul class="depth2">
+                        <li><a href="">고객상담</a></li>
+                        <li><a href="">제품공급문의</a></li>
+                        <li><a href="">사이버 신고센터</a></li>
+                        <li><a href="">안전신문고</a></li>
+                        <li><a href="">개인정보처리방침</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="util">
+            <dl>
+                <dt class="hidden">언어</dt>
+                <dd>ko</dd>
+            </dl>
+            <p><a href="">사이트맵</a></p>
+        </div>
+    </header>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/style/reset.css">
+    <style>
+        /* transform(변형)
+            1. transform: scale() rotate() translate() skew();
+                순서에 따라서 작동되는 방식이 다르고 값은 랜덤하게 사용할 수 있다.
+                scale(n, n): n1, n2 값은 원래 크기에 대한 비율
+                rotate(ndeg): n만큼 회전 / 회전하면 x, y축도 같이 회전
+                translate(n1단위, n2단위): x축으로 n1만큼 y축으로 n2만큼 이동   단위:px,%,rem ...
+                skew(n1deg, n2deg): x축으로 n1만큼 기울기, y축으로 n2만큼 기울기
+
+            position:relative 인 것처럼 작동, 원래 자리에 투명한 static있음
+        
+        */
+        div{
+            margin:0 auto;
+            width:300px; height:200px;
+            background-color:aqua;
+            transition:all .3s ease; 
+
+            font:bold 64px sans-serif;
+            text-align:center;
+
+            transform-origin:0 0; /* 기준점이 div, default값: center center */
+        }
+        div:hover{
+            transform:scale(1, 2) translate(100px, 100px) rotate(45deg);
+            /* transform:rotate(45deg) scale(1,2)로 순서 바꾸면 결과 다르게 나타남
+                글자는 크기가 커지는게 아니라 그냥 늘어나기만 함
+            */
+        }
+    </style>
+</head>
+<body>
+    <h1>transform</h1>
+    <div>1</div>
+    <p>단락</p>
+</body>
+</html>

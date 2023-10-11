@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <style>
+        /* 탭메뉴 박스 */
+        .tab{position:relative; box-sizing:border-box;display:flex; justify-content:space-between; align-items:start; margin:0 auto; padding:20px; width:100%; height:300px; max-width:959px; background-color:aqua; }
+        .tab_menu{flex:1 0 30%; text-align:center; font-size:16px; line-height:1.8; }/* 제목 */
+        .tab_menu.active{color:blue; font-weight:700;}
+       
+        .tab_conts_box{display: none; position:absolute; top:60px; left:20px; width:calc(100% - 40px);} /* 내용 */
+        .tab_conts_box.active{display: block;}
+        .tab_conts_box>ul.tab_conts_txt{}
+        .tab_conts_box>ul.tab_conts_txt>li{padding:20px 0; border-bottom:1px solid #ccc; height:40px; font:16px/40px 'malgun Gothic',sans-serif;}
+
+        .tab_conts_box>.tab_conts_more{margin-top:40px;text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>다음</h1>
+    <ul>
+        <li>뉴스 소식1</li>
+        <li>뉴스 소식2</li>
+        <li>연예</li>
+        <li>스포츠</li>
+        <li>영화</li>
+        <li>자동차</li>
+        <li>부동산</li>
+    </ul>
+    <div>
+        <!-- 이미지 -->
+        <div>
+            <ul>
+                <li><a href=""><img src="" alt=""></a></li>
+                <li><a href=""><img src="" alt=""></a></li>
+                <li><a href=""><img src="" alt=""></a></li>
+                <li><a href=""><img src="" alt=""></a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- 기업은행 -->
+    <div class="tab">
+        <h3 class="tab_menu active">보도자료</h3>
+        <div class="tab_conts_box active">
+            <ul class="tab_conts_txt">
+                <li><a href="">IBK기업은행, 글로벌 ESG 지수 ‘FTSE4Good’ 최초 편입</a></li>
+                <li><a href="">IBK기업은행, 창립 62주년 기념식 개최</a></li>
+            </ul>
+            <p class="tab_conts_more"><a href=""> <span class="hidden">보도자료</span>더보기</a></p>
+        </div>
+        <h3 class="tab_menu">새소식</h3>
+        <div class="tab_conts_box">
+            <ul class="tab_conts_txt">
+                <li><a href="">한국씨티은행 관련 금융거래 일시중단 안내(8/6, 8/13)</a></li>
+                <li><a href="">현금카드 업무 일시 중단 안내(8/8)</a></li>
+            </ul>
+            <p class="tab_conts_more"><a href=""><span class="hidden">새소식</span>더보기</a></p>
+        </div>
+        <h3 class="tab_menu">공고</h3>
+        <div class="tab_conts_box">
+            <p class="tab_conts_more"><a href=""><span class="hidden">공고</span>더보기</a></p>
+        </div>
+    </div>
+</body>
+</html>

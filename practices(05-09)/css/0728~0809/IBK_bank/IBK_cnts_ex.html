@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{list-style:none; padding:0;}
+        ul{display:flex;border:1px solid red; margin:60px auto; width:100%; max-width:940px;}
+        ul.last{justify-content: space-between; border-color:blue;}
+        ul>li{flex:0 0 300px; margin-right:20px;
+            height:400px; background:green; color:#fff;
+        }
+        ul:first-child>li:first-child{height:300px;}
+        ul:first-child>li:last-child{height:200px;}
+        ul>li:last-child{margin-right:0;}
+        ul:not(:nth-of-type(1))>li:nth-child(1){
+            position:relative; top:-100px;
+        }
+        ul:not(:nth-of-type(1))>li:last-child{
+            position:relative; top:-200px;
+        }
+        @media only screen and (max-width:940px ){
+            ul{flex-wrap:wrap; justify-content:center;}
+            ul.last{justify-content: center; border-color:blue;}
+            ul>li{flex:0 1 90%; margin-top:20px;}
+            ul:not(:nth-of-type(1))>li:nth-child(1), ul:not(:nth-of-type(1))>li:last-child{
+                top:0;
+            }            
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+    <ul>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+    </ul>
+    <ul>
+        <li>g</li>
+        <li>h</li>
+        <li>i</li>
+    </ul>
+    <ul class="last">
+        <li>j</li>
+        <li>k</li>
+    </ul>
+</body>
+</html>

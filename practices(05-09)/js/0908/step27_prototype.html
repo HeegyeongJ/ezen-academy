@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <!-- 모든 함수는 정의하면, 자바스크립트 엔진이 인터프리터 하면서 자동으로 prototype이라는 객체를 생성 -->
+    <script>
+        // 객체를 생성하는 방법
+        // 1. literal(지정된 방식의 문법대로 쓰면 객체가 완성되는것) ---> {x:1}
+        // 2. new Object(); 생성자 함수 new라는 키워드와 함께 생성자 함수를 호출
+        //    함수명은 관례적으로 동사(시작 글자는 소문자)를 사용하지만, 생성자 함수로 사용할 때는 관례적으로 명사형으로 사용하며, 이름 첫글자는 대문자를 사용한다. 
+        // 3. new 키워드와 함께 생성자 함수를 호출하면 인스턴스(생성자함수에서 정의한 속성과 값을 상속받는 또다른 객체)가 생성 
+        // 4. 생성자 함수에서는 this 키워드는 instance(인스턴스)의 객체와 bind된다. 생성자 함수는 return을 사용하지 않으면 자동으로 return this;를 한다.
+
+
+        let ob = {x:1, y:2} // 브라우저가 코드를 읽을 때 '{}'를 읽으면 자동으로 new Object();
+        // let ob = new Object();
+        // ob.x = 1; 
+        // ob.y = 2;
+        let obj = {
+            x:1,
+            getX:function (){
+                this.x
+            }
+        }
+        obj.getX(); //함수 내에서 this는 함수를 호출할 때 그 객체와 bind되는 의미
+
+        // function Car(){ //생성자 함수를 작성(정의)할 때 식별자의 첫글자를 대문자로 쓰고 명사형으로 작성한다. 
+        //     let tmpObj = {}; //new Object();
+        //     tmpObj.x=10;
+        //     return tmpObj; //객체를 return해야 한다. 
+        // }
+
+        //생성자 함수는 new 와 함께 호출 생성자 함수(); ---> 인스턴스가 생성된다. ex> {x:10}  
+        // let newCar = new Car();
+
+        function Car(){
+            // this.wheel = 4; 
+            // this.handle = true;
+            // this.engine = 'v6';
+        }
+        Car.prototype.engine ='v6'
+        Car.prototype.setEngine = function(engine_){
+            this.engine = engine_;
+        } 
+        Car.prototype.getEngine = function(engine_){
+            return this.engine;
+        }
+
+        Car.prototype.handle = true;
+        Car.prototype.setHandle = function(handle_){
+            this.handle = handle_;
+        }
+        Car.prototype.getHandle = function(handle_){
+            return this.handle;
+        }
+
+        Car.prototype.wheel = 4;
+        Car.prototype.setwheel = function(wheel_){
+            this.handle = wheel_;
+        }
+        Car.prototype.getwheel = function(wheel_){
+            return this.wheel;
+        }
+
+        let car1 = new Car();
+        let car2 = new Car();
+        let car3 = new Car();
+         
+        console.log('======================= car1.wheel =======================');
+        console.log(car1);
+        console.log(car1.wheel);
+        console.log('====================== car2.handle =======================');
+        console.log(car2);
+        console.log(car2.handle);
+        console.log('====================== car3.engine =======================');
+        console.log(car3);
+        console.log(car3.engine);
+
+
+
+
+
+
+
+
+
+
+        //달리기 기록을 하는 프로그램
+        function Runner( _name, _speed){
+            this.name = _name;
+            this.speed = _speed;
+        }
+
+        //Sconsole.log(Object.create(Runner));
+
+        Runner.prototype.showSpeed  = function () {
+            console.log(`${this.name}의 달리기 기록은 ${this.speed} 입니다.`);
+        }
+
+        //사진을 판독하는 기계와 연결돼서 러너마다 인스턴스를 생성해서 기록해둔다. 
+        let runner1 = new Runner('고길동', 13); // {name:'고길동', speed:13}
+        let runner2 = new Runner('둘리', 16);// {name:'둘리', speed:16}
+        let runner3 = new Runner('마이콜', 12);// {name:'마이콜', speed:12}
+
+
+
+        runner1.showSpeed();
+        runner2.showSpeed();
+        runner3.showSpeed();
+
+        //한국 체대에서 Runner라는 프로그램을 구매
+        function Student(_name1, _speed1, _score){
+            this.name = _name1;
+            this.speed = _speed1;
+            this.score = _score;
+        }
+        //기존의 체대 학생들에 관한 프로토타입을 Runner.prototype과 연결시킨다. 
+        //#1. Student.prototype = new Runner(); //생성자 함수 Runner의 this관련 모든 것을 상속 받는다. 
+                                          //Object.create(Runner.prototype)를 사용하면, Runner.prototype의 constructor가 가리키는 비어있는 객체(속성이 없는 객체)를 만든다. new로 생성한 것이 아니기 때문에 Runner내부의 this.속성을 하나도 상속받지 않는다. 
+        // console.log('================ Student.prototype : new Runner() ================');
+        // console.log(Student.prototype);
+
+        //#2. Object.create(proto); 1. 조건 - proto는 객체여야 한다. 2 - proto의 카피본이 만들어진다(속성이 비어져있는 새로운 객체). 3조건 - proto__proto__ = proto(속성을 다 갖고 있음) 
+        //ex> Object.create({x:1}); ===> {}.__proto__ = {x:1}
+        //Student.prototype = Object.create(new Runner());
+        //console.log(Student.prototype);
+
+        Student.prototype = Object.create(Runner.prototype);
+        Student.prototype.constructor = Student;
+
+        console.log('================ Student.prototype : Object.create(Runner.prototype); ================');
+        console.log(Student.prototype);
+
+
+        let stu1 = new Student('홍길동',11, 4);
+        let stu2 = new Student('스파이더맨',11, 3.2);
+        let stu3 = new Student('아이작 뉴턴',18, 4.5);
+        stu1.showSpeed();
+        //console.log(Student.prototype); 
+
+
+        //프로토타입
+        let obj1 = {props_1:1} //obj1.__proto__ = Object.prototype 
+        let obj2 = {props_2:2} //Object.prototype
+
+        //#1 확장하기
+        //obj2를 확장을 하고 싶다면 인스턴스의 프로토타입을 다른 객체와 연결시킬 수 있다. 
+        //obj2.__proto__ = 다른 객체;
+
+        obj2.__proto__ = obj1;
+        console.log(obj2.props_1);
+
+
+        //#2. 
+        //확장하고 있는 프로토타입의 속성을 변경(update)할 때
+        obj1.props_1 = "업데이트 됐음";
+        obj1.props_3 = "새로운 속성과 값 생성";
+        console.log(obj2.props_1);
+        console.log(obj2.props_3);
+
+
+        //#3. 
+        //자신만의 속성
+        obj2.props_self = "obj2만의 속성";
+        console.log(obj2.props_self);
+        console.log(obj1.props_self); //상속을 해주는 곳에서는 사용할 수 없다. 
+
+    </script>   
+
+
+    </script>
+</body>
+</html>

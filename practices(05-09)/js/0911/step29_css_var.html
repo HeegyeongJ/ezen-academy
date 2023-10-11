@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*:root{변수}
+            1. css변수는 :root에서 변수(글로벌)지정하고 모든 곳에서 사용가능
+                :root{}( === html{})
+            2. css변수 : 지역변수 선언
+                선언한 요소 내부에서만 사용가능하다.
+
+            3. css 문법
+                --변수명: 값;
+                var(--변수명) ===> 값
+            
+            
+        */
+        html{--color:green;}
+        .list_1{--color:red;}
+        .list_1>strong{
+            color:var(--color);
+        }
+        .list_2>em{
+            color:var(--color);
+        }
+    </style>
+    <script>
+        let s = 10; 
+        let v = s;
+
+        if(true){
+            let s = 30; 
+        }
+    </script>
+</head>
+<body>
+    <h1>css 변수</h1>
+    <ul>
+        <li class="list_1">
+            <strong>menu-1</strong>
+        </li>
+        <li class="list_2">
+            <em>menu-2</em>
+        </li>
+    </ul>
+</body>
+</html>

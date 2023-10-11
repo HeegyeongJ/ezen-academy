@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        선택자{animation(속성):애니메이션명A 1time 함수 [반복횟수(default는 1) || infinite] [delaytime];} ※함수 다른거 사용하고 싶으면 cubic-beizer 검색
+
+        keyframs 내에서 %는 1time을 비율로 분할한 것
+        @keyframes 애니메이션명A{
+            0%{} : 0s
+            ...
+            50%{} : 1time의 1/2
+            100%{} : 1time이 끝나는 시간
+        }
+        */
+        .ani{
+            position:absolute; left:0; top:0;
+            width:100px;height:100px;
+            background:red;
+            animation:ani_box 4s ease;
+        }
+        @keyframes ani_box{
+            0%{left:0;top:0;}
+            25%{left:calc(100% - 100px);top:0;}
+            50%{left:calc(100% - 100px);top:calc(100% - 100px);}
+            75%{left:0;top:calc(100% - 100px);}
+            100%{top:0;}
+        }
+        .circle_box{
+            position:absolute; left:100px; top:100px;
+            width:100px; height:100px;
+            background-color:yellow; border-radius:50%;
+            line-height:100px; text-align:center;
+            animation: move_tpBtm 1.5s linear infinite;
+        }
+        @keyframes move_tpBtm{
+            0%{top:100px;}
+            50%{top:120px;}
+            100%{top:100px;}
+        }
+        .criteria{
+            position:absolute; left:50%; transform:translateX(-50%); top:50%;
+            width:200px; height:200px; border:1px solid green;
+        }
+        .bar{
+            position:absolute; top:calc(100% - 30px);
+            width:200px; height:30px; background:black;
+            transform:rotate(-70deg); transform-origin:0% 50%;
+            animation:rotateBar 2s ease;
+        }
+        @keyframes rotateBar{
+            0%{transform:rotate(-70deg);}
+            50%{transform:rotate(0deg);}
+            80%{transform:rotate(-60deg);}
+            100%{transform:rotate(-70deg);}
+        }
+    </style>
+</head>
+<body>
+    <h1>animation</h1>
+    <p>transition이 이벤트성으로 이벤트(click, mouseover, mouseenter, mouseout, ...keydown)가 발생했을 때 단발성으로 발생하는 애니메이션이라면, 
+        애니메이션은 시간에 따라서 애니메이션이 발생하고, 한번 또는 숫자를 정하거나 무한 반복되는 기능</p>
+    <ul>
+        <li>position:static이 아닌 상태에서 animation 작동한다. (위치 이동같은 경우)</li>
+        <li>애니메이션은 많이 사용하지 않는 것이 좋다.</li>
+        <li>시간에 따라서 작동되는 것이기 때문에 1타임에 어느정도 작동되는지는 고려한다.</li>
+    </ul>
+    <div class="ani">ani-box</div>
+    <div class="circle_box">원</div>
+
+    <!-- 예제 사이트 - https://scheele-green.tilda.ws/en -->
+    <div class="criteria">
+        <span class="bar">막대</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            this
+            - 함수에서만 사용하는 키워드(예약된 단어)이다.
+            - this는 함수를 호출하는 객체와 연결된다.
+            - 호출이 끝나면 연결을 끊어버린다. 
+
+        */
+        // let obj1 = {x:1, showX:funciton()}
+        // let obj2 = {x:2}
+
+        // obj1.showX();
+
+        // function showObjX(){}
+
+        
+        
+        let studentA = {
+            name:'학생A', 
+            age:17,
+            getAge:get_age,
+            setAge:set_age
+        }
+        let studentB = {
+            name:'학생B', 
+            age:19,
+            getAge:get_age,
+            setAge:set_age
+        }
+
+
+        function get_age(){
+            return this.age;
+        }
+
+        function set_age(_age){
+            this.age = _age;
+        }
+
+
+        let resultAge1 = studentA.getAge();
+        console.log('======================== resultAge1 ==============================');
+        console.log(resultAge1);
+        studentA.setAge(18);
+        console.log('======================== studentA.setAge이후 ==============================');
+        console.log(studentA.getAge());
+
+        let resultAge2 = studentB.getAge();
+        console.log('======================== resultAge2 ==============================');
+        console.log(resultAge2);
+        studentB.setAge(20);
+        console.log('======================== studentB.setAge이후 ==============================');
+        console.log(studentB.getAge());
+
+
+        /*
+            화살표 함수에서의 this는( 그 this가 가리키는 객체는 ) 화살표함수를 감싸는 함수가 있을 때 그 this와 bind된다. 
+        */
+            let objec1 = {x:10, y:outer(), z:outer2()}
+            let objec2 = {x:20}
+
+            function outer(){
+                console.log(this.x); // undefined - window객체의 x
+                function inner(){
+                    this; // inner 함수를 호출하는 객체
+                    console.log(this.x);
+                }
+                return inner;
+            }
+
+            function outer2(){
+                console.log(this.x); // undefined - window객체의 x
+                inner2 = ()=>{
+                    console.log(this.x); // outer2의 this와 연결된 this
+                }
+
+                return inner2;
+            }
+
+            console.log('-----------------------inner 함수 실행, objec1과 연결된 this----------------------')
+            objec1.y(); // this = objec1 연결
+            objec2.y = objec1.y;
+            console.log('-----------------------inner 함수 실행, objec2과 연결된 this----------------------')
+            objec2.y(); // this = objec2 연결
+            console.log('-----------------------inner 함수 실행, objec1과 연결된 화살표함수 this----------------------')
+            objec1.z();
+
+
+
+
+
+
+        let studentC = {
+            name: '학생C', 
+            age:16,
+            getAge:()=>this.age, // studentC.age로 해야 오류 뜨지 않음 (outer 함수가 있어야 연결가능)
+            setAge:()=>++this.age
+        }
+
+        studentC.getAge(); // undefined
+
+    </script>
+</body>
+</html>

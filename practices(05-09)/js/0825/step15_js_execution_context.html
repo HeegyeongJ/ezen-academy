@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            자바스크립트 작동방식 >> 참고https://think0wise.tistory.com/67
+            1.EC, 2. VO, 3. SC, 4. this
+
+            1. EC(Execution Context) 실행객체 : global - EC, 함수, EC
+                익스큐션 객체 실행(실행만 해줌) 함수하고 변수를 던져줌
+            2. VO(variable object) 변수객체 = vars, function declarations, arguments : hoisting
+                GO(global object) = 전역변수, 전역 함수 (함수 표현식 포함), AO(Activation Object) = 매개변수, 지역변수, 지역함수 (함수표현식 포함) : 값을 넣음
+                변수랑 함수를 끌어 올림
+            3. SC 유효범위(scope chain) : (변수, 함수) 시간, 범위
+                유효범위는 안쪽에서 바깥쪽으로 흘러간다.
+            4. this
+                함수의 유효범위는 lexical (선언한 곳의 유효범위)
+        */
+
+        var global = '전역변수';
+        var global_param = '매개변수';
+        foo(global_param);
+
+        function foo(param1){
+            let local = '지역변수';
+            alert(global);
+            alert(local);
+            alert(param1);
+            
+            if(true){
+                let local2 = 'if 지역변수';
+            }
+
+            nest(global);
+            function nest(nest_param1){
+                alert(nest_param1);
+            }
+        }
+
+
+        var i = 100;
+
+        foo();
+        function foo(){
+            let i = 1;
+            bar();
+        }
+
+        function bar(){
+            alert(i);
+        }
+
+        console.dir(foo);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

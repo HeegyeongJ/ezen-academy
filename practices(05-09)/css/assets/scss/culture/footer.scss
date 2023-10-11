@@ -1,0 +1,44 @@
+footer{
+    .footer_cnts_center{margin:0 auto;width:100%;max-width:128rem;}
+    .footer_top{@include fontFac(400,1.4rem);
+        &.bg_f1{@include bdr(top,#ddd);height:5rem;background-color:#f1f1f1;}
+        .footer_cnts_center{display:flex;justify-content:space-between;align-items:center;
+            .use_info{display:flex;justify-content:space-between;align-items:center;height:5rem;
+                dd{padding:0 2rem;position:relative;
+                    &:not(:last-child):after{@include after_bar(1.2rem,#ccc);}
+                    a{color:#666;
+                        &.em_txt{font-size:1.4rem;font-weight:500;text-decoration:underline;}
+                    }
+                }
+            }
+            .fam_site{display:flex;width:22.8rem;height:5rem;padding:0 2rem;
+                select{flex:0 1 22.8rem;margin-top:0.2rem;height:4.6rem;border:0 none;background-color:#eaeaea;color:#666;@include fontFac(400,1.4rem);
+                    &:focus{outline:0.2rem solid #000;@include brR(0.2rem);}
+                }
+                a{display:flex;align-items:center;justify-content:center;flex:0 0 5.4rem;height:5rem;@include fontFac(300,1.4rem,2rem);background:#555;color:#fff;}
+            }
+        }
+    }
+    .footer_btm{display:flex;justify-content:space-between;padding:4rem 2rem 3rem 2rem;
+        .footer_btm_left{margin-bottom:0.5rem;
+            .accom_logos{display:flex;align-items:center;margin-bottom:1.7rem;
+                dd{&:first-of-type{margin-right:2.9rem;}
+                img{vertical-align: middle;}
+                }
+            }
+            address{@include fontFac(400,1.3rem,2.4rem);color: #666;
+            }
+        }
+        .footer_btm_right{width:25.5rem;
+            .sns_logos{display:flex;justify-content:space-between;margin-bottom:2.5rem;height:4.2rem;
+                .sns_logos_item{
+                    &:first-child{margin-right:1.2rem;}
+                }
+            }
+            .certification_mark{display:flex;justify-content:flex-end;align-items:center;height:3.6rem;
+                dd{
+                    &:first-of-type{margin-right:2.9rem;}}
+            }
+        }
+    }
+}

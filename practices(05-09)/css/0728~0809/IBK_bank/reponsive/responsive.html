@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Document</title>
+    <style>
+        ul{margin:0; padding:0; list-style:none;}
+        .mobile{display:none;}
+        .web{display:block;}
+        header{display:flex; justify-content:space-between; align-items:center; margin:0 auto; max-width:1000px; width:100%; height:80px; background:pink;}
+        h1{flex:0 0 120px; height:50px; background:yellowgreen;}
+        header>div{flex:0 0 600px; height:80px; background:yellow;}
+        .hidden{display:none;}
+        header>div>dl{display:flex; justify-content:end; height:30px; background:orange;}
+        header>div>dl>dd{}
+        header>div>nav>ul{display:flex; justify-content:space-between; height:40px; background:orangered;}
+        header>div>nav>ul>li{}
+
+        @media only screen and (max-width:959px){
+            .mobile{display:block;}
+            .web{display:none;}
+            header{position:relative; display:block; padding-top:15px; height:65px; max-width:959px;}
+            header>h1{margin:0 auto; width:120px;}
+            header>div.w_nav_box{display:none;}
+            header>.btn_menu{position:absolute; right:30px; top:50%; transform:translateY(-50%);}
+
+            .m_nav_box{overflow:hidden; position:fixed; right:-350px; top:0; height:100vh; width:300px; transition:all .3s ease; background:wheat;}
+            .m_nav_box.active{right:0;}
+            .location{position:relative; height:35px; background-color:skyblue; color:#fff; text-align:center;}
+            .location>button{position:absolute; left:10px; top:50%; transform:translateY(-50%);}
+            /* 유틸메뉴 */
+            .m_nav_box>dl{display:flex; justify-content:space-between; align-items:start; padding:10px; width:calc(100% - 50px); height:36px; background:blue; color:#fff;}
+            dd{margin:0; margin-right:30px;}
+            .m_nav_box>dl>dd:last-child{align-self:center; margin:0;}
+            /* 네비게이터 */
+            .m_nav_box>nav{position:relative; left:0; width:600px;}
+            .m_nav_box>nav.active{left:-300px;}
+            .m_nav_box>nav>ul.depth_1_list{display:block; padding:15px; width:270px; height:auto;}
+            .m_nav_box>nav>ul.depth_1_list>li.depth_1_item{height:35px; border-bottom:1px solid #000; line-height:35px;}
+            .m_nav_box>nav>ul.depth_1_list>li.depth_1_item:last-child{border-bottom:0 none;}
+            .m_nav_box>nav>ul.depth_1_list>li.depth_1_item>ul.depth_2_list{
+                display:none;
+                position:absolute; top:0; right:0; padding:15px; width:270px;
+            }
+            .m_nav_box>nav>ul.depth_1_list>li.depth_1_item.active>ul.depth_2_list{display:block;}
+            .m_nav_box>nav>ul.depth_1_list>li.depth_1_item>ul.depth_2_list>li.depth_2_item{height:auto; border-bottom:1px solid #000; line-height:35px;}
+            .m_nav_box>nav>ul.depth_1_list>li.depth_1_item>ul.depth_2_list>li.depth_2_item>a{display:block; height:35px;}
+            .m_nav_box>nav>ul.depth_1_list>li.depth_1_item>ul.depth_2_list>li.depth_2_item>ul.depth_3_list{display:none}
+            .m_nav_box>nav>ul.depth_1_list>li.depth_1_item>ul.depth_2_list>li.depth_2_item.active>ul.depth_3_list{display:block;}
+
+            .curtain{display:none;}
+            .curtain.active{display:block; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(0,0,0,0.5);}
+            .btn_close{position:absolute; right:0; top:0; width:30px; height:30px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="curtain mobile active"></div>
+        <header>
+            <h1>로고</h1>
+            <p class="mobile btn_menu"><button type="button">menu<span class="hidden">네비게이터 열기</span></button></p>
+            <div class="web w_nav_box">
+                <dl>
+                    <dt class="hidden">유틸메뉴</dt>
+                    <dd><a href="">로그인</a></dd>
+                    <dd><a href="">회원가입</a></dd>
+                    <dd><a href="">사이트맵</a></dd>
+                </dl>
+                <nav>
+                    <h1 class="hidden">네비게이터</h1>
+                    <ul>
+                        <li>menu_1</li>
+                        <li>menu_2</li>
+                        <li>menu_3</li>
+                        <li>menu_4</li>
+                        <li>menu_5</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="mobile m_nav_box active">
+                <dl>
+                    <dt class="hidden">유틸메뉴</dt>
+                    <dd>로그인</dd>
+                    <dd>회원가입</dd>
+                    <dd>사이트맵</dd>
+                </dl>
+                <p class="location"><button type="button"><span class="ico">뒤로가기</span></button>IBK 기업은행</p>
+                <nav class="active">
+                    <h1 class="hidden">네비게이터</h1>
+                    <ul class="depth_1_list">
+                        <li class="depth_1_item active">menu_1
+                            <ul class="depth_2_list">
+                                <li class="depth_2_item">menu_1-1
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_1-1_a</li>
+                                        <li class="depth_3_item">menu_1-1_b</li>
+                                    </ul>
+                                </li>
+                                <li class="depth_2_item active"><a href="">menu_1-2</a>
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_1-2_a</li>
+                                        <li class="depth_3_item">menu_1-2_b</li>
+                                    </ul>
+                                </li>
+                                <li class="depth_2_item">menu_1-3
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_1-3_a</li>
+                                        <li class="depth_3_item">menu_1-3_b</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth_1_item">menu_2
+                            <ul class="depth_2_list">
+                                <li class="depth_2_item">menu_2-1
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_2-1_a</li>
+                                        <li class="depth_3_item">menu_2-1_b</li>
+                                    </ul>
+                                </li>
+                                <li class="depth_2_item">menu_2-2
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_2-2_a</li>
+                                        <li class="depth_3_item">menu_2-2_b</li>
+                                    </ul>
+                                </li>
+                                <li class="depth_2_item">menu_2-3
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_2-3_a</li>
+                                        <li class="depth_3_item">menu_2-3_b</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth_1_item">menu_3
+                            <ul class="depth_2_list">
+                                <li class="depth_2_item">menu_3-1
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_3-1_a</li>
+                                        <li class="depth_3_item">menu_3-1_b</li>
+                                    </ul>
+                                </li>
+                                <li class="depth_2_item">menu_3-2
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_3-2_a</li>
+                                        <li class="depth_3_item">menu_3-2_b</li>
+                                    </ul>
+                                </li>
+                                <li class="depth_2_item">menu_3-3
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_3-3_a</li>
+                                        <li class="depth_3_item">menu_3-3_b</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth_1_item">menu_4
+                            <ul class="depth_2_list">
+                                <li class="depth_2_item">menu_4-1
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_4-1_a</li>
+                                        <li class="depth_3_item">menu_4-1_b</li>
+                                    </ul>
+                                </li>
+                                <li class="depth_2_item">menu_4-2
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_4-2_a</li>
+                                        <li class="depth_3_item">menu_4-2_b</li>
+                                    </ul>
+                                </li>
+                                <li class="depth_2_item">menu_4-3
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_4-3_a</li>
+                                        <li class="depth_3_item">menu_4-3_b</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth_1_item">menu_5
+                            <ul class="depth_2_list">
+                                <li class="depth_2_item">menu_5-1
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_5-1_a</li>
+                                        <li class="depth_3_item">menu_5-1_b</li>
+                                    </ul>
+                                </li>
+                                <li class="depth_2_item">menu_5-2
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_5-2_a</li>
+                                        <li class="depth_3_item">menu_5-2_b</li>
+                                    </ul>
+                                </li>
+                                <li class="depth_2_item">menu_5-3
+                                    <ul class="depth_3_list">
+                                        <li class="depth_3_item">menu_5-3_a</li>
+                                        <li class="depth_3_item">menu_5-3_b</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="btn_close"><button type="button">x<span class="hidden">네비게이터 닫기</span></button></p>
+            </div>
+        </header>
+    </div>
+</body>
+</html>

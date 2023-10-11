@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* background: 색상, 이미지, 그라디언트
+            색상 - background-color: rgba(), #ffffff,
+            이미지 - background-image:url(이미지소스)
+                   background-repeat: repeat(default), repeat-x, repeat-y, no-repeat
+                   background-size: auto(default), cover, contain, 수치 및 %(감싸고 있는 요소에 비례한 크기)
+                   background-position: 위치 값으로 x y 값을 띄어서 값을 각각 입력
+                                        ex) 0 0(default), 
+                                            px, rem의 기준은 왼쪽 상단 기준,
+                                            이동하려는 이미지의 왼쪽 상단이 위치
+                                            
+                                            글자로 위치하는 것은 각 값에 해당하는 곳이 기준
+                                            ex) right - 상자요소의 right에 이미지의 right부분이 맞닿게 된다.
+                                            x: left, center, right
+                                            y: top, center, bottom
+
+                                            %
+                                            ex)30%; 상자요소의 30%부분이 이미지의 요소의 30%의 위치 값과 같다.
+            그라디언트 : 이미지와 성격이 비슷
+                        background-image: linear-gradient()선형, radial-gradient()원형
+        */
+        div{
+            margin:0 auto; width:500px; height: 200px; border:1px solid black;
+            background-color:cyan;
+            background-image: url(../asset/imgs/binggrae_logo_mo.png); 
+            background-repeat: no-repeat;
+            /* background-position:50px 50px;
+            background-position:center center; */
+            /* background-position: right bottom; */
+            background-position: 100% 100%;
+            /* background-size: 288px auto;  width height
+                width나 height 중 한 쪽을 키우고 한쪽은 auto 지정하면 원래 비율대로 조정
+            */
+            background-size: contain;
+            /* background-size: cover; */
+        }
+        /* background-image 사용하는 이유: 용량, 속도면에서 경제적, 관리하기 편함, 의미 없는 이미지 장식용으로 넣고 싶을 때 (like 벽지, 장판?) 사용 */
+        
+        p>span.ico{
+            vertical-align:middle;
+            display:inline-block;
+            width: 45px; height:45px;
+            background-image: url(../asset/imgs/ico_daum_weathers.png);
+            background-position:-424px -62px;
+            /* background-size:; */
+            /* font-size:0; line-height:0; */ text-indent: -9999px; 
+        }
+        /* background 축약 
+            background: [색상] || [url()] [repeat] [position-x position-y]
+                    색상이나 이미지 중 하나는 생략 가능
+                    []=생략 가능
+        */
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <p>backgroun-image 연습<span class="ico">날씨 구름</span></p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+aside.etc{ background-color:transparent;
+    .center{display:block; padding:4rem 1.5rem; width:auto; background-color:#fff;
+        >section{flex:0 0 auto;
+            &.app{margin-bottom:3rem;
+                ul{display: flex; justify-content:space-around;
+                    li{ flex:0 0 auto; height:9.6rem;
+                        a{display: block;
+                            .ico{margin-bottom:1rem; width:5rem; height:5rem;}
+                            .app_txt{@include fontFac(300, 1.2rem, 1.8rem);}
+                        }
+                        &:nth-child(1){
+                            a{
+                                .ico{background-image:url(https://www.ibk.co.kr/img/main2023/ico_app_01.png);}
+                            }
+                        }
+                        &:nth-child(2){
+                            a{
+                                .ico{background-image:url(https://www.ibk.co.kr/img/main2023/ico_app_02.png);}
+                            }
+                        }
+                        &:nth-child(3){
+                            a{
+                                .ico{background-image:url(https://www.ibk.co.kr/img/main2023/ico_app_03.png);}
+                            }
+                        }
+                        &:nth-child(4){
+                            a{
+                                .ico{background-image:url(https://www.ibk.co.kr/img/main2023/ico_app_04.png);}
+                            }
+                        }
+                    }
+                }
+            }
+            &.youtube{flex:0 0 41.5rem;
+                ul{display: flex; justify-content:space-between;
+                    li{ flex:1 0 auto;
+                        &:first-child{margin-right:1rem;}
+                        a{display: block;
+                            img{display:block; margin-bottom:1.7rem; width:100%; height:auto;}
+                            .youtube_txt{@include fontFac(300, 1.2rem, 1.8rem);}
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}//aside.etc End

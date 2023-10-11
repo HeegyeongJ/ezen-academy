@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../asset/style/reset.css">
+</head>
+    <style>
+        /* css styling 할 때 브라우저 지정 css값이 아니라, 원래 값으로 되돌리는 것 = reset */
+        li{list-style: none;}
+        section{
+            margin: 0 auto; /* 블럭요소 가운데로(width가 지정되어있을 때만)*/
+            border: 1px solid #b5b5b5;
+            width: 1062px; /* 보더 제외 총 width 1122px - 60px(좌우 패딩값)*/
+            height: 258px; /* 보더 제외 총 height 283px - 25px(위 패딩 값) */
+            padding: 25px 30px 0 30px;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        /* 순서대로 
+        section>h1
+        section>ul
+        section>ul>li
+        section>ul>li>a
+        section>ul>li>a>dl 
+        section>ul>li>a>dl>dt
+        section>ul>li>a>dl>dd:nth-of-type() */
+        section>h1{ margin-bottom: 18px; font-size:20px; line-height: 1.25; color: #222;}
+        section>ul>li{ width: 195px; height: 188px; /*margin:; 현재는 하나밖에 없으니 생략*/}
+        section>ul>li>a>dl{ height: 188px; text-align: center;}
+        section>ul>li>a>dl>dt{margin-bottom: 14px;}
+        section>ul>li>a>dl>dt>img{width: 193px; height: 130px; border: 1px solid #d7d7d7;}
+        section>ul>li>a>dl>dd:nth-of-type(1){ 
+            margin-bottom: 6px;
+            font-size: 15px; font-weight: bold; line-height: 1.25;}
+        section>ul>li>a>dl>dd:nth-of-type(2){ font-size: 13px; line-height:1.25;}
+    </style>
+<body>
+    <section>
+        <h1><a href="">WA 인증현황</a></h1>
+        <ul>
+            <li>
+                <a href="">
+                    <dl>
+                        <dt><img src="https://www.wa.or.kr/board_upload/board/photo/2023_06_30_TfkVCXJRiS.gif" alt=""></dt>
+                        <dd><span class="hidden">사이트 :</span> 함안군청</dd>
+                        <dd><span class="hidden">회사명 :</span> 함안군청</dd>
+                    </dl>
+                </a>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>

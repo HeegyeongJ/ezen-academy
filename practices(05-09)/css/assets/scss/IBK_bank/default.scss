@@ -1,0 +1,145 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table thead tr th, table tbody tr th{vertical-align:middle;}
+/* table thead tr td, table tbody tr td{vertical-align:middle;} */
+a{
+	text-decoration: none;
+}
+.hidden {
+    visibility: visible;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%); 
+    width: 1px;
+    height: 1px;
+    font-size: 100%;
+    line-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+button{	
+	box-sizing:border-box;
+	background:none;
+	border:0 none;
+	padding:0;
+	cursor:pointer;
+}
+input{
+	padding:0;
+	border:0 none;
+}
+
+html{font-size:62.5%;}
+
+
+
+/* style guide */
+// font
+
+// color
+
+// 미디어별 종류
+$mobile:767px;
+$web:768px;
+
+
+// mixin
+@mixin brR($radius_value){
+	border-radius:$radius_value;
+}
+@mixin fontFac($wt:normal, $sz:1.6rem, $lh:1.2, $ff:"'Noto Sans KR'"){
+	font-weight:$wt;
+	font-size:$sz;
+	line-height:$lh;
+	font-family:unquote($ff), sans-serif;
+}
+@mixin bdr($direction, $clr){
+	@if($direction == all){
+		border:0.1rem solid $clr;
+	}@else{
+		border-#{$direction}:0.1rem solid $clr;
+	}
+}
+@mixin after_bar($ht,$clr,$rt:0){
+	content:"";
+	position:absolute;
+	right:$rt;
+	top:50%;
+	transform:translateY(-50%);
+	width:0;
+	height:$ht;
+	@include bdr(left,$clr)
+}
+@mixin bg_img($clr:rgba(0,0,0,0),$link,$loc:0 0){
+	background:$clr $link no-repeat $loc / contain
+}
+@mixin text_ellipsis($line:1){
+    @if($line == 1){//한줄일 때 말줄임
+        overflow:hidden;width:100%;text-overflow: ellipsis;white-space: nowrap; 
+    }@else{//여러줄일 때
+        width:100%;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;      
+    }
+}
+@mixin media($media:768px){
+	@if($media>=768){
+        @media only screen and (min-width:$media){
+            @content;
+        }
+    }@else{
+        @media only screen and (max-width:$media){
+            @content;
+        }
+    }
+}

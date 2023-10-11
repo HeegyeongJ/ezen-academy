@@ -1,0 +1,468 @@
+html{font-size:62.5%;}
+
+    
+*{letter-spacing:-0.09em;}
+
+body.site_map_on{
+    overflow:hidden;
+}
+body.site_map_on>.wrap>div.hd_wrap>header>.hd_btm>nav{display:none;}
+body.site_map_on>.wrap>div.hd_wrap{
+    position:relative;
+    width:100%; height:100vh; 
+    padding-top:14.5rem;
+    background:url(../imgs/binggrae_pc_ham_bg.png) no-repeat 100% -8rem;
+}
+div.hd_wrap{padding-top:14.6rem;}
+header{
+    position:fixed; top:0; left:0; z-index:100;
+    width:100%; 
+    /* background:#fff; */
+}
+header>div.hd_top{width:100%; height:3rem; border-bottom:0.1rem solid #e7e7e7;}
+header>div.hd_top>dl{
+    display:flex; 
+    justify-content:flex-end;
+    align-items:center;
+    font:1.4rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+    letter-spacing: -0.09em;
+}
+
+header>div.hd_top>dl{}
+header>div.hd_top>dl>dd{}
+header>div.hd_top>dl>dd:nth-of-type(1){position:relative;}
+header>div.hd_top>dl>dd:nth-of-type(1)::after{
+    content:""; position:absolute; width:0.2rem; height:0.8rem;
+    right:-1.1rem; top:calc(50% - 0.4rem);
+    background-color:#f2f2f2;
+}
+header>div.hd_top>dl>dd:nth-of-type(2){margin-left:2rem;}
+header>div.hd_top>dl>dd>a{color: #1f1f1f;}
+header>div.hd_top>dl>dd>a>img{
+    margin-left:0.5rem;
+    vertical-align:middle;
+}
+
+header>div.hd_btm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:11.5rem;
+    margin:0 8rem;
+}
+header>div.hd_btm>h1{}
+header>div.hd_btm>nav{width:89.5rem;}
+header>div.hd_btm>nav>ul{ 
+    display: flex;
+    height:11.5rem; 
+}
+header>div.hd_btm>nav>ul>li{
+    display:flex;
+    position:relative;
+
+    flex:0 1 auto;
+    margin-right:auto;
+    /* border:1px solid red; */
+    font:1.9rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+    letter-spacing: -0.09em;
+}
+header>div.hd_btm>nav>ul>li>a{
+    display:flex; 
+    /* width:102px; */
+    align-items: center;
+    border-bottom:0.2rem solid rgba(255,255,255,0);
+    color:#1f1f1f;
+}
+header>div.hd_btm>nav>ul>li>ul.depth2{
+    display:none;
+    position:absolute;
+    top:11.5rem; /* =100% */ 
+    width:140%; /* 먼저 word-break:keep-all로 조절 후 안되면 width값으로 */
+    font-size:1.6rem;
+}
+
+/* util */
+header>div.hd_btm>div.util{
+    display:flex;
+    align-items:center; 
+}
+header>div.hd_btm>div.util>dl{
+    position:relative;
+}
+header>div.hd_btm>div.util>dl>dt{width:5.3rem;}
+header>div.hd_btm>div.util>dl>dt>button{
+    border:0 none;
+    background:none;
+}
+header>div.hd_btm>div.util>dl>dt>button>span{
+    margin-right:0.8rem; 
+    font:bold 1.6rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+    letter-spacing: -0.5px;
+}
+header>div.hd_btm>div.util>dl>dt>button>img{vertical-align:middle;}
+header>div.hd_btm>div.util>dl>dd{
+    position:absolute; left:0; top:100%;
+    height:11rem; width:5.3rem;
+    border-radius:2rem;
+    background-color:#fff;
+    box-shadow:0px 3px 7px 0 rgb(0 0 0 / 5%);
+    }
+header>div.hd_btm>div.util>dl>dd>ul{ height:9rem; width:3.3rem; padding:1rem; }
+header>div.hd_btm>div.util>dl>dd>ul>li{}
+header>div.hd_btm>div.util>dl>dd>ul>li>a{
+    display:block;
+    text-align:center;
+    color:#1f1f1f;
+    font:bold 1.6rem/3rem 'Poppins';
+    letter-spacing: -0.5px;
+}
+header>div.hd_btm>div.util>p>button{ 
+    position:relative;
+    border:0 none; background:none;
+    width:5.3rem; height:3rem;
+}
+header>div.hd_btm>div.util>p>button>span.ico_citemap{
+    position:absolute; right:0; top:50%;
+    width:2.6rem; height:0.2rem;
+    background-color:#000;
+}
+header>div.hd_btm>div.util>p>button>span.ico_citemap::before{
+    content:""; position:absolute; right:0; top:-1rem;
+    width:2.6rem; height:0.2rem;
+    background-color:#000;
+}
+header>div.hd_btm>div.util>p>button>span.ico_citemap::after{
+    content:""; position:absolute; right:0; bottom:-1rem;
+    width:2.6rem; height:0.2rem;
+    background-color:#000;
+}
+
+
+/* GNB event */
+
+header>div.hd_btm>nav>ul:hover>li>ul.depth2{display:block;}
+header>div.hd_btm>nav>ul>li:hover>a{
+    position:relative;
+    color:#e0462e;
+    border-bottom:0.2rem solid #e0462e; 
+    transition:color .3s ease;
+}
+header>div.hd_btm>nav>ul>li:hover>a::after{
+    content:"";
+    position:absolute; 
+    width:0.5rem; height:0.5rem; 
+    background-color:#e0462e;
+    border-radius:50%;
+    right:-1rem; top:calc(50% - 1rem);
+}
+
+
+/* site map */
+nav.site_map{display:none;}
+body.site_map_on>div.wrap>.hd_wrap>nav.site_map>ul{
+    display:flex;
+    justify-content:center;
+    width:159rem; height:48.7rem;
+    margin:6.7rem auto 0 auto;
+}
+body.site_map_on>div.wrap>div.hd_wrap>nav.site_map>ul>li{
+    flex:1 1 15%;
+    padding:5rem 3rem;
+    margin:0 0.5rem;
+    border:0.1rem solid #ececee;
+    border-radius:3rem;
+    background-color:#fff;
+
+    transition:all .5s ease;
+}
+body.site_map_on>div.wrap>.hd_wrap>nav.site_map>ul>li>a{
+    display:block;
+    color:#1f1f1f;
+    font:bold 3.2rem/1 'Binggrae';
+    letter-spacing: -0.16rem;
+    margin-bottom:3.2rem;
+
+    transition:all .5s ease;
+}
+body.site_map_on>div.wrap>.hd_wrap>nav.site_map>ul>li>ul.depth2>li{
+    font:1.8rem/3.4rem 'Poppins','Noto Sans KR', sans-serif;
+}
+body.site_map_on>div.wrap>.hd_wrap>nav.site_map>ul>li>ul.depth2>li>a{color:#1f1f1f;}
+body.site_map_on>div.wrap>.hd_wrap>nav.site_map>ul>li>ul.depth2>li>ul.depth3{ margin:0.8rem 0;}
+body.site_map_on>div.wrap>.hd_wrap>nav.site_map>ul>li>ul.depth2>li>ul.depth3>li>a{
+    font:300 1.5rem 'Poppins','Noto Sans KR', sans-serif;
+    color:rgba(150,150,150,0.8);}
+
+/* site map event */
+body.site_map_on>div.wrap>div.hd_wrap>nav.site_map>ul>li:hover{
+    transform:translateY(-1rem);
+    box-shadow: 0.1rem 0.1rem 2rem 0.3rem rgba(200, 200, 200, 0.5);
+}
+body.site_map_on>div.wrap>div.hd_wrap>nav.site_map>ul>li:hover>a{color:#e0462e;}
+body.site_map_on>div.wrap>div.hd_wrap>nav.site_map>ul>li>ul.depth2>li:hover>a{color:#e0462e;}
+
+
+
+/* main */
+/* box1 */
+main>.wrap{ width:131.0rem; margin:0 auto; padding:5.4rem 0 14rem 0;}
+main>.wrap>section{}
+main>.wrap>section>div.box1>p{
+    font:500 1.4rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+    letter-spacing: -0.07rem;
+    color: #b6b6b6;
+    margin-bottom:2.3rem;
+}
+main>.wrap>section>div.box1>p>a{ color:#b6b6b6; margin-right:0.6rem;}
+main>.wrap>section>div.box1>p>a>img{ }
+main>.wrap>section>div.box1>h1{
+    font:bold 5.8rem/100% 'Binggrae'; letter-spacing: -0.29rem;
+    margin-bottom:4.2rem;
+}
+main>.wrap>section>div.box1>ul{ overflow:hidden; margin-bottom:10.5rem;}
+main>.wrap>section>div.box1>ul>li{
+    float:left;
+
+    background:#fbfbfb;
+    border-radius: 3rem;
+    padding:0 6.3rem; margin-right:0.8rem;
+}
+main>.wrap>section>div.box1>ul>li>a{
+    font:1.6rem/4.3rem 'Poppins','Noto Sans KR', sans-serif;
+    color:#1f1f1f;
+}
+
+
+
+main>.wrap>section>div.box1>ul>li.active{
+    background:linear-gradient(to top, #ed1c24, #e0462e);
+    box-shadow: inset 0px 5px 10px 0 rgba(53, 53, 53, 0.11);
+}
+main>.wrap>section>div.box1>ul>li.active>a{
+    color:#fff;
+}
+
+
+
+
+/* box2 */
+main>.wrap>section>div.box2{
+    clear:both;
+    margin-bottom:14.5rem;
+}
+div.box2>dl{ }
+main>.wrap>section>div.box2>dl>dt{
+    font:bold 3.2rem/1 'Binggrae';
+    text-align:center;
+    margin-bottom:3.8rem;
+}
+main>.wrap>section>div.box2>dl>dd{
+    display:flex;
+    justify-content:center;
+}
+main>.wrap>section>div.box2>dl:nth-of-type(1)>dd{
+    font:500 1.6rem/4.2rem 'Poppins','Noto Sans KR', sans-serif;
+    letter-spacing: -0.8px;
+    width:30.8rem; 
+    margin:0 auto 6.4rem auto;
+    
+    /* border:1px solid #1f1f1f; */
+    border-radius:2rem;
+    box-shadow: 0px 3px 7px 0 rgba(0, 0, 0, 0.05), inset 0px 5px 10px 0 rgba(121, 121, 121, 0.03);
+}
+main>.wrap>section>div.box2>dl>dd>ul{
+    display:flex;
+    justify-content:center;
+}
+main>.wrap>section>div.box2>dl:nth-of-type(1)>dd>ul>li{
+    position:relative;
+}
+main>.wrap>section>div.box2>dl:nth-of-type(1)>dd>ul>li:first-of-type::after{
+    position:absolute; content:""; width:0.1rem; height:1.5rem; border-left:1px;
+    right:0; border-left:0.1rem solid #e5e5e5;
+    top:calc(50% - 0.75rem);
+}
+main>.wrap>section>div.box2>dl:nth-of-type(1)>dd>ul>li>a{   
+    padding:0 3rem;
+    color: rgba(31, 31, 31, 0.5);
+}
+main>.wrap>section>div.box2>dl:nth-of-type(1)>dd>ul>li>a.active{
+    color:#1f1f1f;
+}
+
+main>.wrap>section>div.box2>dl:nth-of-type(2)>dd>div{
+    width:65rem; height:8.3rem;
+    border-radius:3rem;
+    padding:3.4rem 9.2rem 2.7rem 9.2rem;
+    margin-right:1.2rem;
+}
+main>.wrap>section>div.box2>dl:nth-of-type(2)>dd>div>ul{
+    font:normal 1.6rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+    text-align:center;
+}
+main>.wrap>section>div.box2>dl:nth-of-type(2)>dd>div>ul>li{}
+main>.wrap>section>div.box2>dl:nth-of-type(2)>dd>div>ul>li:nth-of-type(2){
+    font: 500 1.9rem/3rem 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.95px;
+
+    margin-top:0.5rem;
+}
+main>.wrap>section>div.box2>dl:nth-of-type(2)>dd>div>ul>li:nth-of-type(2)>span.num{
+    font:500 5.3rem/3rem 'Poppins', sans-serif;
+    letter-spacing:normal;
+    margin-right:0.3rem;
+}
+
+
+
+
+/* icon */
+div.box2>dl:nth-of-type(2)>dd>div>ul>li>span.ico{
+    vertical-align:-0.1rem;
+    display:inline-block;
+    width:4.4rem; height:4.4rem;
+    margin-right:1rem;
+    background-color:#fff;
+    border-radius:50%;         
+}
+
+/* green box*/
+div.box2>dl:nth-of-type(2)>dd>div.green{
+    background:#f3f6e0;
+}
+div.box2>dl:nth-of-type(2)>dd>div.green>ul>li>span.wallet{
+    background-image:url(https://www.bing.co.kr/img/sub/investment/investment/icon_finance01.png);
+    background-repeat:no-repeat;
+    background-position:50%;   
+}
+
+/* blue box */
+div.box2>dl:nth-of-type(2)>dd>div.blue{
+    background:#eff6fa;
+}
+div.box2>dl:nth-of-type(2)>dd>div.blue>ul>li>span.money{
+    background-image:url(https://www.bing.co.kr/img/sub/investment/investment/icon_finance02.png);
+    background-repeat:no-repeat;
+    background-position:50%;   
+}
+
+/* yellow box */
+div.box2>dl:nth-of-type(2)>dd>div.yellow{
+    background:#fcf4e5;
+}
+div.box2>dl:nth-of-type(2)>dd>div.yellow>ul>li>span.invest{
+    background-image:url(https://www.bing.co.kr/img/sub/investment/investment/icon_finance03.png);
+    background-repeat:no-repeat;
+    background-position:50%;   
+}
+
+
+
+
+/* table section */
+main>.wrap>section>section>div.head{ 
+    display:flex; justify-content:space-between;
+}
+main>.wrap>section>section>div.head>h1{
+    font:bold 3.2rem/1 'Binggrae';
+    letter-spacing: -0.16rem;
+}
+main>.wrap>section>section>div.head>p{
+    font:bold 1.5rem 'Poppins','Noto Sans KR', sans-serif;
+    letter-spacing: -0.8px;
+    
+}
+
+
+/* table */
+main>.wrap>section>section>div.table_border{
+    width:127.8rem;
+    padding:1.5rem;
+    margin:2rem 0;
+    border:1px solid #ececee;
+    border-radius:3rem;
+    border-collapse:collapse;
+}
+main>.wrap>section>section>.table_border>table{
+    width:100%;
+}
+
+
+/* thead */
+main>.wrap>section>section>.table_border>table>thead{
+    background-color:#f9f9f9;
+    font:500 1.4rem/1.31 'Poppins','Noto Sans KR', sans-serif;
+    color:#1f1f1f;
+    letter-spacing: -0.8px;
+}
+main>.wrap>section>section>.table_border>table>thead th{
+    padding:2rem 0;
+}
+main>.wrap>section>section>.table_border>table>thead th:first-child{
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+main>.wrap>section>section>.table_border>table>thead th:last-child{
+    border-top-right-radius:2rem;
+    border-bottom-right-radius:2rem;
+}
+
+/* tbody */
+main>.wrap>section>section>.table_border>table>tbody{}
+main>.wrap>section>section>.table_border>table>tbody>tr{
+    font:1.4rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+    letter-spacing: -0.8px;
+    color:#1f1f1f;
+    text-align:center;
+
+    border-bottom:0.1rem solid #e8e8e8;
+}
+main>.wrap>section>section>.table_border>table>tbody>tr.sum{
+    font-weight:bold;
+}
+main>.wrap>section>section>.table_border>table>tbody>tr>td{
+    padding:2rem 0;
+}
+main>.wrap>section>section>.table_border>table>tbody>tr:last-child{
+    border-bottom:0 none;
+}
+main>.wrap>section>section>p{
+    font:1.6rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+    color:rgba(31,31,31,.5);
+}
+
+
+/* footer */
+div.wrap>footer{background-color:#1b1b1b; padding:4rem 5rem;}
+div.wrap>footer>div.ft_wrap{ }
+div.wrap>footer>div.ft_top{overflow:hidden;}
+div.wrap>footer>div.ft_top>img{float:left;}
+div.wrap>footer>div.ft_top>dl{
+    float:right;
+    display:flex;
+    width:16.8rem;
+}
+div.wrap>footer>div.ft_top>dl>dd{ 
+    flex:1 0 auto;   
+    font:500 1.4rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+}
+div.wrap>footer>div.ft_top>dl>dd>a{color:#606060;}
+div.wrap>footer>address{ 
+    clear:both;
+    margin:2.3rem 0 11.2rem 0;
+    font:300 1.7rem/4.2rem 'Poppins','Noto Sans KR', sans-serif;
+    color:#bbbbbb;
+}
+div.wrap>footer>div.ft_btm{display:flex; justify-content:space-between;}
+div.wrap>footer>div.ft_btm>p{ 
+    font:1.4rem/6.8rem 'Poppins','Noto Sans KR', sans-serif;
+    letter-spacing: -0.15px;
+    color:rgba(255, 255, 255, 0.2);
+}
+div.wrap>footer>div.ft_btm>dl{
+    display:flex; justify-content:space-around; align-items:center;
+    width:35.4rem;
+    padding-right:6rem;
+}
+div.wrap>footer>div.ft_btm>dl>dd{}
+

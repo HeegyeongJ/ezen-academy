@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=""></script>
+    <script>
+        //한줄 주석
+        /*
+            여러줄 주석 
+        */
+        // 다 사용가능
+
+        /*
+            javascript 특징
+            => interpreter 언어(script방식 - javascript와 php) (<-> compile 언어 = java,sass)
+                장점:compile 방식에 비해서 오류 위치를 찾기 쉽고 코드 이해가 수월
+                단점:code가 길어질 수록 느려진다. (한줄씩 해석하기 때문에) <-> compile은 처음 로딩만 느리고 그 이후에는 빨라진다.
+        */
+        /*
+            변수 =variable
+            - 저장할 수 있는 공간, 변하는 값이 들어간다.
+            - 변수 작성 키워드 = let(scpope 유효범위 block(={})으로 제한한다), var(), const(상수) 
+                변수정의 ex)let 식별자 = 값; 
+                    let 식별자 (까지)-> 변수선언    
+                    식별자 = 값; (까지)-> 값을 변수에 넣는 행위='할당한다'
+            - 변수 선언 이후에는 식별자만 사용하면, 그 자체가 값이 되고 재정의할 수 있다.
+            - 식별자(id 만드는것과 똑같다): _ || $ || 영소문자로 시작 / 중간에 숫자 가능, 특수문자 사용X
+            - 값으로 할당되는 것: 
+                데이터 타입-종류별로 구분되는 것(글자인식)
+                    1.기본 타입(primative type) : string(문자열), number(숫자), undefined(미지정), boolean(true/false), null, symbol
+                    2.객체 타입(object type = reference type, 복합 데이터 타입(참조 타입)) : array(배열), object(객체), date(시간), ...정의형 데이터 타입
+                        ? 객체 - 속성과 값들의 모임 (하나의 역할을 위해 모여짐) ==> 속성이 존재해서 사용할 수 있다
+                        ==> html 요소를 가지고 script로 가지고 올 때는 키워드 사용해서 객체화 시켜서 가지고 온다.
+                            ex) document.getElementById('id명') = id 에 해당하는 요소 하나 return;
+                                document.getElementByClassName('class명') = class 에 해당하는 것을 모두 return; 
+                                document.querySelector('#id명 || .class명 || tag명' )
+                    **string type은 무엇을 더하든 string으로 만듦
+
+
+
+
+
+            
+        */
+
+        let str = '00540341'; // 싱글 || 더블 퀘터이션 => string type
+        let num = 125; // number type(0도 가능)
+        let und; // undefiend type - 값이 자동으로 undefined로 들어감
+        let bool = true; // boolean type(값을 직접 지정하기도 하고, 논리 연산자(그 결과값)에 의해서 값이 정해지기도 한다.)
+        let nu = null; // 값이 없음 null type(object 타입 내부에 null 타입이 존재)
+        
+        /*
+            값을 화면에 출력하는 역할
+                alert(전달인자) - 확인 버튼 클릭 전까지 interpreter가 멈춘다 
+                console.log(전달인자) - typeof 변수: 변수의 데이터타입을 string 타입으로 return한다.
+                console.dir(전달인자)
+        */
+       alert('내가 쓴 값 : '+str);
+       console.log('내가 쓴 값 : '+num);
+       console.log(typeof str);
+       console.log(typeof num);
+       console.log(typeof und);
+       console.log(typeof bool);
+       console.log(typeof nu);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

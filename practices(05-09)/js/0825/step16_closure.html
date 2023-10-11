@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            closure
+            중첩함수가 있을 때 외부함수(또는 외부 block statement), 내부 함수가 존재할 때 내부 변수는 외부에서 사용할 수 없지만 클로져를 사용하면 사용할 수 있게 된다.
+            ==> 꺼내서 쓰면 지역변수가 reset 안됨
+
+
+            function outer(){
+                let local = 1;
+                let inner = function(){
+                    let closure = local;
+                }
+                return inner;
+            }
+
+            result;  ==> 오류 : 선언되기 이전이라 사용할 수 없음
+
+            let result = outer();           local 변수 은닉했다가 바깥에서 살리기 위해서
+            result();
+        */
+
+        // 변수에 함수를 할당하고 익명 함수 표기 == 함수 표현식
+        let foo = function (){ // 함수는 값이기 때문에 저장 X(hoisting 안됨)
+            alert('임시 함수');
+        }
+
+        foo();
+        
+
+        function outer(){
+            let num = 0; // 은닉화 (전역변수로 쓸 때는 브라우저에서 수정할 수 있어서)
+            let inner_var = function(){
+                ++num;
+                console.log(num);
+            }
+            return inner_var; // 함수 호출이 아니라 함수를 밖에 가지고 나가는것
+        }
+        // outer(); console.log(num); outer 함수가 값을 저장하지 않기 때문에 num --> 오류 / 사용할 수 있게 하려면? = closure
+
+        let closure = outer(); // 함수 안에 return 없으면 그냥 사라지기 때문에 undefined
+        closure(); //1
+        closure(); //2
+        closure(); //3
+
+
+
+        var i = 0;
+        
+        for(i; i < 10; i++){
+            function nest(){
+                console.log(i);
+            }
+        }
+
+        let outer_i = nest();
+        console.log(`변수 outer_i = ${outer_i}`);
+    </script>
+</head>
+<body>
+    <button class="btn_1" id="btn01">1</button>
+    <button class="btn_2">2</button>
+    <button class="btn_3">3</button>
+    <script>
+        /*
+        let btn_1 = document.querySelector('.btn_1'); 
+        btn_1.addEventListener('click', function(){
+            alert(11111111);
+        });
+            // id로 불러오기
+            // let btn1 = document.querySelector('#btn01'); // document.querySelector() : html 요소를 script 내부로 return 하는 역할
+            // btn1.addEventListener('click', function(){
+            //     alert(1);
+            // }); // 이벤트 발생할 때까지 listen -> 실제 이벤트 발생하면, 함수가 실행 (이벤트 이름, 익명함수)
+        let btn2 = document.querySelector('.btn_2'); 
+        btn2.addEventListener('click', function(){
+            alert(2222);
+        });
+        let btn3 = document.querySelector('.btn_3'); 
+        btn3.addEventListener('click', function(){
+            alert(33333333);
+        });
+        */
+
+        // 위의 코드 합치기
+        /*
+        selectElmt('.btn_1',11111);
+        selectElmt('.btn_2',22222);
+        selectElmt('.btn_3',33333);
+        function selectElmt(elmt, num){
+            let btn;
+            btn = document.querySelector(elmt);
+            btn.addEventListener('click', function(){
+                alert(num);
+            });
+        }
+        */
+
+        // 위의 코드 줄이기
+        /*
+        selectElmt();
+        function selectElmt(){
+            for(var i = 1; i <= 3; ++i){
+                document.querySelector(`.btn_${i}`).addEventListener('click', function (){
+                    alert(`${i} ${i} ${i}`);
+                });
+            }
+        }
+        */
+
+        // 위의 코드에서 alert의 i가 1씩 커질 수 있도록
+        selectElmt();
+        function selectElmt(){
+            function outer(num){
+                let closure_fnc = function (){
+                    alert(`${num}${num}${num}${num}${num}`)
+                }
+                return closure_fnc;
+            }
+            for(var i = 1; i <= 3; ++i){
+                document.querySelector(`.btn_${i}`).addEventListener('click', outer(i)); // document.querySelector 호출하면 사라짐, 사라지는 순간 addEventListener()를 연결
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

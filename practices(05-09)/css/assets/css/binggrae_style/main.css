@@ -1,0 +1,629 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Binggrae";
+  src: url(../../fonts/Binggrae-Bold2.eot);
+  src: local("※"), url(../../fonts/Binggrae-Bold2.woff) format("woff"), url(../../fonts/Binggrae-Bold2.ttf) format("truetype");
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table thead tr th, table tbody tr th {
+  vertical-align: middle;
+}
+
+/* table thead tr td, table tbody tr td{vertical-align:middle;} */
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  visibility: visible;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  font-size: 100%;
+  line-height: 100%;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* 변수는 변수명 앞에 $ 붙이기 - 색상, 폰트 등 스타일 가이드 미리 작성하기
+ 변수는 저장하는 곳
+ ------------예제------------
+ $common_font_family:"Poppins,'Noto Sans KR', sans-serif"; // 바깥쪽에 더블 쿼테이션 주의
+
+ $primary_100: rgba(255,57,57,1);
+ $primary_80: rgba(255,57,57,0.8);
+ $primary_60: rgba(255,57,57,0.6);
+
+ $font_hd_h1_50sz:50;
+ $font_hd_h2_18sz:18;
+
+ $font_bd_p_20sz:20;
+ $font_bd_p_14sz:14;
+
+ $font_tit_fm:Binggrae;
+ $font_cnts_fm:Poppins;
+ $font_sub_fm:"Noto Sans KR";*/
+/* 스타일 가이드 */
+main {
+  position: relative;
+  max-width: 131rem;
+  width: 100%;
+  margin: 0 auto;
+  /* 공통사항 */
+}
+main .cnts_section {
+  margin-top: 5.4rem;
+}
+main .cnts_section .cnts_sect_hd {
+  height: 19.6rem;
+  margin-bottom: 10.6rem;
+}
+main .cnts_section .cnts_sect_hd .location {
+  margin-bottom: 2.4rem;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  font-family: 'Poppins', "Noto Sans KR", sans-serif;
+}
+main .cnts_section .cnts_sect_hd .location a {
+  position: relative;
+  padding: 0 1.2rem;
+  color: #a5a5a5;
+}
+main .cnts_section .cnts_sect_hd .location a:first-child {
+  padding-left: 0;
+}
+main .cnts_section .cnts_sect_hd .location a:after {
+  content: "";
+  position: absolute;
+  right: -0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.6rem;
+  height: 1rem;
+  background: url(https://www.bing.co.kr/img/icon/btn_icon_brec_arrow.png) no-repeat 0 0;
+}
+main .cnts_section .cnts_sect_hd .location .curnt_pg {
+  padding-left: 1.2rem;
+  color: #a5a5a5;
+}
+main .cnts_section .cnts_sect_hd h1 {
+  margin-bottom: 4.1rem;
+  font-weight: bold;
+  font-size: 5.8rem;
+  line-height: 1;
+  font-family: Binggrae,'Noto Sans KR', sans-serif, "Noto Sans KR", sans-serif;
+}
+main .cnts_section .cnts_sect_hd .cnts_sect_nav ul {
+  display: flex;
+  height: 4.3rem;
+}
+main .cnts_section .cnts_sect_hd .cnts_sect_nav ul li {
+  flex: 0 0 18rem;
+  margin-right: 0.8rem;
+  border-radius: 2.15rem;
+  text-align: center;
+  background: #fbfbfb;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 4.3rem;
+  font-family: 'Poppins', "Noto Sans KR", sans-serif;
+}
+main .cnts_section .cnts_sect_hd .cnts_sect_nav ul li.active {
+  background: #e73029;
+}
+main .cnts_section .cnts_sect_hd .cnts_sect_nav ul li.active a {
+  color: #fff;
+}
+main .cnts_section .cnts_sect_hd .cnts_sect_nav ul li:hover {
+  background: #e73029;
+}
+main .cnts_section .cnts_sect_hd .cnts_sect_nav ul li:hover a {
+  color: #fff;
+}
+main .cnts_section .cnts_sect_hd .cnts_sect_nav ul li a {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1f1f1f;
+}
+main .cnts_sect_h2_m-t {
+  margin-top: 6.3rem;
+}
+main .cnts_sect_h2 {
+  font-weight: 50;
+  font-size: 3.2rem;
+  line-height: 1;
+  font-family: Binggrae,'Noto Sans KR', sans-serif, "Noto Sans KR", sans-serif;
+  text-align: center;
+  color: #1f1f1f;
+}
+main .sect_link {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.7rem;
+  height: 4.4rem;
+}
+main .sect_link ul {
+  flex: 0 1 30.8rem;
+  display: flex;
+  border-radius: 2.2rem;
+  background: #fff;
+  box-shadow: 0 0.3rem 0.3rem 0 rgba(210, 210, 210, 0.6);
+}
+main .sect_link ul li {
+  position: relative;
+  flex: 1 0 15.4rem;
+  display: flex;
+}
+main .sect_link ul li:not(:last-child):after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 1.4rem;
+  border-left: 0.1rem solid #e5e5e5;
+}
+main .sect_link ul li a {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-family: 'Poppins', "Noto Sans KR", sans-serif;
+}
+main .diagram_show-box_tit {
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 3rem;
+  font-family: 'Poppins', "Noto Sans KR", sans-serif;
+  text-align: center;
+}
+main .card_txt {
+  display: flex;
+  margin-top: 3.8rem;
+}
+main .card_txt div {
+  flex: 1 1 30%;
+  margin: 0 0.7rem;
+  padding: 3.6rem 0;
+  height: 8.2rem;
+  border-radius: 2.4rem;
+}
+main .card_txt div:nth-child(1) {
+  background-color: #f3f6e0;
+}
+main .card_txt div:nth-child(2) {
+  background-color: #eff6fa;
+}
+main .card_txt div:nth-child(3) {
+  background-color: #fcf4e5;
+}
+main .card_txt div dd {
+  margin-top: 0.7rem;
+  text-align: center;
+}
+main .card_txt div dd .ico {
+  display: inline-block;
+  margin-right: 1.2rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  vertical-align: -0.4rem;
+  background-color: #fff;
+}
+main .card_txt div dd .ico.purse {
+  background: #fff url(https://www.bing.co.kr/img/sub/investment/investment/icon_finance01.png) no-repeat 50% 50%;
+}
+main .card_txt div dd .ico.pocket {
+  background: #fff url(https://www.bing.co.kr/img/sub/investment/investment/icon_finance02.png) no-repeat 50% 50%;
+}
+main .card_txt div dd .ico.bag {
+  background: #fff url(https://www.bing.co.kr/img/sub/investment/investment/icon_finance03.png) no-repeat 50% 50%;
+}
+main .card_txt div dd .bgFtsz {
+  font-weight: 500;
+  font-size: 5.3rem;
+  line-height: 1.2;
+  font-family: 'Poppins', "Noto Sans KR", sans-serif;
+}
+main .card_txt div dd .smFtsz {
+  font-weight: 500;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  font-family: 'Poppins', "Noto Sans KR", sans-serif;
+}
+
+.site_map_on .hd_wrap {
+  height: 100vh;
+  background: #fff url(../assets/imgs/binggrae_pc_ham_bg.png) no-repeat 100% -8rem;
+}
+.site_map_on .hd_wrap header {
+  background-color: #fff;
+}
+.site_map_on .hd_wrap header nav {
+  display: none;
+}
+.site_map_on .hd_wrap nav.site_map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  padding-top: 14.6rem;
+  background: url(https://www.bing.co.kr/img/main/section01_bg.png) no-repeat 50% 0;
+}
+.wrap .hd_wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+.wrap .hd_wrap.depth2_on {
+  border-radius: 0 0 5rem 5rem;
+}
+.wrap .hd_wrap header {
+  height: 14.6rem;
+}
+.wrap .hd_wrap header.active {
+  height: 56.6rem;
+  border-radius: 0 0 5rem 5rem;
+  box-shadow: 0 0.3rem 0.8rem 0.2rem rgba(220, 220, 220, 0.5);
+}
+.wrap .hd_wrap header .hd_top {
+  height: 3rem;
+}
+.wrap .hd_wrap header .hd_top dl {
+  float: right;
+  padding-right: 8rem;
+}
+.wrap .hd_wrap header .hd_top dl dd {
+  float: left;
+  font: 1.4rem/3rem "Poppins", "Noto Sans KR", sans-serif;
+}
+.wrap .hd_wrap header .hd_top dl dd:first-of-type {
+  padding-right: 0.9rem;
+  position: relative;
+}
+.wrap .hd_wrap header .hd_top dl dd:first-of-type:after {
+  content: "";
+  position: absolute;
+  width: 0.2rem;
+  height: 0.8rem;
+  background-color: #e7e7e7;
+  right: -0.2rem;
+  top: calc(50% - 0.4rem);
+}
+.wrap .hd_wrap header .hd_top dl dd:last-of-type {
+  padding-left: 0.9rem;
+}
+.wrap .hd_wrap header .hd_top dl dd a img {
+  vertical-align: middle;
+}
+.wrap .hd_wrap header .hd_btm {
+  clear: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8rem;
+  height: 11.5rem;
+}
+.wrap .hd_wrap header .hd_btm.active {
+  border-bottom: 0.1rem solid #e7e7e7;
+}
+.wrap .hd_wrap header .hd_btm.active nav ul:hover li ul.depth2 {
+  display: block;
+}
+.wrap .hd_wrap header .hd_btm.active nav ul li:hover a {
+  position: relative;
+  color: #e0462e;
+  border-bottom: 0.2rem solid #e0462e;
+}
+.wrap .hd_wrap header .hd_btm.active nav ul li:hover a:after {
+  content: "";
+  position: absolute;
+  right: -1rem;
+  top: calc(50% - 1rem);
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: #e0462e;
+}
+.wrap .hd_wrap header .hd_btm h1 {
+  flex: 0 0 auto;
+}
+.wrap .hd_wrap header .hd_btm nav {
+  flex: 0 1 83.5rem;
+  height: 11.5rem;
+}
+.wrap .hd_wrap header .hd_btm nav ul {
+  display: flex;
+  height: 11.5rem;
+}
+.wrap .hd_wrap header .hd_btm nav ul li {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+}
+.wrap .hd_wrap header .hd_btm nav ul li a {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.2rem solid rgba(255, 255, 255, 0);
+  font: 2rem "Poppins", "Noto Sans KR", sans-serif;
+}
+.wrap .hd_wrap header .hd_btm nav ul li ul.depth2 {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: none;
+  width: 100%;
+  padding-top: 1.9rem;
+  font: 1.8rem/4.2rem "Poppins", "Noto Sans KR", sans-serif;
+}
+.wrap .hd_wrap header .hd_btm nav ul li ul.depth2 li {
+  height: 4.2rem;
+  word-break: keep-all;
+}
+.wrap .hd_wrap header .hd_btm nav ul li ul.depth2 li a {
+  display: block;
+}
+.wrap .hd_wrap header .hd_btm .util {
+  display: flex;
+  flex: 0 0 auto;
+  background: none;
+}
+.wrap .hd_wrap header .hd_btm .util dl {
+  position: relative;
+  width: 5.4rem;
+  height: 2.8rem;
+}
+.wrap .hd_wrap header .hd_btm .util dl dt button {
+  background: none;
+  border: 0 none;
+}
+.wrap .hd_wrap header .hd_btm .util dl dt button span {
+  font: bold 1.6rem/2.8rem "Poppins", "Noto Sans KR", sans-serif;
+  color: #1f1f1f;
+}
+.wrap .hd_wrap header .hd_btm .util dl dt button img {
+  vertical-align: middle;
+}
+.wrap .hd_wrap header .hd_btm .util dl dd {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 3.4rem;
+  background-color: #fff;
+  box-shadow: 0 0.3rem 0.7rem 0.3rem rgba(200, 200, 200, 0.2);
+}
+.wrap .hd_wrap header .hd_btm .util dl dd ul {
+  font: bold 1.6rem/3rem "Poppins", "Noto Sans KR", sans-serif;
+}
+.wrap .hd_wrap header .hd_btm .util dl dd ul li a {
+  display: block;
+  text-align: center;
+}
+.wrap .hd_wrap header .hd_btm .util p {
+  margin-left: 2rem;
+  height: 3rem;
+}
+.wrap .hd_wrap header .hd_btm .util p button {
+  position: relative;
+  background: none;
+  border: 0 none;
+  width: 2.8rem;
+  height: 3rem;
+}
+.wrap .hd_wrap header .hd_btm .util p button:hover {
+  height: 0;
+}
+.wrap .hd_wrap header .hd_btm .util p button:hover .ico_menu:after {
+  transform-origin: 100% 0;
+  transform: rotate(-43deg);
+}
+.wrap .hd_wrap header .hd_btm .util p button:hover .ico_menu:before {
+  transform-origin: 100% 100%;
+  transform: rotate(43deg);
+}
+.wrap .hd_wrap header .hd_btm .util p button .ico_menu {
+  position: relative;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2.6rem;
+  height: 0.2rem;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+.wrap .hd_wrap header .hd_btm .util p button .ico_menu:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1rem;
+  width: 2.6rem;
+  height: 0.2rem;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+.wrap .hd_wrap header .hd_btm .util p button .ico_menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  width: 2.6rem;
+  height: 0.2rem;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+.wrap .hd_wrap nav.site_map {
+  display: none;
+  width: 159rem;
+  margin: 0 auto;
+}
+.wrap .hd_wrap nav.site_map ul {
+  display: flex;
+  flex: 1 0 auto;
+}
+.wrap .hd_wrap nav.site_map ul li {
+  flex: 1 1 15%;
+  margin: 0 0.5rem;
+  padding: 3rem;
+  border: 0.1rem solid #ececec;
+  border-radius: 3rem;
+}
+.wrap .hd_wrap nav.site_map ul li a {
+  display: block;
+  font: bold 3.2rem/7.5rem "Binggrae";
+  color: #1f1f1f;
+}
+.wrap .hd_wrap nav.site_map ul li ul > li {
+  margin: 1.5rem 0;
+  font: 1.8rem/1 "Poppins", "Noto Sans KR", sans-serif;
+}
+.wrap .hd_wrap nav.site_map ul li ul > li a {
+  display: block;
+  color: #1f1f1f;
+}
+
+main .cnts_section section .unit {
+  text-align: right;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  font-family: 'Poppins', "Noto Sans KR", sans-serif;
+}
+main .cnts_section section .diagram_bar {
+  margin-top: 10rem;
+}
+main .cnts_section section .diagram_bar .diagram_show-box {
+  display: flex;
+  padding: 3rem;
+  border-radius: 3rem;
+  background: #f7f7f7;
+}
+main .cnts_section section .diagram_bar .diagram_show-box .diagram_show-box_item {
+  flex: 1 0 calc(30% - 6rem);
+  padding: 3rem;
+  height: 23rem;
+  border-radius: 2rem;
+  background-color: #fff;
+}
+main .cnts_section section .diagram_bar .diagram_show-box .diagram_show-box_item:nth-child(2) {
+  margin: 0 2.5rem;
+}
+main .cnts_section section .diagram_bar .diagram_show-box .diagram_show-box_item .diagram_show-box_tit {
+  text-align: left;
+}
+main .cnts_section section .asset_status_table {
+  margin-top: 14.5rem;
+}
+main .cnts_section section .asset_status_table .cnts_sect_h2 {
+  text-align: left;
+}
+main .cnts_section section .asset_status_table .table_outer {
+  padding: 1.5rem;
+  border-radius: 2.8rem;
+  border: 0.1rem solid #ececec;
+}
+main .cnts_section section .asset_status_table .table_outer .asset_table {
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1.31;
+  font-family: 'Poppins', "Noto Sans KR", sans-serif;
+}
+main .cnts_section section .asset_status_table .table_outer .asset_table colgroup col {
+  width: 30rem;
+}
+main .cnts_section section .asset_status_table .table_outer .asset_table colgroup col:first-child {
+  width: 38rem;
+}
+main .cnts_section section .asset_status_table .table_outer .asset_table thead tr th {
+  height: 8rem;
+  background: #f9f9f9;
+}
+main .cnts_section section .asset_status_table .table_outer .asset_table thead tr th:first-child {
+  border-radius: 2rem 0 0 2rem;
+}
+main .cnts_section section .asset_status_table .table_outer .asset_table thead tr th:last-child {
+  border-radius: 0 2rem 2rem 0;
+}
+main .cnts_section section .asset_status_table .table_outer .asset_table tbody tr th, main .cnts_section section .asset_status_table .table_outer .asset_table tbody tr td, main .cnts_section section .asset_status_table .table_outer .asset_table tfoot tr th, main .cnts_section section .asset_status_table .table_outer .asset_table tfoot tr td {
+  height: 7.9rem;
+  border-bottom: 0.1rem solid #ececec;
+  vertical-align: middle;
+}
+main .cnts_section section .asset_status_table .table_outer .asset_table tfoot {
+  font-weight: 500;
+}/*# sourceMappingURL=main.css.map */

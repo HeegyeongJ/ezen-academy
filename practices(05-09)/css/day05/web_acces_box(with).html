@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../asset/style/reset.css">
+    <style>
+        @font-face {
+            font-family: 'KoPub_Bold';
+            src: url(../asset/fonts/KoPubWorld_Dotum_ProBold.eot);
+            src: local('※'), url(../asset/fonts/KoPubWorld_Dotum_ProBold.woff) format('woff'),
+            url(../asset/fonts/KoPubWorld_Dotum_Bold.ttf) format('truetype');
+        }
+        /* f12 - network - font 입력 되는지 확인 */
+        @font-face {
+            font-family: 'KoPub_Medium';
+            src: url(../asset/fonts/KoPubWorld_Dotum_ProMedium.eot);
+            src: local('※'), url(../asset/fonts/KoPubWorld_Dotum_ProMedium.woff) format('woff'),
+            url(../asset/fonts/KoPubWorld_Dotum_Medium.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'KoPub_Light';
+            src: url(../asset/fonts/KoPubWorld_Dotum_ProLight.eot);
+            src: local('※'), url(../asset/fonts/KoPubWorld_Dotum_ProLight.woff) format('woff'),
+            url(../asset/fonts/KoPubWorld_Dotum_Light.ttf) format('truetype');
+        }
+        /* 3가지 폰트 다운 받으면 용량 1MB 넘음 */
+        /* main>div.main_top.on.sss{} 32점 */
+        /* div{}
+        div>dt{}
+        div>dt>a{}
+        div>dd{}
+        div>dd>a{} */
+        dl>div{ 
+            width: 163px; height: 88px;
+            padding: 22px 10px 0 95px;
+            border: 1px solid #ddd; border-bottom: 0 none;
+        }
+        dl>div:last-child{ border-bottom: 1px solid #ddd;  
+        border-radius: 0 0 8px 8px; box-shadow: 0 3px 0 0 rgb(0,0,0,.8);}
+        dl>div:first-child{ border-radius: 8px 8px 0 0; }
+        dt{ font: 13px/20px/*line-height*/ 'KoPub_Bold', sans-serif; 
+            margin-bottom: 3px;} /* color는 a가 가지고 있기 떄문에 여기선 안먹음*/
+        dt>a{ color: #444;}
+        dd{ font: 12px/20px 'KoPub_Light', sans-serif; }
+        dd>a{ color: #555;}
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="main_top">
+        <!-- div class="main_top on sss" 클래스 여러개 사용 가능 -->
+            <section>
+                <h1>지식마당 대표 컨텐츠</h1>
+                <dl>
+                    <!-- <div>
+                        <dt></dt>
+                        <dd></dd>
+                    </div> -->
+                    <div>
+                        <dt><a href="">웹 콘텐츠 제작기법</a></dt>
+                        <dd><a href="">웹접근성 제작기법에 대한 정보 제공</a></dd>
+                    </div>
+                    <div>
+                        <dt><a href="">웹 콘텐츠 제작기법</a></dt>
+                        <dd><a href="">웹접근성 제작기법에 대한 정보 제공</a></dd>
+                    </div>
+                    <div>
+                        <dt><a href="">웹 콘텐츠 제작기법</a></dt>
+                        <dd><a href="">웹접근성 제작기법에 대한 정보 제공</a></dd>
+                    </div>
+                    <!-- <div>
+                        <dt></dt>
+                        <dd></dd>
+                    </div>
+                    <div>
+                        <dt></dt>
+                        <dd></dd>
+                    </div>
+                    <div>
+                        <dt></dt>
+                        <dd></dd>
+                    </div> -->
+                </dl>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

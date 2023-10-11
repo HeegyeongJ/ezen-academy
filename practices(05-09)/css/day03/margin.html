@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        .wrap{
+            padding-top:1px;
+            background:url(../asset/imgs/pattern.jpg) repeat-x 0 0/auto;
+        }
+        .wrap>section{
+            height:80vh;
+        }
+        .wrap>section:nth-child(1){
+            margin-top:341px;
+            background-color:rgba(255, 183, 88,0.5); 
+        }
+        .wrap>section:nth-child(2){
+            background-color:rgb(255, 183, 88); 
+        }
+        .wrap>section:nth-child(3){
+            background-color:rgb(2, 163, 144); 
+        }
+        .wrap>section:nth-child(4){
+            background-color:rgb(239, 33, 188); 
+        }
+        /* 
+            1.형제요소 - 형제요소 하단과 위가 겹쳐져서 큰 쪽이 우선 
+            2.부모요소 - 보더가 없을 때, 자식요소가 마진이 존재하고 부모요소도 padding-top이 없을 때
+            마진겹침 안 일어나는 경우 2가지 : float요소, flex요소
+        */
+    </style>
+</head>
+<body>
+    <div class="wrap">        
+        <section>
+            <h1>타이틀1</h1>
+        </section>
+        <section>
+            <h1>타이틀2</h1>
+        </section>
+        <section>
+            <h1>타이틀3</h1>
+        </section>
+        <section>
+            <h1>타이틀4</h1>
+        </section>
+
+    </div>
+</body>
+</html>

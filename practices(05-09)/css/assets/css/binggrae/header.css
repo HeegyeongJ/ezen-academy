@@ -1,0 +1,211 @@
+body.site_map_on{
+    height:100vh;
+    overflow: hidden; /* 컨텐츠 숨기고 스크롤 없애기*/
+}
+body.site_map_on>.wrap>.hd_wrap{
+    height:100vh;
+    background:#fff url(../assets/imgs/binggrae_pc_ham_bg.png) no-repeat 100% -8rem;
+}
+body.site_map_on>.wrap>.hd_wrap>header>.hd_btm>nav{display:none;}
+
+
+
+
+.wrap{
+    padding-top:14.6rem;  
+    /* header position:fixed하니까 부모요소 height가 없어지고 밑에 형제main이 없어진 헤더의 height 있던 곳으로 빨려들어감 --> .wrap이나 main:padding-top  마진 안주는 이유는 마진겹침 때문에 */
+    background:url(https://www.bing.co.kr/img/main/section01_bg.png) no-repeat 50% 0;
+}
+.hd_wrap{
+    position:fixed; left:0; top:0; z-index:100;  
+    width:100%;
+}
+header{
+    height:14.6rem; /* background-color:#fff; */
+    /*margin-bottom:11.4rem;  사이트맵 margin-top이 안먹어서(가끔 그럴 때 위에 요소에 margin-bottom 으로 주면 됨)*/ 
+}
+header>div.hd_top{ height:3rem; /* border-bottom:0.1rem solid rgba(255,255,255,0); 굳이 넣자면이고 안넣어도 됨 */ border-bottom:0.1rem solid #e7e7e7;}
+header>div.hd_top>dl{ float:right; padding-right:8rem;} /* 부모요소에게 flex쓰거나 float 쓰기*/
+header>div.hd_top>dl>dd{ 
+    float:left; 
+    font:1.4rem/3rem 'Poppins','Noto Sans KR', sans-serif; 
+}
+header>div.hd_top>dl>dd:first-of-type{ padding-right:0.9rem; position:relative; }
+header>div.hd_top>dl>dd:first-of-type::after{
+    content:""; position:absolute; 
+    width:0.2rem; height:0.8rem; background-color:#e7e7e7;
+    right:-0.2rem; top:calc(50% - 0.4rem);
+}
+header>div.hd_top>dl>dd:last-of-type{ padding-left:0.9rem; }
+header>div.hd_top>dl>dd>a{}
+header>div.hd_top>dl>dd>a>img{ vertical-align:middle;}
+
+/* header bottom */
+header>div.hd_btm{ 
+    clear:right; 
+    display:flex; justify-content:space-between;
+    align-items: center;
+    padding:0 8rem;
+    height: 11.5rem;
+} /*width나 margin에 변화가 있다면 float라고 볼 수 없음 -> flex 사용*/
+header>div.hd_btm>h1{flex:0 0 auto;}/* 크기 작아져도 줄어들지 말게 */
+header>div.hd_btm>nav{
+    flex:0 1 83.5rem;
+    height: 11.5rem; /* a를 늘어나게 --> a에게 block주면 li만큼 커지고 그러기 위해서 li의 높이 있어야 되고 --> ul도 높이 있어야함 */
+}/* 83.5rem이 되면 줄어들게*/
+header>div.hd_btm>nav>ul{
+    display:flex;  /* li가 stretch 되어서 li는 자동으로 높이 값 설정 */
+    height: 11.5rem;
+}
+header>div.hd_btm>nav>ul>li{
+    position:relative;
+    display:flex; /* a가 stretch 되어서 a는 자동으로 높이 값 설정 */
+    flex:1 1 auto; 
+}
+header>div.hd_btm>nav>ul>li>a{ 
+    display:flex; /* a안에 있는 컨텐츠 가운데로 보내기 위함 */
+    align-items:center; 
+    border-bottom:0.2rem solid rgba(255, 255, 255, 0);
+    font:2rem 'Poppins','Noto Sans KR', sans-serif;
+}
+header>div.hd_btm>nav>ul>li>ul.depth2{
+    position:absolute;
+    left:0; top:100%; /* relative(조상 li) 기준 */
+    display:none;
+    width:100%; /* 부모요소 li가 기준 */
+    padding-top:1.9rem;
+    font:1.8rem/4.2rem 'Poppins','Noto Sans KR', sans-serif;
+}
+header>div.hd_btm>nav>ul>li>ul.depth2>li{height:4.2rem; word-break:keep-all;}
+header>div.hd_btm>nav>ul>li>ul.depth2>li>a{
+    display:block; /* or li에 flex주고 a가 stretch 되면 a에 flex:1 1 auto; */
+}
+
+/* GNB event */
+header.active{
+    height:56.6rem;
+    border-radius:0 0 5rem 5rem;
+    box-shadow:0 0.3rem 0.8rem 0.2rem rgba(220, 220, 220, 0.5);
+}
+header>div.hd_btm.active{
+    border-bottom:0.1rem solid #e7e7e7;
+}
+header>div.hd_btm>nav>ul>li:hover>a{
+    position:relative;
+    color:#e0462e;
+    border-bottom:0.2rem solid #e0462e;
+}
+header>div.hd_btm>nav>ul>li:hover>a::after{
+    content:""; position:absolute;
+    right:-1rem; top:calc(50% - 1rem); /* 포토샵으로 거리 재기 */
+    width:0.6rem; height:0.6rem;
+    border-radius:50%;
+    background-color:#e0462e;
+}
+header>div.hd_btm>nav>ul:hover>li>ul.depth2{display:block;}
+
+/* util menu */
+header>div.hd_btm>div.util{
+    display:flex; /* util끼리 일행정렬 */
+    flex:0 0 auto;/* nav의 flex 영향 -> 크기 고정 */
+    background:none;        
+}
+header>div.hd_btm>div.util>dl{
+    position:relative;
+    width:5.4rem; height:2.8rem;
+}
+header>div.hd_btm>div.util>dl>dt{}
+header>div.hd_btm>div.util>dl>dt>button>span{
+    font:bold 1.6rem/2.8rem 'Poppins','Noto Sans KR', sans-serif;
+    color:#1f1f1f;
+}
+header>div.hd_btm>div.util>dl>dt>button{background:none; border:0 none;}
+header>div.hd_btm>div.util>dl>dt>button>img{vertical-align:middle;}
+header>div.hd_btm>div.util>dl>dd{
+    position:absolute; left:0; top:100%;
+    border-radius:2rem;
+    padding:1rem;
+    width:3.4rem;
+    background-color:#fff;
+    box-shadow:0 0.3rem 0.7rem 0.3rem rgba(200, 200, 200, 0.2);
+}
+header>div.hd_btm>div.util>dl>dd>ul{
+    font:bold 1.6rem/3rem 'Poppins','Noto Sans KR', sans-serif;
+}
+header>div.hd_btm>div.util>dl>dd>ul>li{}
+header>div.hd_btm>div.util>dl>dd>ul>li>a{
+    display:block;
+    /* height:3rem; */
+    text-align:center;
+}
+header>div.hd_btm>div.util>p{margin-left:2rem; height:3rem;}
+header>div.hd_btm>div.util>p>button{
+    position:relative;
+    background:none; border:0 none; 
+    width:2.8rem; height:3rem;}
+header>div.hd_btm>div.util>p>button>span.ico_menu{
+    position:relative;
+    position:absolute; left:0; top:50%;
+    width:2.6rem; height:0.2rem;
+    background-color:#000;
+    transition:all .3s ease;
+}
+header>div.hd_btm>div.util>p>button>span.ico_menu::after{ 
+    content:"";
+    position:absolute; left:0; top:-1rem;
+    width:2.6rem; height:0.2rem;
+    background-color:#000;
+    transition:all .3s ease;
+}
+header>div.hd_btm>div.util>p>button>span.ico_menu::before{
+    content:"";
+    position:absolute; left:0; bottom:-1rem;
+    width:2.6rem; height:0.2rem;
+    background-color:#000;
+    transition:all .3s ease;
+}
+header>div.hd_btm>div.util>p>button:hover>span.ico_menu{
+    height:0;
+}
+header>div.hd_btm>div.util>p>button:hover>span.ico_menu::after{
+    transform-origin:100% 0;
+    transform:rotate(-43deg);
+}
+header>div.hd_btm>div.util>p>button:hover>span.ico_menu::before{
+    transform-origin:100% 100%;
+    transform:rotate(43deg);
+}
+
+/* 사이트맵 */
+.site_map_on>.wrap>.hd_wrap>nav.site_map{
+    display:flex; /* 이벤트 실행했을 때 보이게 */
+    justify-content:center;
+    align-items:center;
+}
+.hd_wrap>nav.site_map{
+    display:none;
+    width:159rem; /* nav>ul>li 마진 포함*/
+    margin:0 auto;
+}
+.hd_wrap>nav.site_map>ul{
+    display:flex;
+    flex:1 0 auto;
+}
+.hd_wrap>nav.site_map>ul>li{
+    flex:1 1 15%;
+    margin:0 0.5rem;
+    padding:3rem; 
+    border:0.1rem solid #ececec;
+    border-radius:3rem;
+}
+.hd_wrap>nav.site_map>ul>li>a{
+    display:block;  
+    font:bold 3.2rem/7.5rem 'Binggrae';
+    color:#1f1f1f;
+}
+.hd_wrap>nav.site_map>ul>li>ul{}
+.hd_wrap>nav.site_map>ul>li>ul>li{ 
+    margin:1.5rem 0;
+    font:1.8rem/1 'Poppins','Noto Sans KR', sans-serif;
+}
+.hd_wrap>nav.site_map>ul>li>ul>li>a{display:block; color:#1f1f1f;}
