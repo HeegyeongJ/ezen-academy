@@ -170,29 +170,29 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".hslide1", {
-     /*  pagination: {
+      pagination: {
         el: ".swiper-pagination",
         clickable: true,
-      }, 페이징 필요 없음 */ 
+      }, 
       effect: "fade",
-      autoplay:{
+      autoplay: {
         delay: 2500,
-        disableOnInetraction: false,
+        disableOnInteraction: false,
       },
       on:{
         slideChange: function(){
             let activeSlide = this.slides[this.activeIndex];
             gsap.set[activeSlide.querySelectorAll('div.summary p')];
 
-            const split = new SplitText(activeSlide.querySelectorAll('.summary p'))
+            const split = new SplitText(activeSlide.querySelectorAll('.summary p'), {type: 'chars'})
 
             gsap.from(split.chars, {
                 y:100,
-                x:-100,
+                x:-10,
                 opacity:0,
                 duration:1,
                 stagger:{
-                    each: 0.2,
+                    each: 0.02,
                     from: 'start'
                 }
             })
