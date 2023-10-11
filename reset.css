@@ -50,4 +50,20 @@ button{
 	background: none;
 	border: none;
 }
+a{
+	text-decoration: none;
+}
+.hidden {
+    visibility: visible; /* visible(default), hidden(화면에 안보일 뿐 화면에 존재) vs display:none; 화면 자체 삭제라서 웹 접근성X */
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px); /* 항상 자르는 기준이 왼쪽 상단, right/bottom은 left/top에서부터 얼마나 보일지? - 안보일 뿐 화면에 존재 */
+    clip-path: inset(50%); /* svg(scalable vector graphic) 요소를 숨기기 위한 방편 */
+    width: 1px;
+    height: 1px;
+    font-size: 100%;
+    line-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
 html{font-size: 62.5%}
