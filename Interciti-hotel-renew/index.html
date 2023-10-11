@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+  <!-- Demo styles -->
+  <style>
+    .swiper {
+      width: 100%;
+      height: 70vh;
+    }
+
+    .swiper-slide {
+        position: relative; 
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .summary{
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        color:#fff;
+        
+    }
+    .summary .title {
+        font-size: 72px;
+        font-weight: 500;
+        font-family: 'Cinzel', serif;
+      }
+  
+    .summary .subtitle {
+     
+    }
+  
+    .summary .text {
+        margin: 0 auto 60px auto;
+        font-size: 16px;
+        max-width: 500px;
+        line-height: 1.8;
+        font-weight: 500;
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+    .resv-btn{ 
+        border: 1px solid #fff;
+        background-color: rgba(255,255,255,0);
+        border-radius: 8px;
+        color: white;
+        width: 150px;
+        height: 60px;
+        font-family: 'Cinzel', serif;
+        font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+    <section id="sect1">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="summary">
+                    <div class="title">The Hotel IntercitI</div>
+                    <!-- <div class="subtitle" ></div> -->
+                    <div class="text">고객의 작은 관심에도 귀 기울이며,<br> 차별화된 서비스와 시설로써 보다 편안하고 안락한 휴식을 제공합니다.</div>
+                    <button class="resv-btn">RESERVATION</button>
+                </div>
+                <img src="/assets/imgs/visual01.png" alt="">
+            </div>
+            </div>
+            <div class="swiper-slide"><img src="/assets/imgs/visual02.png" alt=""></div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <section id="sect2">
+        <div class="inner">
+            <div class="sect2__intro flex">
+                <h2 class="sect2__h2">HOTEL<br> INTERCITI<hr></h2>
+                <div class="h2-desc">
+                    <p class="h2-desc__p">2023년 연회장, 객실, 레스토랑 등 전관 리뉴얼을 통해 새롭게 단장한 호텔인터시티가 호텔의 새로운 기준을 제시합니다.</p>
+                    <p class="h2-desc__p">편안하고 프라이빗한 객실, 쾌적하고 차별화된 시설을 갖춘 연회장과 회의실, 일생에 가장 아름다운 순간으로 기억될 웨딩홀, 수려한 도시의 경관과 함께 특별한 식사를 위한 다이닝 뷔페까지.</p>
+                    <p class="h2-desc__p">더 특별한 라이프 스타일을 경험하고 성공적인 비즈니스 행사를 위한 품격 있는 서비스로 대전 최고의 4성 호텔로서의 명성을 이어가겠습니다.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <section id="sect3">
+        <div class="inner">
+            <h2 class="sect3__h2">INTERCITI <span class="brown">ROOMS</span></h2>
+            <p class="sect3__h2-desc">Standard / Deluxe / Suite</p>
+            <ul class="campain flex">
+                <li><img src="/assets/imgs/sd01.jpg" alt=""></li>
+                <li><img src="/assets/imgs/dd02.jpg" alt=""></li>
+                <li><img src="/assets/imgs/sud01.jpg" alt=""></li>
+            </ul>
+            <button class="sect3__btn btn-res">RESERVE</button>
+            <button class="sect3__btn btn-more">MORE</button>
+        </div>
+    </section>
+    <section id="sect4">
+        <h2 class="sect4__h2">EVENT & PROMOTION</h2>
+        <div class="sect4-card">
+            <div>
+                <h3>추석을 부탁해</h3>
+                <p>명절 연휴 내내 집밥만...? 하루만큼은 다 내려놓고 맛있는 뷔페 메뉴로 즐겨보시면 어때요?
+                연휴기간 방문 고객님 모두에게 향긋한 커피를 선물합니다.
+                사랑하는 가족과 함께하는 즐거운 한가위! 더스크래치에서 맛있는 추억을 만들어보세요.
+                </p>
+            </div>
+            <img src="/assets/imgs/choosuk.jpg" alt="">
+        </div>
+        <div class="sect4-card">
+            <div>
+                <h3>Night & Small Wedding Promotion</h3>
+                <p></p>
+            </div>
+            <img src="/assets/imgs/a1b18811b4c6d51c31c0edebe1e0a011_crop_auto_fix_640_560.jpg" alt="">
+        </div>
+        <div class="sect4-card">
+            <div>
+                <h3>The Scratch OPEN EVENT</h3>
+                <p></p>
+            </div>
+            <img src="/assets/imgs/5b7e838549761ef9dde0639d2c34ddf4_crop_auto_fix_640_560.png" alt="">
+        </div>
+        <div class="sect4-card">
+            <div>
+                <h3>The Scratch 요일별 EVENT</h3>
+                <p></p>
+            </div>
+            <img src="/assets/imgs/ca8ebe51465aa6305fd3506ea8af55a6_crop_auto_fix_640_560.jpg" alt="">
+        </div>
+    </section>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>
