@@ -1,5 +1,10 @@
 @import "../../../reset.css";
-
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
 #header{
     position: absolute;
@@ -10,6 +15,14 @@
     height: 90px;
     border-bottom: 1px solid #fff;
 }
+#header .active{
+    background-color: #fff;
+}
+#header .active .ov{
+    opacity: 1;
+}
+
+
 .header_wrap{
     position: relative;
     display: flex;
@@ -27,16 +40,60 @@
     top: 3.2rem;
     right: 11rem;
 }
+#logo .ov{
+    opacity: 0;
+}
 #gnb1{
 
 }
 #gnb1 #head_menu{
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    right: 8%;
     display: flex;
 }
+#gnb1 #head_menu li{
+    position: relative;
+}
+#gnb1 #head_menu a{
+    display: inline-block;
+    padding: 3.25rem 2.5rem;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: 'Pretendard-Regular';
+}
+
+#gnb1 #head_menu ul{
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #BF2A4C;
+    border-radius: 8px;
+    padding: 12.5px 5px;
+    min-width: 180px;
+    width: 100%;
+}
+#gnb1 #head_menu ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#gnb1 #head_menu ul a{
+    text-align: center;
+    line-height: 36px;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0;
+    width: 100%;
+    height: 36px;
+}
+
+
+
 
 .title{display: none;}
 
@@ -50,7 +107,7 @@
 #gnb2 .global{
     position: absolute;
     top: 3rem;
-    right: 6rem;
+    right: 5.5rem;
     width: 3rem;
     height: 3rem;
     color: #fff;
@@ -59,3 +116,20 @@
     font-size: 2.2rem;
     font-weight: bold;
 }
+#gnb2 .control.open{
+    width: 3rem;
+    height: 3rem;
+    background: url('../../imgs/menu.svg') no-repeat;
+}
+
+/* hover 이벤트 */
+#gnb1:hover .ov{
+    display: block;
+}
+#gnb1:hover .n_ov{
+
+}
+#gnb1 #head_menu li:hover ul{
+    display: block;
+}
+#gnb1 #head_menu li:hover>a{color:#BF2A4C;}
